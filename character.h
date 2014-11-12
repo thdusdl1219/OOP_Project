@@ -1,21 +1,19 @@
-#include <iostream>
-#include <string>
-
 class Character {
 public:
-	Character(string, int, int, int, int); //character 持失(name, team, numbomb, powbomb, speed)
+	Character(string _name, int, int, int, int);//character 持失(name, team, numbomb, powbomb, speed)
+	Character(char*, int, int, int, int);
 	void setNumBomb(int); //
 	void setPowBomb(int);
 	void setSpeed(int);
 	string getName();
-	int getTeam();
-	int getNumBomb();
-	int getPowBomb();
-	int getSpeed();
+	int getTeam() const;
+	int getNumBomb() const;
+	int getPowBomb() const;
+	int getSpeed() const;
 private:
-	enum {MAXNUM_BOMB = Max};
-	enum {MAXNUM_BOMB = Max};
-	enum {MAX_SPEED = Max};
+	enum {MAXNUM_BOMB = 8};
+	enum {MAXPOW_BOMB = 8};
+	enum {MAX_SPEED = 8};
 	string name;
 	int team;
 	int numbomb;
