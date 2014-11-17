@@ -5,7 +5,7 @@
 Character::Character(string _name, int _numbomb, int _powbomb, int _speed, int _team) {
 	name = _name;
 	numbomb = _numbomb;
-	powbomb = _powbomb;
+    powbomb = _powbomb;
 	speed = _speed;
 	int _team;
 }
