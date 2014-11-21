@@ -518,6 +518,8 @@ compiler_rcc_make_all: qrc_resource.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resource.cpp
 qrc_resource.cpp: ../src/resource.qrc \
+		../src/images/init/button_init_creator.png \
+		../src/images/init/button_init_play.png \
 		../src/images/init/init_background.png
 	/Users/parksoyeon/Qt/5.3/clang_64/bin/rcc -name resource ../src/resource.qrc -o qrc_resource.cpp
 
@@ -649,7 +651,11 @@ initscene.o: ../src/scene/initscene.cpp ../src/scene/initscene.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QPixmap \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
-		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		../src/Types.h \
+		../src/mainwindow.h \
+		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o initscene.o ../src/scene/initscene.cpp
 
 qneed.o: ../src/qneed.cpp ../src/qneed.h \

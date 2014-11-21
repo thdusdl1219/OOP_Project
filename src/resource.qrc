@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>images/init/init_background.png</file>
+        <file>images/init/button_init_play.png</file>
+        <file>images/init/button_init_creator.png</file>
     </qresource>
 </RCC>

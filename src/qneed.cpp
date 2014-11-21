@@ -22,3 +22,7 @@ void Qneed::loadImage(const char* filename)
     setPixmap(*image);
 }
 
+MainWindow* Qneed::get_window()
+{
+    return window;
+}

@@ -14,6 +14,7 @@ public:
     Qneed(QGraphicsScene*, MainWindow*);
     Qneed(QObject *parent = 0);
     void loadImage(const char* filename);
+    MainWindow* get_window();
 signals:
 
 public slots:
