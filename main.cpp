@@ -7,5 +7,6 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 		scanf("%d",&a);
+    printf("abc");
     return a.exec();
 }
