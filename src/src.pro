@@ -14,9 +14,19 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    character.cpp
+    character.cpp \
+    scene/scene.cpp \
+    scene/initscene.cpp \
+    qneed.cpp
 
 HEADERS  += mainwindow.h \
-    character.h
+    character.h \
+    Types.h \
+    scene/scene.h \
+    scene/initscene.h \
+    qneed.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    resource.qrc

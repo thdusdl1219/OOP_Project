@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "character.h"
-
+/*
 Character::Character(string _name, int _numbomb, int _powbomb, int _speed, int _team) {
 	name = _name;
 	numbomb = _numbomb;
@@ -47,4 +47,4 @@ int Character::getPowBomb() const {
 
 int Character::getSpeed() const {
 	return speed;
-}
+}*/

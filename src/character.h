@@ -4,7 +4,7 @@
 #define MAXNUM_BOMB = 8
 #define MAXPOW_BOMB = 8
 #define MAX_SPEED = 8
-
+/*
 class Character {
 public:
 	Character(string _name, int, int, int, int);//character(name, team, numbomb, powbomb, speed)
@@ -25,5 +25,5 @@ private:
     int speed;
     Character();
 };
-
+*/
 #endif
