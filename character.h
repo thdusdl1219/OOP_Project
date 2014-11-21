@@ -22,8 +22,8 @@ private:
 	int team;
 	int numbomb;
 	int powbomb;
-	int speed;
-	Character();
+    int speed;
+    Character();
 };
 
 #endif
