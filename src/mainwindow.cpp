@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "Types.h"
 #include "scene/initscene.h"
+#include "scene/logoscene.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -35,7 +36,7 @@ void MainWindow::changeScene(int scenetype)
 //            scene = new EndgameScene(this);
             break;
         case LOGO :
-//            scene = new LogoScene(this);
+            scene = new LogoScene(this);
             break;
     }
     ui->graphicsView->setScene(scene);

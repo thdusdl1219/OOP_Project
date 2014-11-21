@@ -14,6 +14,8 @@ InitScene::~InitScene()
    qDebug() << "InitScene Die";
    if(get_background() != NULL)
        delete get_background();
+   delete play_button;
+   delete creator_button;
 }
 
 void InitScene::action()
@@ -36,7 +38,7 @@ void InitScene::setupInit()
 
 PlayButton::PlayButton(QGraphicsScene *scene, MainWindow *window) : Qneed(scene, window)
 {
-    this->loadImage(":images/init/button_init_play.png");
+    this->loadImage(":images/init/init_button_play.png");
 }
 
 void PlayButton::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -52,7 +54,7 @@ void PlayButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 CreatorButton::CreatorButton(QGraphicsScene *scene, MainWindow *window) : Qneed(scene, window)
 {
-    this->loadImage(":images/init/button_init_creator.png");
+    this->loadImage(":images/init/init_button_creator.png");
 }
 
 void CreatorButton::mousePressEvent(QGraphicsSceneMouseEvent *event)

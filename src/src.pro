@@ -17,14 +17,16 @@ SOURCES += main.cpp\
     character.cpp \
     scene/scene.cpp \
     scene/initscene.cpp \
-    qneed.cpp
+    qneed.cpp \
+    scene/logoscene.cpp
 
 HEADERS  += mainwindow.h \
     character.h \
     Types.h \
     scene/scene.h \
     scene/initscene.h \
-    qneed.h
+    qneed.h \
+    scene/logoscene.h
 
 FORMS    += mainwindow.ui
 

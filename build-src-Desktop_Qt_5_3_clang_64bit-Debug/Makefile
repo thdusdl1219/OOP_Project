@@ -50,7 +50,8 @@ SOURCES       = ../src/main.cpp \
 		../src/character.cpp \
 		../src/scene/scene.cpp \
 		../src/scene/initscene.cpp \
-		../src/qneed.cpp qrc_resource.cpp \
+		../src/qneed.cpp \
+		../src/scene/logoscene.cpp qrc_resource.cpp \
 		moc_mainwindow.cpp \
 		moc_scene.cpp \
 		moc_qneed.cpp
@@ -60,6 +61,7 @@ OBJECTS       = main.o \
 		scene.o \
 		initscene.o \
 		qneed.o \
+		logoscene.o \
 		qrc_resource.o \
 		moc_mainwindow.o \
 		moc_scene.o \
@@ -185,7 +187,8 @@ DIST          = ../../../Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
 		../src/character.cpp \
 		../src/scene/scene.cpp \
 		../src/scene/initscene.cpp \
-		../src/qneed.cpp
+		../src/qneed.cpp \
+		../src/scene/logoscene.cpp
 QMAKE_TARGET  = src
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = src.app/Contents/MacOS/src
@@ -491,7 +494,7 @@ src.app/Contents/Info.plist:
 	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,@TYPEINFO@,????,g" -e "s,@ICON@,,g" -e "s,@BUNDLEIDENTIFIER@,helloworld.src,g" -e "s,@EXECUTABLE@,src,g" -e "s,@TYPEINFO@,????,g" ../../../Qt/5.3/clang_64/mkspecs/macx-clang/Info.plist.app >src.app/Contents/Info.plist
 dist: 
 	@test -d .tmp/src1.0.0 || mkdir -p .tmp/src1.0.0
-	$(COPY_FILE) --parents $(DIST) .tmp/src1.0.0/ && $(COPY_FILE) --parents ../src/resource.qrc .tmp/src1.0.0/ && $(COPY_FILE) --parents ../src/mainwindow.h ../src/character.h ../src/Types.h ../src/scene/scene.h ../src/scene/initscene.h ../src/qneed.h .tmp/src1.0.0/ && $(COPY_FILE) --parents ../src/main.cpp ../src/mainwindow.cpp ../src/character.cpp ../src/scene/scene.cpp ../src/scene/initscene.cpp ../src/qneed.cpp .tmp/src1.0.0/ && $(COPY_FILE) --parents ../src/mainwindow.ui .tmp/src1.0.0/ && (cd `dirname .tmp/src1.0.0` && $(TAR) src1.0.0.tar src1.0.0 && $(COMPRESS) src1.0.0.tar) && $(MOVE) `dirname .tmp/src1.0.0`/src1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/src1.0.0
+	$(COPY_FILE) --parents $(DIST) .tmp/src1.0.0/ && $(COPY_FILE) --parents ../src/resource.qrc .tmp/src1.0.0/ && $(COPY_FILE) --parents ../src/mainwindow.h ../src/character.h ../src/Types.h ../src/scene/scene.h ../src/scene/initscene.h ../src/qneed.h ../src/scene/logoscene.h .tmp/src1.0.0/ && $(COPY_FILE) --parents ../src/main.cpp ../src/mainwindow.cpp ../src/character.cpp ../src/scene/scene.cpp ../src/scene/initscene.cpp ../src/qneed.cpp ../src/scene/logoscene.cpp .tmp/src1.0.0/ && $(COPY_FILE) --parents ../src/mainwindow.ui .tmp/src1.0.0/ && (cd `dirname .tmp/src1.0.0` && $(TAR) src1.0.0.tar src1.0.0 && $(COMPRESS) src1.0.0.tar) && $(MOVE) `dirname .tmp/src1.0.0`/src1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/src1.0.0
 
 
 clean:compiler_clean 
@@ -518,9 +521,11 @@ compiler_rcc_make_all: qrc_resource.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resource.cpp
 qrc_resource.cpp: ../src/resource.qrc \
-		../src/images/init/button_init_creator.png \
-		../src/images/init/button_init_play.png \
-		../src/images/init/init_background.png
+		../src/images/init/init_button_creator.png \
+		../src/images/init/init_background.png \
+		../src/images/init/init_button_play.png \
+		../src/images/logo/logo_background.png \
+		../src/images/logo/logo.png
 	/Users/parksoyeon/Qt/5.3/clang_64/bin/rcc -name resource ../src/resource.qrc -o qrc_resource.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_scene.cpp moc_qneed.cpp
@@ -618,7 +623,8 @@ mainwindow.o: ../src/mainwindow.cpp ../src/mainwindow.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h \
 		ui_mainwindow.h \
 		../src/Types.h \
-		../src/scene/initscene.h
+		../src/scene/initscene.h \
+		../src/scene/logoscene.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../src/mainwindow.cpp
 
 character.o: ../src/character.cpp ../src/character.h
@@ -670,6 +676,21 @@ qneed.o: ../src/qneed.cpp ../src/qneed.h \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qneed.o ../src/qneed.cpp
+
+logoscene.o: ../src/scene/logoscene.cpp ../src/scene/logoscene.h \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QObject \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qobject.h \
+		../src/scene/scene.h \
+		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QGraphicsScene \
+		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsscene.h \
+		../src/qneed.h \
+		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QGraphicsPixmapItem \
+		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsitem.h \
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QPixmap \
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o logoscene.o ../src/scene/logoscene.cpp
 
 qrc_resource.o: qrc_resource.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resource.o qrc_resource.cpp
