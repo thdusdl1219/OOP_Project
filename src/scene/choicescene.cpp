@@ -16,13 +16,22 @@ ChoiceScene::ChoiceScene(QObject *parent) :
 	player1 = NULL;
 	player2 = NULL;
 	map_cnt = 0;
+	scene = this;
 	setupChoice();
 }
 ChoiceScene::~ChoiceScene()
 {
+	qDebug() << "choiceScene deleted";
 	player1_cnt = 0;
 	player2_cnt = 0;
 	delete go_button;
+}
+
+ChoiceScene* ChoiceScene::scene = NULL;
+
+ChoiceScene* ChoiceScene::get_ChoiceScene()
+{
+	return scene;
 }
 
 void ChoiceScene::action()

@@ -21,11 +21,13 @@ public:
     Character* player1;
     Character* player2;
     int map_cnt;
+    static ChoiceScene* get_ChoiceScene();
 signals:
 
 public slots:
 
 private:
+    static ChoiceScene* scene;
     GoButton* go_button;
     PlayerButton* player_button[6];
     MapButton* map_button[3];
