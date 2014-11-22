@@ -2,7 +2,7 @@
 #include <QDebug>
 #include "../Types.h"
 #include "../mainwindow.h"
-
+#include <QKeyEvent>
 InitScene::InitScene(QObject* parent) : Scene(parent)
 {
     qDebug() << "InitScene call";

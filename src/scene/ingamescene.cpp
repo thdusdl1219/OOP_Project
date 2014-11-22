@@ -1,6 +1,7 @@
 #include "ingamescene.h"
 #include "choicescene.h"
-
+#include <QDebug>
+#include <QKeyEvent>
 InGameScene::InGameScene(QObject *parent) :
   Scene(parent)
 {
@@ -11,6 +12,12 @@ InGameScene::~InGameScene()
 {
 
 }
+
+void InGameScene::keyPressEvent(QKeyEvent *event)
+{
+	qDebug() << "PPP!" << event->key();
+}
+
 
 void InGameScene::setupIngame()
 {

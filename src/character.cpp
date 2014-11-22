@@ -6,6 +6,7 @@ Character::Character(enum CharacterType::Type _character_type, int _numbomb, int
 	powbomb = _powbomb;
 	speed = _speed;
 	team = _team;
+	image = NULL;
 }
 
 void Character::setNumBomb(int cnumbomb) {

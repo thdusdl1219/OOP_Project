@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include "Types.h"
-
+#include "qneed.h"
 
 using namespace std;
 
@@ -29,5 +29,6 @@ public:
 	int getNumBomb() const;
 	int getPowBomb() const;
 	int getSpeed() const;
+	Qneed* image;
 };
 #endif

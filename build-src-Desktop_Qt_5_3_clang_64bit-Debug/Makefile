@@ -540,18 +540,21 @@ compiler_rcc_make_all: qrc_resource.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resource.cpp
 qrc_resource.cpp: ../src/resource.qrc \
+		../src/images/init/init_button_play2.png \
 		../src/images/init/init_button_creator.png \
+		../src/images/init/init_background1.png \
 		../src/images/init/init_background.png \
 		../src/images/init/init_button_play.png \
 		../src/images/ingame/ingame_background.png \
 		../src/images/logo/logo_background.png \
 		../src/images/logo/logo.png \
 		../src/images/choice/choice_character_clicked4.png \
+		../src/images/choice/choice_character_clicked5.png \
 		../src/images/choice/choice_character0.png \
 		../src/images/choice/choice_button_go.png \
-		../src/images/choice/choice_character_clicked5.png \
 		../src/images/choice/choice_character1.png \
 		../src/images/choice/choice_character2.png \
+		../src/images/choice/choice_background1.png \
 		../src/images/choice/choice_character3.png \
 		../src/images/choice/choice_character4.png \
 		../src/images/choice/choice_character5.png \

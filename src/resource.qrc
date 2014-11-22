@@ -1,30 +1,33 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/init/init_background.png</file>
-        <file>images/init/init_button_creator.png</file>
-        <file>images/init/init_button_play.png</file>
-        <file>images/logo/logo_background.png</file>
-        <file>images/logo/logo.png</file>
-        <file>images/choice/choice_button_go.png</file>
         <file>images/choice/choice_background.png</file>
-        <file>images/choice/choice_character0.png</file>
-        <file>images/choice/choice_character1.png</file>
-        <file>images/choice/choice_character2.png</file>
-        <file>images/choice/choice_character3.png</file>
+        <file>images/choice/choice_background1.png</file>
+        <file>images/choice/choice_button_go.png</file>
         <file>images/choice/choice_character_clicked0.png</file>
         <file>images/choice/choice_character_clicked1.png</file>
         <file>images/choice/choice_character_clicked2.png</file>
         <file>images/choice/choice_character_clicked3.png</file>
-        <file>images/choice/choice_map0.png</file>
-        <file>images/choice/choice_map1.png</file>
-        <file>images/choice/choice_map2.png</file>
+        <file>images/choice/choice_character_clicked4.png</file>
+        <file>images/choice/choice_character_clicked5.png</file>
+        <file>images/choice/choice_character0.png</file>
+        <file>images/choice/choice_character1.png</file>
+        <file>images/choice/choice_character2.png</file>
+        <file>images/choice/choice_character3.png</file>
+        <file>images/choice/choice_character4.png</file>
+        <file>images/choice/choice_character5.png</file>
         <file>images/choice/choice_map_clicked0.png</file>
         <file>images/choice/choice_map_clicked1.png</file>
         <file>images/choice/choice_map_clicked2.png</file>
+        <file>images/choice/choice_map0.png</file>
+        <file>images/choice/choice_map1.png</file>
+        <file>images/choice/choice_map2.png</file>
         <file>images/ingame/ingame_background.png</file>
-        <file>images/choice/choice_character_clicked4.png</file>
-        <file>images/choice/choice_character_clicked5.png</file>
-        <file>images/choice/choice_character4.png</file>
-        <file>images/choice/choice_character5.png</file>
+        <file>images/init/init_background.png</file>
+        <file>images/init/init_background1.png</file>
+        <file>images/init/init_button_creator.png</file>
+        <file>images/init/init_button_play.png</file>
+        <file>images/init/init_button_play2.png</file>
+        <file>images/logo/logo.png</file>
+        <file>images/logo/logo_background.png</file>
     </qresource>
 </RCC>

@@ -10,6 +10,7 @@ public:
 	InGameScene(QObject *parent = 0);
 	void setupIngame();
 	virtual void action();
+	virtual void keyPressEvent(QKeyEvent* event);
 	~InGameScene();
 signals:
 
