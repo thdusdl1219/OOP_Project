@@ -18,8 +18,6 @@ ChoiceScene::ChoiceScene(QObject *parent) :
 }
 ChoiceScene::~ChoiceScene()
 {
-	if(get_background() == NULL)
-		delete get_background();
 	delete go_button;
 }
 

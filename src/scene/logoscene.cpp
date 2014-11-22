@@ -8,8 +8,6 @@ LogoScene::LogoScene(QObject* parent) : Scene(parent)
 
 LogoScene::~LogoScene()
 {
-    if(get_background() != NULL)
-        delete get_background();
     delete logo;
 }
 

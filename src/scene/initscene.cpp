@@ -12,8 +12,6 @@ InitScene::InitScene(QObject* parent) : Scene(parent)
 InitScene::~InitScene()
 {
    qDebug() << "InitScene Die";
-   if(get_background() != NULL)
-       delete get_background();
    delete play_button;
    delete creator_button;
 }

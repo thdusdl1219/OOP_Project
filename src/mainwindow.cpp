@@ -4,6 +4,8 @@
 #include "scene/initscene.h"
 #include "scene/choicescene.h"
 #include "scene/logoscene.h"
+#include "scene/ingamescene.h"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -31,7 +33,7 @@ void MainWindow::changeScene(int scenetype)
             scene = new ChoiceScene(this);
             break;
         case INGAME :
-//            scene = new IngameScene(this);
+            scene = new InGameScene(this);
             break;
         case ENDGAME :
 //            scene = new EndgameScene(this);

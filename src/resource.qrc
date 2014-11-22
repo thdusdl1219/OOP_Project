@@ -21,5 +21,6 @@
         <file>images/choice/choice_map_clicked0.png</file>
         <file>images/choice/choice_map_clicked1.png</file>
         <file>images/choice/choice_map_clicked2.png</file>
+        <file>images/ingame/ingame_background.png</file>
     </qresource>
 </RCC>
