@@ -28,10 +28,10 @@ void InitScene::setupInit()
     set_background(background);
 
     play_button = new PlayButton(this, get_window());
-    play_button->setPos(380, 350);
+    play_button->setPos(422, 526);
 
     creator_button = new CreatorButton(this, get_window());
-    creator_button->setPos(380, 500);
+    creator_button->setPos(422, 622);
 }
 
 PlayButton::PlayButton(QGraphicsScene *scene, MainWindow *window) : Qneed(scene, window)
