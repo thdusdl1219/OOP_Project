@@ -16,4 +16,9 @@ namespace Team
   enum Type { POSTECH, KAIST };
 }
 
+namespace ItemType
+{
+  enum Stat_Type {BOMB_NUM, BOMB_POWER, SPEED, LIFE};
+}
+
 #endif // TYPES_H

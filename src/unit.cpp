@@ -1,26 +1,27 @@
 #include "unit.h"
 
-Unit::Unit(int r, int c){
-  row=r;
-  col=c;
+Unit::Unit(QGraphicsScene* scene, MainWindow* window, int pos) : Qneed(scene, window)
+{
+  position = pos;
 }
 
-void Unit::getPostion(int& r, int& c){
-  r=row;
-  c=col;
+Unit::~Unit()
+{
+
 }
 
-Item::Item(int r, int c, const char* filename): Unit(r, c){
-  QPixmap* imgSrc = new QPixmap(filename);
-  if(imgSrc != NULL)
-    imageSrc=imgSrc;
-  else
-    imageSrc=NULL;
+int Unit::getPostion()
+{
+  return position;
+}
+
+Item::Item(QGraphicsScene* scene, MainWindow* window, int pos): Unit(scene, window, pos)
+{
   for(int i=0; i<4; i++)  stat[i]=0;
 }
 
-void Item::setItemStat(int s, int qauntity){
-  for(int i=0; i<qauntity; i++) stat[s]++;
+void Item::setItemStat(int s, int quantity){
+  stat[s] = quantity;
 }
 
 bool Item::bombObject(){
@@ -28,12 +29,8 @@ bool Item::bombObject(){
   return true;
 }
 
-Soju::Soju(int r, int c, const char* filename, int t, int p): Unit(r, c){
-  QPixmap* imgSrc = new QPixmap(filename);
-  if(imgSrc != NULL)
-    imageSrc=imgSrc;
-  else
-    imageSrc=NULL;
+Soju::Soju(QGraphicsScene* scene, MainWindow* window, int pos, int t, int p): Unit(scene, window, pos)
+{
   time=t;
   power=p;
 }
@@ -52,24 +49,20 @@ bool Soju::bombObject(){
   return true;
 }
 
-/*
-Block::Block(int r, int c, const char* filename, bool b, Item* i): Unit(r, c){
-  QPixmap* imgSrc = new QPixmap(filename);
-  if(imgSrc != NULL)
-    imageSrc=imgSrc;
-  else
-    imageSrc=NULL;
-  breakable=b;
-  if(i==NULL){
+
+Block::Block(QGraphicsScene* scene, MainWindow* window, int pos, bool bre, Item* it): Unit(scene, window, pos)
+{
+  breakable=bre;
+  if(it==NULL){
       hasItem=false;
       item=NULL;
     }
   else{
       hasItem=true;
-      item=i;
+      item=it;
     }
 }
-*/
+
 Item* Block::getItem(){
   return item;
 }
@@ -80,6 +73,13 @@ bool Block::isBreakable(){
 
 
 bool Block::bombObject(){
-  delete this;
-  return true;
+  if(item != NULL)
+  {
+      return true;
+  }
+  else
+  {
+    delete this;
+    return false;
+  }
 }

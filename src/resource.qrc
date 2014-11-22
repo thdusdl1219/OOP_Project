@@ -29,5 +29,6 @@
         <file>images/init/init_button_play2.png</file>
         <file>images/logo/logo.png</file>
         <file>images/logo/logo_background.png</file>
+        <file>images/ingame/map/map_background.png</file>
     </qresource>
 </RCC>

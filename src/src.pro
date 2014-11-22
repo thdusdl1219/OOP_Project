@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     scene/choicescene.cpp \
     scene/ingamescene.cpp \
     scene/endgamescene.cpp \
-    unit.cpp
+    unit.cpp \
+    map.cpp
 
 HEADERS  += mainwindow.h \
     character.h \
@@ -34,7 +35,8 @@ HEADERS  += mainwindow.h \
     scene/choicescene.h \
     scene/ingamescene.h \
     scene/endgamescene.h \
-    unit.h
+    unit.h \
+    map.h
 
 FORMS    += mainwindow.ui
 
