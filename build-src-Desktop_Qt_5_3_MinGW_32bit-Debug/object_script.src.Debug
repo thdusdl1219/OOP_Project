@@ -1,0 +1,17 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\character.o
+./debug\scene.o
+./debug\initscene.o
+./debug\qneed.o
+./debug\logoscene.o
+./debug\choicescene.o
+./debug\qrc_resource.o
+./debug\moc_mainwindow.o
+./debug\moc_scene.o
+./debug\moc_initscene.o
+./debug\moc_qneed.o
+./debug\moc_logoscene.o
+./debug\moc_choicescene.o
+);

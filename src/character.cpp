@@ -1,13 +1,11 @@
-#include <iostream>
-#include <string>
 #include "character.h"
-/*
+
 Character::Character(string _name, int _numbomb, int _powbomb, int _speed, int _team) {
 	name = _name;
 	numbomb = _numbomb;
-    powbomb = _powbomb;
+	powbomb = _powbomb;
 	speed = _speed;
-	int _team;
+	team = _team;
 }
 
 Character::Character(char* _name, int _numbomb, int _powbomb, int _speed, int _team) {
@@ -15,7 +13,7 @@ Character::Character(char* _name, int _numbomb, int _powbomb, int _speed, int _t
 	numbomb = _numbomb;
 	powbomb = _powbomb;
 	speed = _speed;
-	int _team;
+	team = _team;
 }
 
 void Character::setNumBomb(int cnumbomb) {
@@ -33,6 +31,10 @@ void Character::setSpeed(int cspeed) {
 		numbomb += cspeed;
 }
 
+string Character::getName() {
+	return name;
+}
+
 int Character::getTeam() const {
 	return team;
 }
@@ -47,4 +49,4 @@ int Character::getPowBomb() const {
 
 int Character::getSpeed() const {
 	return speed;
-}*/
+}
