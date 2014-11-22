@@ -32,6 +32,8 @@ public :
     GoButton(QGraphicsScene*, MainWindow*);
     virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
     virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
+private:
+    ChoiceScene* scene;
 };
 
 class PlayerButton : public Qneed
@@ -41,6 +43,7 @@ public :
     virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
     virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
 private :
+    bool play;
     int character_id;
     ChoiceScene* scene;
 };

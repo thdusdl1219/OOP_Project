@@ -52,6 +52,7 @@ GoButton::GoButton(QGraphicsScene *scene, MainWindow *window) : Qneed(scene,wind
 {
 	qDebug() << "Go Button created";
 	loadImage(":images/choice/choice_button_go.png");
+	this->scene = dynamic_cast<ChoiceScene* >(scene);
 }
 
 void GoButton::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -61,13 +62,24 @@ void GoButton::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void GoButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
-	get_window()->changeScene(SceneType::INGAME);
+	if(scene->player1_cnt == 1 && scene->player2_cnt == 1)
+		get_window()->changeScene(SceneType::INGAME);
+	else
+		{
+			QMessageBox message_box;
+			message_box.setStandardButtons(QMessageBox::Ok);
+			message_box.setDefaultButton(QMessageBox::Ok);
+			message_box.setText("You must choose character!");
+			message_box.exec();
+			return;
+		}
 }
 
 PlayerButton::PlayerButton(QGraphicsScene *scene, MainWindow *window, int player_num) : Qneed(scene, window)
 {
 	qDebug() << "Player button created";
 	character_id = player_num;
+	play = false;
 	this->scene = dynamic_cast<ChoiceScene *>(scene);
 	switch(player_num)
 		{
@@ -95,7 +107,8 @@ void PlayerButton::mousePressEvent(QGraphicsSceneMouseEvent *event)
 void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
 	qDebug() << "Player" << character_id << "Released";
-
+	if(!play)
+	{
 		QMessageBox message_box;
 		if(character_id < 2)
 		{
@@ -119,6 +132,7 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 					return;
 				}
 		}
+	play = true;
 	switch(character_id)
 		{
 		case 0:
@@ -148,4 +162,5 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 			loadImage(":images/choice/choice_character_clicked3.png");
 			break;
 		}
+	}
 }
