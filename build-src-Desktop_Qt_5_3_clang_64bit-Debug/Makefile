@@ -541,22 +541,26 @@ qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/ingame/ingame_background.png \
 		../src/images/logo/logo_background.png \
 		../src/images/logo/logo.png \
-		../src/images/choice/choice_character_clicked3.png \
-		../src/images/choice/choice_map_clicked0.png \
-		../src/images/choice/choice_character2.png \
-		../src/images/choice/choice_background.png \
-		../src/images/choice/choice_character_clicked2.png \
-		../src/images/choice/choice_character1.png \
-		../src/images/choice/choice_map2.png \
-		../src/images/choice/choice_character_clicked1.png \
-		../src/images/choice/choice_map_clicked2.png \
+		../src/images/choice/choice_character_clicked4.png \
 		../src/images/choice/choice_character0.png \
-		../src/images/choice/choice_map1.png \
 		../src/images/choice/choice_button_go.png \
-		../src/images/choice/choice_character_clicked0.png \
-		../src/images/choice/choice_map_clicked1.png \
+		../src/images/choice/choice_character_clicked5.png \
+		../src/images/choice/choice_character1.png \
+		../src/images/choice/choice_character2.png \
 		../src/images/choice/choice_character3.png \
-		../src/images/choice/choice_map0.png
+		../src/images/choice/choice_character4.png \
+		../src/images/choice/choice_character5.png \
+		../src/images/choice/choice_background.png \
+		../src/images/choice/choice_map_clicked0.png \
+		../src/images/choice/choice_map_clicked1.png \
+		../src/images/choice/choice_map_clicked2.png \
+		../src/images/choice/choice_map0.png \
+		../src/images/choice/choice_map1.png \
+		../src/images/choice/choice_map2.png \
+		../src/images/choice/choice_character_clicked0.png \
+		../src/images/choice/choice_character_clicked1.png \
+		../src/images/choice/choice_character_clicked2.png \
+		../src/images/choice/choice_character_clicked3.png
 	/Users/parksoyeon/Qt/5.3/clang_64/bin/rcc -name resource ../src/resource.qrc -o qrc_resource.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_scene.cpp moc_initscene.cpp moc_qneed.cpp moc_logoscene.cpp moc_choicescene.cpp moc_ingamescene.cpp
@@ -636,6 +640,7 @@ moc_choicescene.cpp: ../src/scene/scene.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsitem.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QPixmap \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h \
+		../src/character.h \
 		../src/scene/choicescene.h
 	/Users/parksoyeon/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/parksoyeon/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/parksoyeon/OOP/CSED232/src -I/Users/parksoyeon/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/parksoyeon/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/parksoyeon/Qt/5.3/clang_64/lib/QtCore.framework/Headers -I. -F/Users/parksoyeon/Qt/5.3/clang_64/lib ../src/scene/choicescene.h -o moc_choicescene.cpp
 
@@ -708,6 +713,7 @@ mainwindow.o: ../src/mainwindow.cpp ../src/mainwindow.h \
 		../src/Types.h \
 		../src/scene/initscene.h \
 		../src/scene/choicescene.h \
+		../src/character.h \
 		../src/scene/logoscene.h \
 		../src/scene/ingamescene.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../src/mainwindow.cpp
@@ -788,6 +794,7 @@ choicescene.o: ../src/scene/choicescene.cpp ../src/scene/choicescene.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsitem.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QPixmap \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h \
+		../src/character.h \
 		../src/Types.h \
 		../src/mainwindow.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \

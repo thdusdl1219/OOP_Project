@@ -12,19 +12,17 @@ using namespace std;
 
 class Character {
 private:
-	string name;
+	int character_type;
 	int team;
 	int numbomb;
 	int powbomb;
-    int speed;
-    Character();
+	int speed;
 public:
-	Character(string, int, int, int, int);
-	Character(char*, int, int, int, int);
+	Character(int, int, int, int, int);
 	void setNumBomb(int);
 	void setPowBomb(int);
 	void setSpeed(int);
-    string getName();
+	int getType();
 	int getTeam() const;
 	int getNumBomb() const;
 	int getPowBomb() const;

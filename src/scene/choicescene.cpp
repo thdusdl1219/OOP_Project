@@ -1,6 +1,6 @@
 #include "choicescene.h"
-#include "Types.h"
-#include "mainwindow.h"
+#include "../Types.h"
+#include "../mainwindow.h"
 #include <QDebug>
 #include <QMessageBox>
 ChoiceScene::ChoiceScene(QObject *parent) :
@@ -13,11 +13,15 @@ ChoiceScene::ChoiceScene(QObject *parent) :
 		}
 	player1_cnt = 0;
 	player2_cnt = 0;
+	player1 = NULL;
+	player2 = NULL;
 	map_cnt = 0;
 	setupChoice();
 }
 ChoiceScene::~ChoiceScene()
 {
+	player1_cnt = 0;
+	player2_cnt = 0;
 	delete go_button;
 }
 
@@ -40,16 +44,20 @@ void ChoiceScene::setupChoice()
 	player_button[1] = new PlayerButton(this, get_window(), 1);
 	player_button[1]->setPos(70, 300);
 	player_button[2] = new PlayerButton(this, get_window(), 2);
-	player_button[2] ->setPos(800, 100);
+	player_button[2] ->setPos(70, 500);
 	player_button[3] = new PlayerButton(this, get_window(), 3);
-	player_button[3]->setPos(800, 300);
+	player_button[3]->setPos(800, 100);
+	player_button[4] = new PlayerButton(this, get_window(), 4);
+	player_button[4]->setPos(800, 300);
+	player_button[5] = new PlayerButton(this, get_window(), 5);
+	player_button[5]->setPos(800, 500);
 
 	map_button[0] = new MapButton(this, get_window(), 0);
-	map_button[0] ->setPos(70, 500);
+	map_button[0] ->setPos(200, 500);
 	map_button[1] = new MapButton(this, get_window(), 1);
-	map_button[1] ->setPos(300, 500);
+	map_button[1] ->setPos(400, 500);
 	map_button[2] = new MapButton(this, get_window(), 2);
-	map_button[2] ->setPos(570, 500);
+	map_button[2] ->setPos(600, 500);
 
 
 }
@@ -74,13 +82,13 @@ void GoButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 			if(scene->map_cnt == 1)
 				get_window()->changeScene(SceneType::INGAME);
 			else
-			{
-				message_box.setStandardButtons(QMessageBox::Ok);
-				message_box.setDefaultButton(QMessageBox::Ok);
-				message_box.setText("You must choose map!");
-				message_box.exec();
-				return;
-			}
+				{
+					message_box.setStandardButtons(QMessageBox::Ok);
+					message_box.setDefaultButton(QMessageBox::Ok);
+					message_box.setText("You must choose map!");
+					message_box.exec();
+					return;
+				}
 
 		}
 	else
@@ -113,6 +121,12 @@ PlayerButton::PlayerButton(QGraphicsScene *scene, MainWindow *window, int player
 		case 3:
 			loadImage(":images/choice/choice_character3.png");
 			break;
+		case 4:
+			loadImage(":images/choice/choice_character4.png");
+			break;
+		case 5:
+			loadImage(":images/choice/choice_character5.png");
+			break;
 		}
 }
 
@@ -128,7 +142,7 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 	if(!play)
 		{
 			QMessageBox message_box;
-			if(character_id < 2)
+			if(character_id < 3)
 				{
 					if(scene->player1_cnt > 0)
 						{
@@ -155,10 +169,12 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 				{
 				case 0:
 				case 1:
-					scene->player1_cnt++;
-					break;
 				case 2:
+				scene->player1_cnt++;
+				break;
 				case 3:
+				case 4:
+				case 5:
 					scene->player2_cnt++;
 					break;
 				}
@@ -179,6 +195,12 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 				case 3:
 					loadImage(":images/choice/choice_character_clicked3.png");
 					break;
+				case 4:
+					loadImage(":images/choice/choice_character_clicked4.png");
+					break;
+				case 5:
+					loadImage(":images/choice/choice_character_clicked5.png");
+					break;
 				}
 		}
 	else
@@ -188,10 +210,12 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 				{
 				case 0:
 				case 1:
+				case 2:
 					scene->player1_cnt--;
 					break;
-				case 2:
 				case 3:
+				case 4:
+				case 5:
 					scene->player2_cnt--;
 					break;
 				}
@@ -208,6 +232,12 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 					break;
 				case 3:
 					loadImage(":images/choice/choice_character3.png");
+					break;
+				case 4:
+					loadImage(":images/choice/choice_character4.png");
+					break;
+				case 5:
+					loadImage(":images/choice/choice_character5.png");
 					break;
 				}
 

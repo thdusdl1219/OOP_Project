@@ -3,7 +3,7 @@
 
 #include "scene.h"
 #include "../qneed.h"
-
+#include "../character.h"
 class GoButton;
 class PlayerButton;
 class MapButton;
@@ -18,6 +18,8 @@ public:
     ~ChoiceScene();
     int player1_cnt;
     int player2_cnt;
+    Character* player1;
+    Character* player2;
     int map_cnt;
 signals:
 
@@ -25,7 +27,7 @@ public slots:
 
 private:
     GoButton* go_button;
-    PlayerButton* player_button[4];
+    PlayerButton* player_button[6];
     MapButton* map_button[3];
 };
 

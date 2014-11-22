@@ -1,15 +1,7 @@
 #include "character.h"
 
-Character::Character(string _name, int _numbomb, int _powbomb, int _speed, int _team) {
-	name = _name;
-	numbomb = _numbomb;
-	powbomb = _powbomb;
-	speed = _speed;
-	team = _team;
-}
-
-Character::Character(char* _name, int _numbomb, int _powbomb, int _speed, int _team) {
-	name = _name;
+Character::Character(int _character_type, int _numbomb, int _powbomb, int _speed, int _team) {
+	character_type = _character_type;
 	numbomb = _numbomb;
 	powbomb = _powbomb;
 	speed = _speed;
@@ -31,8 +23,8 @@ void Character::setSpeed(int cspeed) {
 		numbomb += cspeed;
 }
 
-string Character::getName() {
-	return name;
+int Character::getType() {
+	return character_type;
 }
 
 int Character::getTeam() const {
