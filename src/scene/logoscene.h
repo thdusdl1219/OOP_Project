@@ -6,6 +6,7 @@
 
 class LogoScene : public Scene
 {
+    Q_OBJECT
 public:
     LogoScene(QObject* parent = 0);
     virtual void action();

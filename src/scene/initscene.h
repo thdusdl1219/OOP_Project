@@ -9,6 +9,7 @@ class PlayButton;
 class CreatorButton;
 class InitScene : public Scene
 {
+    Q_OBJECT
 public:
     InitScene(QObject* parent = 0);
     virtual void action();
