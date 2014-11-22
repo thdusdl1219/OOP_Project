@@ -15,5 +15,11 @@
         <file>images/choice/choice_character_clicked1.png</file>
         <file>images/choice/choice_character_clicked2.png</file>
         <file>images/choice/choice_character_clicked3.png</file>
+        <file>images/choice/choice_map0.png</file>
+        <file>images/choice/choice_map1.png</file>
+        <file>images/choice/choice_map2.png</file>
+        <file>images/choice/choice_map_clicked0.png</file>
+        <file>images/choice/choice_map_clicked1.png</file>
+        <file>images/choice/choice_map_clicked2.png</file>
     </qresource>
 </RCC>

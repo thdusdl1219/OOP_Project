@@ -13,6 +13,7 @@ ChoiceScene::ChoiceScene(QObject *parent) :
 		}
 	player1_cnt = 0;
 	player2_cnt = 0;
+	map_cnt = 0;
 	setupChoice();
 }
 ChoiceScene::~ChoiceScene()
@@ -44,6 +45,13 @@ void ChoiceScene::setupChoice()
 	player_button[2] ->setPos(800, 100);
 	player_button[3] = new PlayerButton(this, get_window(), 3);
 	player_button[3]->setPos(800, 300);
+
+	map_button[0] = new MapButton(this, get_window(), 0);
+	map_button[0] ->setPos(70, 500);
+	map_button[1] = new MapButton(this, get_window(), 1);
+	map_button[1] ->setPos(300, 500);
+	map_button[2] = new MapButton(this, get_window(), 2);
+	map_button[2] ->setPos(570, 500);
 
 
 }
@@ -164,3 +172,63 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 		}
 	}
 }
+
+MapButton::MapButton(QGraphicsScene *scene, MainWindow *window, int map_num) : Qneed(scene, window)
+{
+	map_id = map_num;
+	choice = false;
+	this->scene = dynamic_cast<ChoiceScene*>(scene);
+	switch(map_num)
+	{
+		case 0:
+			loadImage(":images/choice/choice_map0.png");
+			break;
+		case 1:
+			loadImage(":images/choice/choice_map1.png");
+			break;
+		case 2:
+			loadImage(":images/choice/choice_map2.png");
+			break;
+	}
+}
+
+void MapButton::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+	qDebug() << "Map" << map_id << "pressed";
+}
+
+void MapButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+	qDebug() << "Map" << map_id << "Released";
+	if(!choice)
+		{
+			if(scene->map_cnt > 0)
+				{
+					QMessageBox message_box;
+					message_box.setStandardButtons(QMessageBox::Ok);
+					message_box.setDefaultButton(QMessageBox::Ok);
+					message_box.setText("You can choose just 1 map");
+					message_box.exec();
+					return;
+				}
+			else
+				{
+					scene->map_cnt++;
+					choice = true;
+					switch(map_id)
+						{
+							case 0:
+								loadImage(":images/choice/choice_map_clicked0.png");
+								break;
+							case 1:
+								loadImage(":images/choice/choice_map_clicked1.png");
+								break;
+							case 2:
+								loadImage(":images/choice/choice_map_clicked2.png");
+								break;
+						}
+				}
+		}
+}
+
+// clear button need...

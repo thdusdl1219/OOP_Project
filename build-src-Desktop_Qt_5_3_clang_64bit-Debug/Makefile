@@ -536,15 +536,21 @@ qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/logo/logo_background.png \
 		../src/images/logo/logo.png \
 		../src/images/choice/choice_character_clicked3.png \
+		../src/images/choice/choice_map_clicked0.png \
 		../src/images/choice/choice_character2.png \
 		../src/images/choice/choice_background.png \
 		../src/images/choice/choice_character_clicked2.png \
 		../src/images/choice/choice_character1.png \
+		../src/images/choice/choice_map2.png \
 		../src/images/choice/choice_character_clicked1.png \
+		../src/images/choice/choice_map_clicked2.png \
 		../src/images/choice/choice_character0.png \
+		../src/images/choice/choice_map1.png \
 		../src/images/choice/choice_button_go.png \
 		../src/images/choice/choice_character_clicked0.png \
-		../src/images/choice/choice_character3.png
+		../src/images/choice/choice_map_clicked1.png \
+		../src/images/choice/choice_character3.png \
+		../src/images/choice/choice_map0.png
 	/Users/parksoyeon/Qt/5.3/clang_64/bin/rcc -name resource ../src/resource.qrc -o qrc_resource.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_scene.cpp moc_initscene.cpp moc_qneed.cpp moc_logoscene.cpp moc_choicescene.cpp
@@ -767,7 +773,9 @@ choicescene.o: ../src/scene/choicescene.cpp ../src/scene/choicescene.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
-		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMessageBox \
+		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o choicescene.o ../src/scene/choicescene.cpp
 
 qrc_resource.o: qrc_resource.cpp 
