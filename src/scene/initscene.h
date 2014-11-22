@@ -24,16 +24,16 @@ class PlayButton : public Qneed
 {
 public:
     PlayButton(QGraphicsScene*, MainWindow *);
-    void mousePressEvent(QGraphicsSceneMouseEvent* event);
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
 };
 
 class CreatorButton : public Qneed
 {
 public:
     CreatorButton(QGraphicsScene*, MainWindow *);
-    void mousePressEvent(QGraphicsSceneMouseEvent* event);
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
 };
 
 

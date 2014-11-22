@@ -30,16 +30,16 @@ class GoButton : public Qneed
 {
 public :
     GoButton(QGraphicsScene*, MainWindow*);
-    void mousePressEvent(QGraphicsSceneMouseEvent* event);
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
 };
 
 class PlayerButton : public Qneed
 {
 public :
     PlayerButton(QGraphicsScene*, MainWindow*, int);
-    void mousePressEvent(QGraphicsSceneMouseEvent* event);
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
 private :
     int character_id;
     ChoiceScene* scene;
