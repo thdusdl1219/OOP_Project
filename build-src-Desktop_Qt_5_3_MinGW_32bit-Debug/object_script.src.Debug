@@ -7,6 +7,7 @@ INPUT(
 ./debug\qneed.o
 ./debug\logoscene.o
 ./debug\choicescene.o
+./debug\ingamescene.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
 ./debug\moc_scene.o
@@ -14,4 +15,5 @@ INPUT(
 ./debug\moc_qneed.o
 ./debug\moc_logoscene.o
 ./debug\moc_choicescene.o
+./debug\moc_ingamescene.o
 );
