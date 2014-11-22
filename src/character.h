@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include "Types.h"
+
 
 using namespace std;
 
@@ -12,18 +14,18 @@ using namespace std;
 
 class Character {
 private:
-	int character_type;
-	int team;
+	enum CharacterType::Type character_type;
+	enum Team::Type team;
 	int numbomb;
 	int powbomb;
 	int speed;
 public:
-	Character(int, int, int, int, int);
+	Character(enum CharacterType::Type, int _numbomb, int _powbomb, int _speed, enum Team::Type);
 	void setNumBomb(int);
 	void setPowBomb(int);
 	void setSpeed(int);
-	int getType();
-	int getTeam() const;
+	enum CharacterType::Type getType();
+	enum Team::Type getTeam() const;
 	int getNumBomb() const;
 	int getPowBomb() const;
 	int getSpeed() const;

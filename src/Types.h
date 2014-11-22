@@ -10,4 +10,10 @@ namespace CharacterType
 {
   enum Type { LIAR, RICH, ALCHOHOLIC };
 }
+
+namespace Team
+{
+  enum Type { POSTECH, KAIST };
+}
+
 #endif // TYPES_H

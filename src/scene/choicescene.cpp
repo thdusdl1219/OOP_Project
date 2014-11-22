@@ -170,8 +170,8 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 				case 0:
 				case 1:
 				case 2:
-				scene->player1_cnt++;
-				break;
+					scene->player1_cnt++;
+					break;
 				case 3:
 				case 4:
 				case 5:
@@ -185,21 +185,27 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 				{
 				case 0:
 					loadImage(":images/choice/choice_character_clicked0.png");
+					scene->player1 = new Character(CharacterType::LIAR, 1, 1, 2, Team::POSTECH);
 					break;
 				case 1:
 					loadImage(":images/choice/choice_character_clicked1.png");
+					scene->player1 = new Character(CharacterType::RICH, 1, 2, 1, Team::POSTECH);
 					break;
 				case 2:
 					loadImage(":images/choice/choice_character_clicked2.png");
+					scene->player1 = new Character(CharacterType::ALCHOHOLIC, 2, 1, 1, Team::POSTECH);
 					break;
 				case 3:
 					loadImage(":images/choice/choice_character_clicked3.png");
+					scene->player2 = new Character(CharacterType::LIAR, 1, 1, 2, Team::KAIST);
 					break;
 				case 4:
 					loadImage(":images/choice/choice_character_clicked4.png");
+					scene->player2 = new Character(CharacterType::RICH, 1, 2, 1, Team::KAIST);
 					break;
 				case 5:
 					loadImage(":images/choice/choice_character_clicked5.png");
+					scene->player2 = new Character(CharacterType::ALCHOHOLIC, 2, 1, 1, Team::KAIST);
 					break;
 				}
 		}
@@ -211,11 +217,15 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 				case 0:
 				case 1:
 				case 2:
+					delete scene->player1;
+					scene->player1 = NULL;
 					scene->player1_cnt--;
 					break;
 				case 3:
 				case 4:
 				case 5:
+					delete scene->player2;
+					scene->player2 = NULL;
 					scene->player2_cnt--;
 					break;
 				}

@@ -1,6 +1,6 @@
 #include "character.h"
 
-Character::Character(int _character_type, int _numbomb, int _powbomb, int _speed, int _team) {
+Character::Character(enum CharacterType::Type _character_type, int _numbomb, int _powbomb, int _speed, enum Team::Type _team) {
 	character_type = _character_type;
 	numbomb = _numbomb;
 	powbomb = _powbomb;
@@ -23,11 +23,11 @@ void Character::setSpeed(int cspeed) {
 		numbomb += cspeed;
 }
 
-int Character::getType() {
+enum CharacterType::Type Character::getType() {
 	return character_type;
 }
 
-int Character::getTeam() const {
+enum Team::Type Character::getTeam() const {
 	return team;
 }
 
