@@ -8,6 +8,8 @@ INPUT(
 ./debug\logoscene.o
 ./debug\choicescene.o
 ./debug\ingamescene.o
+./debug\endgamescene.o
+./debug\unit.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
 ./debug\moc_scene.o
@@ -16,4 +18,6 @@ INPUT(
 ./debug\moc_logoscene.o
 ./debug\moc_choicescene.o
 ./debug\moc_ingamescene.o
+./debug\moc_endgamescene.o
+./debug\moc_unit.o
 );

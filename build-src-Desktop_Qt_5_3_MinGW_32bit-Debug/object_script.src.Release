@@ -8,6 +8,8 @@ INPUT(
 ./release\logoscene.o
 ./release\choicescene.o
 ./release\ingamescene.o
+./release\endgamescene.o
+./release\unit.o
 ./release\qrc_resource.o
 ./release\moc_mainwindow.o
 ./release\moc_scene.o
@@ -16,4 +18,6 @@ INPUT(
 ./release\moc_logoscene.o
 ./release\moc_choicescene.o
 ./release\moc_ingamescene.o
+./release\moc_endgamescene.o
+./release\moc_unit.o
 );
