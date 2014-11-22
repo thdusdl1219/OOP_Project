@@ -1,5 +1,5 @@
 #include "scene.h"
-#include "mainwindow.h"
+#include "../mainwindow.h"
 Scene::Scene(QObject *parent) :
     QGraphicsScene(parent)
 {

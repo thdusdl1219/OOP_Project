@@ -2,7 +2,7 @@
 #define SCENE_H
 
 #include <QGraphicsScene>
-#include "qneed.h"
+#include "../qneed.h"
 class MainWindow;
 
 class Scene : public QGraphicsScene

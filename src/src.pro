@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     qneed.cpp \
     scene/logoscene.cpp \
     scene/choicescene.cpp \
-    scene/ingamescene.cpp
+    scene/ingamescene.cpp \
+    scene/endgamescene.cpp
 
 HEADERS  += mainwindow.h \
     character.h \
@@ -30,7 +31,8 @@ HEADERS  += mainwindow.h \
     qneed.h \
     scene/logoscene.h \
     scene/choicescene.h \
-    scene/ingamescene.h
+    scene/ingamescene.h \
+    scene/endgamescene.h
 
 FORMS    += mainwindow.ui
 

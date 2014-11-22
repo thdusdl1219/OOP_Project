@@ -1,7 +1,7 @@
 #include "initscene.h"
 #include <QDebug>
-#include "Types.h"
-#include "mainwindow.h"
+#include "../Types.h"
+#include "../mainwindow.h"
 
 InitScene::InitScene(QObject* parent) : Scene(parent)
 {
