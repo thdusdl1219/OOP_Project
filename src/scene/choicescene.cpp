@@ -70,11 +70,23 @@ void GoButton::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void GoButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
+	QMessageBox message_box;
 	if(scene->player1_cnt == 1 && scene->player2_cnt == 1)
-		get_window()->changeScene(SceneType::INGAME);
+		{
+			if(scene->map_cnt == 1)
+				get_window()->changeScene(SceneType::INGAME);
+			else
+			{
+				message_box.setStandardButtons(QMessageBox::Ok);
+				message_box.setDefaultButton(QMessageBox::Ok);
+				message_box.setText("You must choose map!");
+				message_box.exec();
+				return;
+			}
+
+		}
 	else
 		{
-			QMessageBox message_box;
 			message_box.setStandardButtons(QMessageBox::Ok);
 			message_box.setDefaultButton(QMessageBox::Ok);
 			message_box.setText("You must choose character!");
@@ -116,61 +128,92 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
 	qDebug() << "Player" << character_id << "Released";
 	if(!play)
-	{
-		QMessageBox message_box;
-		if(character_id < 2)
 		{
-			if(scene->player1_cnt > 0)
+			QMessageBox message_box;
+			if(character_id < 2)
 				{
-					message_box.setStandardButtons(QMessageBox::Ok);
-					message_box.setDefaultButton(QMessageBox::Ok);
-					message_box.setText("You can choose just 1 character");
-					message_box.exec();
-					return;
+					if(scene->player1_cnt > 0)
+						{
+							message_box.setStandardButtons(QMessageBox::Ok);
+							message_box.setDefaultButton(QMessageBox::Ok);
+							message_box.setText("You can choose just 1 character");
+							message_box.exec();
+							return;
+						}
+				}
+			else
+				{
+					if(scene->player2_cnt > 0)
+						{
+							message_box.setStandardButtons(QMessageBox::Ok);
+							message_box.setDefaultButton(QMessageBox::Ok);
+							message_box.setText("You can choose just 1 character");
+							message_box.exec();
+							return;
+						}
+				}
+			play = true;
+			switch(character_id)
+				{
+				case 0:
+				case 1:
+					scene->player1_cnt++;
+					break;
+				case 2:
+				case 3:
+					scene->player2_cnt++;
+					break;
+				}
+
+
+
+			switch(character_id)
+				{
+				case 0:
+					loadImage(":images/choice/choice_character_clicked0.png");
+					break;
+				case 1:
+					loadImage(":images/choice/choice_character_clicked1.png");
+					break;
+				case 2:
+					loadImage(":images/choice/choice_character_clicked2.png");
+					break;
+				case 3:
+					loadImage(":images/choice/choice_character_clicked3.png");
+					break;
 				}
 		}
 	else
 		{
-			if(scene->player2_cnt > 0)
+			play = false;
+			switch(character_id)
 				{
-					message_box.setStandardButtons(QMessageBox::Ok);
-					message_box.setDefaultButton(QMessageBox::Ok);
-					message_box.setText("You can choose just 1 character");
-					message_box.exec();
-					return;
+				case 0:
+				case 1:
+					scene->player1_cnt--;
+					break;
+				case 2:
+				case 3:
+					scene->player2_cnt--;
+					break;
 				}
-		}
-	play = true;
-	switch(character_id)
-		{
-		case 0:
-		case 1:
-			scene->player1_cnt++;
-			break;
-		case 2:
-		case 3:
-			scene->player2_cnt++;
-			break;
-		}
+			switch(character_id)
+				{
+				case 0:
+					loadImage(":images/choice/choice_character0.png");
+					break;
+				case 1:
+					loadImage(":images/choice/choice_character1.png");
+					break;
+				case 2:
+					loadImage(":images/choice/choice_character2.png");
+					break;
+				case 3:
+					loadImage(":images/choice/choice_character3.png");
+					break;
+				}
 
-
-
-	switch(character_id)
-		{
-		case 0:
-			loadImage(":images/choice/choice_character_clicked0.png");
-			break;
-		case 1:
-			loadImage(":images/choice/choice_character_clicked1.png");
-			break;
-		case 2:
-			loadImage(":images/choice/choice_character_clicked2.png");
-			break;
-		case 3:
-			loadImage(":images/choice/choice_character_clicked3.png");
-			break;
 		}
-	}
 }
 
 MapButton::MapButton(QGraphicsScene *scene, MainWindow *window, int map_num) : Qneed(scene, window)
@@ -179,7 +222,7 @@ MapButton::MapButton(QGraphicsScene *scene, MainWindow *window, int map_num) : Q
 	choice = false;
 	this->scene = dynamic_cast<ChoiceScene*>(scene);
 	switch(map_num)
-	{
+		{
 		case 0:
 			loadImage(":images/choice/choice_map0.png");
 			break;
@@ -189,7 +232,7 @@ MapButton::MapButton(QGraphicsScene *scene, MainWindow *window, int map_num) : Q
 		case 2:
 			loadImage(":images/choice/choice_map2.png");
 			break;
-	}
+		}
 }
 
 void MapButton::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -217,18 +260,34 @@ void MapButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 					choice = true;
 					switch(map_id)
 						{
-							case 0:
-								loadImage(":images/choice/choice_map_clicked0.png");
-								break;
-							case 1:
-								loadImage(":images/choice/choice_map_clicked1.png");
-								break;
-							case 2:
-								loadImage(":images/choice/choice_map_clicked2.png");
-								break;
+						case 0:
+							loadImage(":images/choice/choice_map_clicked0.png");
+							break;
+						case 1:
+							loadImage(":images/choice/choice_map_clicked1.png");
+							break;
+						case 2:
+							loadImage(":images/choice/choice_map_clicked2.png");
+							break;
 						}
+				}
+		}
+	else
+		{
+			choice = false;
+			scene->map_cnt--;
+			switch(map_id)
+				{
+				case 0:
+					loadImage(":images/choice/choice_map0.png");
+					break;
+				case 1:
+					loadImage(":images/choice/choice_map1.png");
+					break;
+				case 2:
+					loadImage(":images/choice/choice_map2.png");
+					break;
 				}
 		}
 }
 
-// clear button need...
