@@ -7,5 +7,13 @@
         <file>images/logo/logo.png</file>
         <file>images/choice/choice_button_go.png</file>
         <file>images/choice/choice_background.png</file>
+        <file>images/choice/choice_character0.png</file>
+        <file>images/choice/choice_character1.png</file>
+        <file>images/choice/choice_character2.png</file>
+        <file>images/choice/choice_character3.png</file>
+        <file>images/choice/choice_character_clicked0.png</file>
+        <file>images/choice/choice_character_clicked1.png</file>
+        <file>images/choice/choice_character_clicked2.png</file>
+        <file>images/choice/choice_character_clicked3.png</file>
     </qresource>
 </RCC>
