@@ -11,7 +11,7 @@ class Unit: public Qneed
 	Q_OBJECT
 public:
 	Unit(Qneed*, int);		// row, col;
-	virtual bool bombObject() {}	// action for bombing Unit
+	virtual bool bombObject() {return true;}	// action for bombing Unit
 	int getPostion();	// get row col of Unit;
 	virtual ~Unit();
 private:

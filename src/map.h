@@ -12,7 +12,7 @@ class Map : public Qneed
 {
 public:
   Map(QGraphicsScene*, MainWindow *, int);
-
+  Unit* cell[130];
 
 public slots:
 private:
@@ -22,7 +22,6 @@ private:
   void mapInit3();
   QGraphicsScene* scene;
   MainWindow* window;
-  Unit* cell[130];
 };
 
 namespace Map_xy
