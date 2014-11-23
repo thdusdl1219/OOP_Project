@@ -4,6 +4,7 @@
 #include "qneed.h"
 #include <QPoint>
 #include "unit.h"
+#include "scene/choicescene.h"
 class Unit;
 class Block;
 class Map : public Qneed

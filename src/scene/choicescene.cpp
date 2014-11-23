@@ -3,6 +3,7 @@
 #include "../mainwindow.h"
 #include <QDebug>
 #include <QMessageBox>
+#include "../character.h"
 ChoiceScene::ChoiceScene(QObject *parent) :
 	Scene(parent)
 {

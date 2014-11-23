@@ -16,12 +16,12 @@ public:
     void loadImage(const char* filename);
     MainWindow* get_window();
     void additem(QGraphicsScene*);
+    void setParent(Qneed* parent);
 signals:
 
 public slots:
 
 private:
-    void setParent(Qneed* parent);
     QPixmap* image;
     MainWindow* window;
 };

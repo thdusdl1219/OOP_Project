@@ -22,7 +22,8 @@ Map::Map(QGraphicsScene* scene, MainWindow* window, int map_kind) : Qneed(scene,
 }
 void Map::mapInit1()
 {
-  cell[0] = new Block(this, 0, true, NULL);
+//  cell[0] = ChoiceScene::get_ChoiceScene()->player1;
+//  cell[0] -> setParent(this);
   cell[1] = new Block(this, 1, true, NULL);
   cell[2] = new Soju(this, 2, 3);
 }

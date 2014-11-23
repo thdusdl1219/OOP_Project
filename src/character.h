@@ -7,13 +7,11 @@
 #include "qneed.h"
 #include "unit.h"
 
-
 using namespace std;
 
 #define MAXNUM_BOMB 8
 #define MAXPOW_BOMB 8
 #define MAX_SPEED 8
-
 class Character : public Unit
 {
 private:
@@ -23,11 +21,14 @@ private:
 	int powbomb;
 	int speed;
 	int position;
+	void setupCharacter();
 public:
 	Character(Qneed* parent, enum CharacterType::Type, int _numbomb, int _powbomb, int _speed, enum Team::Type);
 	void setNumBomb(int);
 	void setPowBomb(int);
 	void setSpeed(int);
+	void setPosition(int);
+	int getPosition();
 	enum CharacterType::Type getType();
 	enum Team::Type getTeam() const;
 	int getNumBomb() const;
