@@ -158,7 +158,6 @@ release/qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/choice/choice_character_clicked4.png \
 		../src/images/choice/choice_character_clicked5.png \
 		../src/images/choice/choice_character0.png \
-		../src/images/choice/choice_button_go.png \
 		../src/images/choice/choice_character1.png \
 		../src/images/choice/choice_character2.png \
 		../src/images/choice/choice_background1.png \
@@ -775,12 +774,6 @@ release/moc_choicescene.cpp: ../src/scene/scene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
-		../src/character.h \
-		../src/Types.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
-		../src/unit.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
-		../src/map.h \
 		../src/scene/choicescene.h
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/SEC/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\choicescene.h -o release\moc_choicescene.cpp
 
@@ -1084,8 +1077,6 @@ release/moc_unit.cpp: C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
 		../src/Types.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
-		../src/map.h \
-		../src/unit.h \
 		../src/unit.h
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/SEC/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\unit.h -o release\moc_unit.cpp
 
@@ -1386,10 +1377,6 @@ release/mainwindow.o: ../src/mainwindow.cpp ../src/mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
 		../src/scene/initscene.h \
 		../src/scene/choicescene.h \
-		../src/character.h \
-		../src/unit.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
-		../src/map.h \
 		../src/scene/logoscene.h \
 		../src/scene/ingamescene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QDebug \
@@ -1493,8 +1480,7 @@ release/character.o: ../src/character.cpp ../src/character.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
 		../src/unit.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
-		../src/map.h
+		C:/Qt/5.3/mingw482_32/include/QtGui/QImage
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\character.o ..\src\character.cpp
 
 release/scene.o: ../src/scene/scene.cpp ../src/scene/scene.h \
@@ -2021,12 +2007,8 @@ release/choicescene.o: ../src/scene/choicescene.cpp ../src/scene/choicescene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
-		../src/character.h \
 		../src/Types.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
-		../src/unit.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
-		../src/map.h \
 		../src/mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmainwindow.h \
@@ -2049,7 +2031,10 @@ release/choicescene.o: ../src/scene/choicescene.cpp ../src/scene/choicescene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QDebug \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMessageBox \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmessagebox.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdialog.h
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdialog.h \
+		../src/character.h \
+		../src/unit.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/QImage
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\choicescene.o ..\src\scene\choicescene.cpp
 
 release/ingamescene.o: ../src/scene/ingamescene.cpp ../src/scene/ingamescene.h \
@@ -2158,12 +2143,15 @@ release/ingamescene.o: ../src/scene/ingamescene.cpp ../src/scene/ingamescene.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
 		../src/scene/choicescene.h \
-		../src/character.h \
-		../src/Types.h \
+		../src/map.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
 		../src/unit.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
-		../src/map.h
+		../src/Types.h \
+		../src/character.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QTimer \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qtimer.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ingamescene.o ..\src\scene\ingamescene.cpp
 
 release/endgamescene.o: ../src/scene/endgamescene.cpp ../src/scene/endgamescene.h \
@@ -2360,7 +2348,9 @@ release/unit.o: ../src/unit.cpp ../src/unit.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
 		../src/Types.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
-		../src/map.h
+		C:/Qt/5.3/mingw482_32/include/QtCore/QTimer \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qtimer.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\unit.o ..\src\unit.cpp
 
 release/map.o: ../src/map.cpp ../src/map.h \
@@ -2460,7 +2450,10 @@ release/map.o: ../src/map.cpp ../src/map.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
 		../src/unit.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
-		../src/Types.h
+		../src/Types.h \
+		../src/scene/choicescene.h \
+		../src/scene/scene.h \
+		../src/character.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\map.o ..\src\map.cpp
 
 release/qrc_resource.o: release/qrc_resource.cpp 
