@@ -74,6 +74,7 @@ void InGameScene::setupIngame()
 
 	Map* newMap = new Map(this, get_window(), ChoiceScene::get_ChoiceScene()->map_kind);
 	newMap->setPos(44,24);
+	newMap->setFixedSize(936, 720);
 	map = newMap;
 //	ChoiceScene* scene = ChoiceScene::get_ChoiceScene(); // just test. you can call ChoiceScene!
 }

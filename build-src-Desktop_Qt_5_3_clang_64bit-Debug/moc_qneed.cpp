@@ -60,7 +60,7 @@ void Qneed::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
 }
 
 const QMetaObject Qneed::staticMetaObject = {
-    { &QObject::staticMetaObject, qt_meta_stringdata_Qneed.data,
+    { &QWidget::staticMetaObject, qt_meta_stringdata_Qneed.data,
       qt_meta_data_Qneed,  qt_static_metacall, 0, 0}
 };
 
@@ -77,12 +77,12 @@ void *Qneed::qt_metacast(const char *_clname)
         return static_cast<void*>(const_cast< Qneed*>(this));
     if (!strcmp(_clname, "QGraphicsPixmapItem"))
         return static_cast< QGraphicsPixmapItem*>(const_cast< Qneed*>(this));
-    return QObject::qt_metacast(_clname);
+    return QWidget::qt_metacast(_clname);
 }
 
 int Qneed::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QObject::qt_metacall(_c, _id, _a);
+    _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     return _id;

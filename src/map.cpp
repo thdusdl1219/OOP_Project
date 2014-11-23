@@ -154,10 +154,6 @@ void Map::mapInit1()
   cell[0] = ChoiceScene::get_ChoiceScene()->player1;
   cell[0] -> setParent(this);
   dynamic_cast<Character*>(cell[0])->setPosition(0);
-
-  cell[1] = new Block(this, 1*3, true, NULL);
-  cell[2] = new Soju(this, 2*3, 3);
-
   cell[129] = ChoiceScene::get_ChoiceScene()->player2;
   cell[129] -> setParent(this);
   dynamic_cast<Character*>(cell[129])->setPosition(129*3*3);
