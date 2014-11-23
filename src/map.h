@@ -4,13 +4,14 @@
 #include "qneed.h"
 #include <QPoint>
 #include "unit.h"
-#include "Types.h"
+class Unit;
 class Block;
 class Map : public Qneed
 {
 public:
-	Map(QGraphicsScene*, MainWindow *, int);
-	Block* b;
+  Map(QGraphicsScene*, MainWindow *, int);
+
+
 public slots:
 private:
   void map_xyInit();
@@ -19,6 +20,7 @@ private:
   void mapInit3();
   QGraphicsScene* scene;
   MainWindow* window;
+  Unit* cell[130];
 };
 
 namespace Map_xy

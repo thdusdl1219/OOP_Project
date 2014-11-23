@@ -22,5 +22,6 @@ namespace ItemType
   enum Type {BOMB_NUM, BOMB_POWER, SPEED, LIFE};
 }
 
+
 extern QPoint cell_xy[130];
 #endif // TYPES_H

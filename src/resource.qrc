@@ -31,5 +31,6 @@
         <file>images/logo/logo_background.png</file>
         <file>images/ingame/map/map_background.png</file>
         <file>images/ingame/map/map_block.png</file>
+        <file>images/ingame/map/map_soju.png</file>
     </qresource>
 </RCC>

@@ -20,11 +20,11 @@ Map::Map(QGraphicsScene* scene, MainWindow* window, int map_kind) : Qneed(scene,
         break;
     }
 }
-
 void Map::mapInit1()
 {
-  b = new Block(this, 0, true, NULL);
-
+  cell[0] = new Block(this, 0, true, NULL);
+  cell[1] = new Block(this, 1, true, NULL);
+  cell[2] = new Soju(this, 2, 3);
 }
 
 void Map::mapInit2()
@@ -48,6 +48,8 @@ void Map::map_xyInit()
       cell_xy[i*13 + j] = QPoint(j*cell_s, i*cell_s);
     }
   }
+  for(int i = 0; i < 130; i++)
+    cell[i] = NULL;
 }
 
 namespace Map_xy

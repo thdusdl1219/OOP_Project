@@ -41,9 +41,11 @@ bool Item::bombObject(){
   return true;
 }
 
-Soju::Soju(Qneed* need, int pos, int t, int p): Unit(need, pos)
+Soju::Soju(Qneed* need, int pos, int p): Unit(need, pos)
 {
-  time=t;
+  loadImage(":images/ingame/map/map_soju.png");
+  setPos(cell_xy[pos]);
+  time=2;
   power=p;
 }
 

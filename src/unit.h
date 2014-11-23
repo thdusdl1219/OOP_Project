@@ -40,7 +40,7 @@ class Soju: public Unit
 {
 	Q_OBJECT
 public:
-	Soju(Qneed*, int, int , int);	// row, col, imageSrc;
+	Soju(Qneed*, int , int);	// row, col, imageSrc;
 	// get private member function
 	int getTime();
 	int getPower();
