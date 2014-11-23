@@ -552,6 +552,7 @@ qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/init/init_button_creator.png \
 		../src/images/init/init_background1.png \
 		../src/images/init/init_background.png \
+		../src/images/init/init_button_play_press.png \
 		../src/images/init/init_button_play.png \
 		../src/images/ingame/ingame_background.png \
 		../src/images/ingame/character/rich_postech.png \
@@ -576,6 +577,7 @@ qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/choice/choice_character3.png \
 		../src/images/choice/choice_character4.png \
 		../src/images/choice/choice_character5.png \
+		../src/images/choice/choice_button_go_press.png \
 		../src/images/choice/choice_background.png \
 		../src/images/choice/choice_map_clicked0.png \
 		../src/images/choice/choice_map_clicked1.png \
@@ -917,7 +919,7 @@ ingamescene.o: ../src/scene/ingamescene.cpp ../src/scene/ingamescene.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qimage.h \
 		../src/Types.h \
 		../src/character.h \
-		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/Qtimer \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ingamescene.o ../src/scene/ingamescene.cpp
 
