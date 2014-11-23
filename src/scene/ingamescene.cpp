@@ -37,7 +37,7 @@ void InGameScene::setupIngame()
 	set_background(background);
 
 	Map* newMap = new Map(this, get_window(), ChoiceScene::get_ChoiceScene()->map_kind);
-	newMap->setPos(57,34);
+	newMap->setPos(44,24);
 	map = newMap;
 //	ChoiceScene* scene = ChoiceScene::get_ChoiceScene(); // just test. you can call ChoiceScene!
 }

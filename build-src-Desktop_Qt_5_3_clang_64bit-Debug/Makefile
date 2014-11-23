@@ -562,6 +562,7 @@ qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/ingame/character/alchoholic_kaist.png \
 		../src/images/ingame/map/map_soju.png \
 		../src/images/ingame/map/map_block.png \
+		../src/images/ingame/map/map_breakable.png \
 		../src/images/ingame/map/map_background.png \
 		../src/images/logo/logo_background.png \
 		../src/images/logo/logo.png \
@@ -915,7 +916,9 @@ ingamescene.o: ../src/scene/ingamescene.cpp ../src/scene/ingamescene.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QImage \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qimage.h \
 		../src/Types.h \
-		../src/character.h
+		../src/character.h \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/Qtimer \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ingamescene.o ../src/scene/ingamescene.cpp
 
 endgamescene.o: ../src/scene/endgamescene.cpp ../src/scene/endgamescene.h \
@@ -945,7 +948,9 @@ unit.o: ../src/unit.cpp ../src/unit.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsscene.h \
 		../src/Types.h \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QPoint \
-		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qpoint.h
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qpoint.h \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o unit.o ../src/unit.cpp
 
 map.o: ../src/map.cpp ../src/map.h \

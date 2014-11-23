@@ -457,5 +457,5 @@ namespace Map_xy
 {
   const int map_w = 57;
   const int map_h = 34;
-  const int cell_s = 70;
+  const int cell_s = 72;
 }
