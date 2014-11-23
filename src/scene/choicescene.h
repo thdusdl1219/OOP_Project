@@ -3,7 +3,7 @@
 
 #include "scene.h"
 #include "../qneed.h"
-#include "../character.h"
+class Character;
 class GoButton;
 class PlayerButton;
 class MapButton;

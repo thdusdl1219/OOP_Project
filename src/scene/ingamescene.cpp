@@ -15,6 +15,10 @@ InGameScene::~InGameScene()
 void InGameScene::keyPressEvent(QKeyEvent *event)
 {
 	qDebug() << "PPP!" << event->key();
+	if(event->key() == 16777248)
+		{
+			map->cell[2] = new Soju(map, 2, 2);
+		}
 }
 
 
@@ -27,6 +31,7 @@ void InGameScene::setupIngame()
 
 	Map* newMap = new Map(this, get_window(), ChoiceScene::get_ChoiceScene()->map_kind);
 	newMap->setPos(57,34);
+	map = newMap;
 //	ChoiceScene* scene = ChoiceScene::get_ChoiceScene(); // just test. you can call ChoiceScene!
 }
 

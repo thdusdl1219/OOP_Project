@@ -22,7 +22,6 @@ Map::Map(QGraphicsScene* scene, MainWindow* window, int map_kind) : Qneed(scene,
 }
 void Map::mapInit1()
 {
-    cell[	0	]=new 	Unit	(this, 	0	);
     cell[	1	]=new 	Unit	(this, 	1	);
     cell[	2	]=new 	Block	(this, 	2	, 	true,	NULL);
     cell[	3	]=new 	Block	(this, 	3	, 	true,	NULL);
@@ -151,13 +150,18 @@ void Map::mapInit1()
     cell[	126	]=new 	Block	(this, 	126	, 	true,	NULL);
     cell[	127	]=new 	Block	(this, 	127	, 	true,	NULL);
     cell[	128	]=new 	Unit	(this, 	128	);
-    cell[	129	]=new 	Unit	(this, 	129	);
+
+  cell[0] = ChoiceScene::get_ChoiceScene()->player1;
+  cell[0] -> setParent(this);
+  dynamic_cast<Character*>(cell[0])->setPosition(0);
+  cell[129] = ChoiceScene::get_ChoiceScene()->player2;
+  cell[129] -> setParent(this);
+  dynamic_cast<Character*>(cell[129])->setPosition(129);
 
 }
 
 void Map::mapInit2()
 {
-    cell[	0	]=new 	Unit	(this, 	0	);
     cell[	1	]=new 	Unit	(this, 	1	);
     cell[	2	]=new 	Block	(this, 	2	, 	true,	NULL);
     cell[	3	]=new 	Block	(this, 	3	, 	true,	NULL);
@@ -286,12 +290,17 @@ void Map::mapInit2()
     cell[	126	]=new 	Block	(this, 	126	, 	true,	NULL);
     cell[	127	]=new 	Block	(this, 	127	, 	true,	NULL);
     cell[	128	]=new 	Unit	(this, 	128	);
-    cell[	129	]=new 	Unit	(this, 	129	);
+
+    cell[0] = ChoiceScene::get_ChoiceScene()->player1;
+    cell[0] -> setParent(this);
+    dynamic_cast<Character*>(cell[0])->setPosition(0);
+    cell[129] = ChoiceScene::get_ChoiceScene()->player2;
+    cell[129] -> setParent(this);
+    dynamic_cast<Character*>(cell[129])->setPosition(129);
 }
 
 void Map::mapInit3()
 {
-    cell[	0	]=new 	Unit	(this, 	0	);
     cell[	1	]=new 	Unit	(this, 	1	);
     cell[	2	]=new 	Block	(this, 	2	, 	true,	NULL);
     cell[	3	]=new 	Block	(this, 	3	, 	true,	NULL);
@@ -420,7 +429,13 @@ void Map::mapInit3()
     cell[	126	]=new 	Block	(this, 	126	, 	true,	NULL);
     cell[	127	]=new 	Block	(this, 	127	, 	true,	NULL);
     cell[	128	]=new 	Unit	(this, 	128	);
-    cell[	129	]=new 	Unit	(this, 	129	);
+
+    cell[0] = ChoiceScene::get_ChoiceScene()->player1;
+    cell[0] -> setParent(this);
+    dynamic_cast<Character*>(cell[0])->setPosition(0);
+    cell[129] = ChoiceScene::get_ChoiceScene()->player2;
+    cell[129] -> setParent(this);
+    dynamic_cast<Character*>(cell[129])->setPosition(129);
 }
 
 void Map::map_xyInit()

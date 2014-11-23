@@ -5,6 +5,7 @@
 #include <QKeyEvent>
 #include "scene.h"
 #include "../qneed.h"
+class Map;
 class InGameScene : public Scene
 {
   Q_OBJECT
@@ -24,6 +25,8 @@ signals:
 
 public slots:
 
+private:
+	Map* map;
 };
 
 #endif // INGAMESCENE_H

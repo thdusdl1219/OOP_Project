@@ -32,6 +32,15 @@
         <file>images/ingame/map/map_background.png</file>
         <file>images/ingame/map/map_block.png</file>
         <file>images/ingame/map/map_soju.png</file>
+<<<<<<< HEAD
         <file>images/ingame/map/map_breakable.png</file>
+=======
+        <file>images/ingame/character/alchoholic_kaist.png</file>
+        <file>images/ingame/character/alchoholic_postech.png</file>
+        <file>images/ingame/character/liar_kaist.png</file>
+        <file>images/ingame/character/liar_postech.png</file>
+        <file>images/ingame/character/rich_kaist.png</file>
+        <file>images/ingame/character/rich_postech.png</file>
+>>>>>>> fe70bfd9e9d2ce634cd7321157639803ae27660e
     </qresource>
 </RCC>

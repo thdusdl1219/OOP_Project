@@ -10,6 +10,7 @@ INPUT(
 ./debug\ingamescene.o
 ./debug\endgamescene.o
 ./debug\unit.o
+./debug\map.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
 ./debug\moc_scene.o

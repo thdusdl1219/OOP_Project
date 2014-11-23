@@ -9,6 +9,54 @@ Character::Character(Qneed* parent, enum CharacterType::Type _character_type, in
 	speed = _speed;
 	team = _team;
 	position = 0;
+	setupCharacter();
+}
+
+void Character::setupCharacter()
+{
+	using namespace CharacterType;
+	if(team == Team::POSTECH)
+		{
+		switch(character_type)
+			{
+			case LIAR:
+				loadImage(":images/ingame/character/liar_postech.png");
+				break;
+			case RICH:
+				loadImage(":images/ingame/character/rich_postech.png");
+				break;
+			case ALCHOHOLIC:
+				loadImage(":images/ingame/character/alchoholic_postech.png");
+				break;
+			}
+		}
+	else
+		{
+		switch(character_type)
+			{
+			case LIAR:
+				loadImage(":images/ingame/character/liar_kaist.png");
+				break;
+			case RICH:
+				loadImage(":images/ingame/character/rich_kaist.png");
+				break;
+			case ALCHOHOLIC:
+				loadImage(":images/ingame/character/alchoholic_kaist.png");
+				break;
+			}
+		}
+}
+
+
+void Character::setPosition(int pos)
+{
+	position = pos;
+	setPos(cell_xy[position]);
+}
+
+int Character::getPosition()
+{
+	return position;
 }
 
 void Character::setNumBomb(int cnumbomb) {

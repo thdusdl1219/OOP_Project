@@ -45,7 +45,7 @@ Soju::Soju(Qneed* need, int pos, int p): Unit(need, pos)
 {
   loadImage(":images/ingame/map/map_soju.png");
   setPos(cell_xy[pos]);
-  time=2;
+  time=10;
   power=p;
 }
 
@@ -58,7 +58,6 @@ int Soju::getPower(){
 }
 
 bool Soju::bombObject(){
-  time=0;
   delete this;
   return true;
 }

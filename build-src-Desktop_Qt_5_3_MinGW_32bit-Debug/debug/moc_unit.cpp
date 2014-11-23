@@ -60,7 +60,7 @@ void Unit::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
 }
 
 const QMetaObject Unit::staticMetaObject = {
-    { &QObject::staticMetaObject, qt_meta_stringdata_Unit.data,
+    { &Qneed::staticMetaObject, qt_meta_stringdata_Unit.data,
       qt_meta_data_Unit,  qt_static_metacall, 0, 0}
 };
 
@@ -75,12 +75,213 @@ void *Unit::qt_metacast(const char *_clname)
     if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_Unit.stringdata))
         return static_cast<void*>(const_cast< Unit*>(this));
-    return QObject::qt_metacast(_clname);
+    return Qneed::qt_metacast(_clname);
 }
 
 int Unit::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QObject::qt_metacall(_c, _id, _a);
+    _id = Qneed::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    return _id;
+}
+struct qt_meta_stringdata_Item_t {
+    QByteArrayData data[1];
+    char stringdata[5];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_Item_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_Item_t qt_meta_stringdata_Item = {
+    {
+QT_MOC_LITERAL(0, 0, 4)
+    },
+    "Item"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_Item[] = {
+
+ // content:
+       7,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void Item::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+const QMetaObject Item::staticMetaObject = {
+    { &Unit::staticMetaObject, qt_meta_stringdata_Item.data,
+      qt_meta_data_Item,  qt_static_metacall, 0, 0}
+};
+
+
+const QMetaObject *Item::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *Item::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_Item.stringdata))
+        return static_cast<void*>(const_cast< Item*>(this));
+    return Unit::qt_metacast(_clname);
+}
+
+int Item::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = Unit::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    return _id;
+}
+struct qt_meta_stringdata_Soju_t {
+    QByteArrayData data[1];
+    char stringdata[5];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_Soju_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_Soju_t qt_meta_stringdata_Soju = {
+    {
+QT_MOC_LITERAL(0, 0, 4)
+    },
+    "Soju"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_Soju[] = {
+
+ // content:
+       7,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void Soju::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+const QMetaObject Soju::staticMetaObject = {
+    { &Unit::staticMetaObject, qt_meta_stringdata_Soju.data,
+      qt_meta_data_Soju,  qt_static_metacall, 0, 0}
+};
+
+
+const QMetaObject *Soju::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *Soju::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_Soju.stringdata))
+        return static_cast<void*>(const_cast< Soju*>(this));
+    return Unit::qt_metacast(_clname);
+}
+
+int Soju::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = Unit::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    return _id;
+}
+struct qt_meta_stringdata_Block_t {
+    QByteArrayData data[1];
+    char stringdata[6];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_Block_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_Block_t qt_meta_stringdata_Block = {
+    {
+QT_MOC_LITERAL(0, 0, 5)
+    },
+    "Block"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_Block[] = {
+
+ // content:
+       7,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void Block::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+const QMetaObject Block::staticMetaObject = {
+    { &Unit::staticMetaObject, qt_meta_stringdata_Block.data,
+      qt_meta_data_Block,  qt_static_metacall, 0, 0}
+};
+
+
+const QMetaObject *Block::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *Block::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_Block.stringdata))
+        return static_cast<void*>(const_cast< Block*>(this));
+    return Unit::qt_metacast(_clname);
+}
+
+int Block::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = Unit::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     return _id;

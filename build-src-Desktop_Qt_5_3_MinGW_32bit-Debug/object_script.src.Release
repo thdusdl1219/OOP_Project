@@ -10,6 +10,7 @@ INPUT(
 ./release\ingamescene.o
 ./release\endgamescene.o
 ./release\unit.o
+./release\map.o
 ./release\qrc_resource.o
 ./release\moc_mainwindow.o
 ./release\moc_scene.o

@@ -554,6 +554,12 @@ qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/init/init_background.png \
 		../src/images/init/init_button_play.png \
 		../src/images/ingame/ingame_background.png \
+		../src/images/ingame/character/rich_postech.png \
+		../src/images/ingame/character/liar_kaist.png \
+		../src/images/ingame/character/alchoholic_postech.png \
+		../src/images/ingame/character/liar_postech.png \
+		../src/images/ingame/character/rich_kaist.png \
+		../src/images/ingame/character/alchoholic_kaist.png \
 		../src/images/ingame/map/map_soju.png \
 		../src/images/ingame/map/map_block.png \
 		../src/images/ingame/map/map_background.png \
@@ -659,18 +665,14 @@ moc_choicescene.cpp: ../src/scene/scene.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsitem.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QPixmap \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h \
-		../src/character.h \
-		../src/Types.h \
-		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QPoint \
-		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qpoint.h \
-		../src/unit.h \
-		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QImage \
-		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qimage.h \
-		../src/map.h \
 		../src/scene/choicescene.h
 	/Users/parksoyeon/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/parksoyeon/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/parksoyeon/OOP/CSED232/src -I/Users/parksoyeon/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/parksoyeon/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/parksoyeon/Qt/5.3/clang_64/lib/QtCore.framework/Headers -I. -F/Users/parksoyeon/Qt/5.3/clang_64/lib ../src/scene/choicescene.h -o moc_choicescene.cpp
 
-moc_ingamescene.cpp: ../src/scene/scene.h \
+moc_ingamescene.cpp: ../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QKeyEvent \
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h \
+		../src/scene/scene.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QGraphicsScene \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsscene.h \
 		../src/qneed.h \
@@ -710,8 +712,6 @@ moc_unit.cpp: ../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QI
 		../src/Types.h \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QPoint \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qpoint.h \
-		../src/map.h \
-		../src/unit.h \
 		../src/unit.h
 	/Users/parksoyeon/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/parksoyeon/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/parksoyeon/OOP/CSED232/src -I/Users/parksoyeon/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/parksoyeon/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/parksoyeon/Qt/5.3/clang_64/lib/QtCore.framework/Headers -I. -F/Users/parksoyeon/Qt/5.3/clang_64/lib ../src/unit.h -o moc_unit.cpp
 
@@ -773,13 +773,12 @@ mainwindow.o: ../src/mainwindow.cpp ../src/mainwindow.h \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qpoint.h \
 		../src/scene/initscene.h \
 		../src/scene/choicescene.h \
-		../src/character.h \
-		../src/unit.h \
-		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QImage \
-		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qimage.h \
-		../src/map.h \
 		../src/scene/logoscene.h \
-		../src/scene/ingamescene.h
+		../src/scene/ingamescene.h \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QKeyEvent \
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../src/mainwindow.cpp
 
 character.o: ../src/character.cpp ../src/character.h \
@@ -797,8 +796,7 @@ character.o: ../src/character.cpp ../src/character.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsscene.h \
 		../src/unit.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QImage \
-		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qimage.h \
-		../src/map.h
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qimage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o character.o ../src/character.cpp
 
 scene.o: ../src/scene/scene.cpp ../src/scene/scene.h \
@@ -878,24 +876,27 @@ choicescene.o: ../src/scene/choicescene.cpp ../src/scene/choicescene.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsitem.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QPixmap \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h \
-		../src/character.h \
 		../src/Types.h \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QPoint \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qpoint.h \
-		../src/unit.h \
-		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QImage \
-		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qimage.h \
-		../src/map.h \
 		../src/mainwindow.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMessageBox \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmessagebox.h
+		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmessagebox.h \
+		../src/character.h \
+		../src/unit.h \
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QImage \
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qimage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o choicescene.o ../src/scene/choicescene.cpp
 
 ingamescene.o: ../src/scene/ingamescene.cpp ../src/scene/ingamescene.h \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QKeyEvent \
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h \
 		../src/scene/scene.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QGraphicsScene \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsscene.h \
@@ -907,18 +908,14 @@ ingamescene.o: ../src/scene/ingamescene.cpp ../src/scene/ingamescene.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QPixmap \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h \
 		../src/scene/choicescene.h \
-		../src/character.h \
-		../src/Types.h \
+		../src/map.h \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QPoint \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qpoint.h \
 		../src/unit.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QImage \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qimage.h \
-		../src/map.h \
-		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
-		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
-		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QKeyEvent \
-		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h
+		../src/Types.h \
+		../src/character.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ingamescene.o ../src/scene/ingamescene.cpp
 
 endgamescene.o: ../src/scene/endgamescene.cpp ../src/scene/endgamescene.h \
@@ -948,8 +945,7 @@ unit.o: ../src/unit.cpp ../src/unit.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsscene.h \
 		../src/Types.h \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QPoint \
-		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qpoint.h \
-		../src/map.h
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qpoint.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o unit.o ../src/unit.cpp
 
 map.o: ../src/map.cpp ../src/map.h \
@@ -967,7 +963,10 @@ map.o: ../src/map.cpp ../src/map.h \
 		../src/unit.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QImage \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qimage.h \
-		../src/Types.h
+		../src/Types.h \
+		../src/scene/choicescene.h \
+		../src/scene/scene.h \
+		../src/character.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o map.o ../src/map.cpp
 
 qrc_resource.o: qrc_resource.cpp 
