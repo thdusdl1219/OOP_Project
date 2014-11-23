@@ -1,6 +1,6 @@
 #include "unit.h"
 
-Unit::Unit(QGraphicsScene* scene, MainWindow* window, int pos) : Qneed(scene, window)
+Unit::Unit(Qneed* need, int pos) : Qneed(need)
 {
   position = pos;
 }
@@ -15,9 +15,21 @@ int Unit::getPostion()
   return position;
 }
 
-Item::Item(QGraphicsScene* scene, MainWindow* window, int pos): Unit(scene, window, pos)
+Item::Item(Qneed* need, int pos, ItemType::Type type): Unit(need, pos)
 {
   for(int i=0; i<4; i++)  stat[i]=0;
+  switch(type)
+    {
+    case ItemType::BOMB_NUM:
+      break;
+    case ItemType::BOMB_POWER:
+      break;
+    case ItemType::LIFE:
+      break;
+    case ItemType::SPEED:
+      break;
+    }
+
 }
 
 void Item::setItemStat(int s, int quantity){
@@ -29,7 +41,7 @@ bool Item::bombObject(){
   return true;
 }
 
-Soju::Soju(QGraphicsScene* scene, MainWindow* window, int pos, int t, int p): Unit(scene, window, pos)
+Soju::Soju(Qneed* need, int pos, int t, int p): Unit(need, pos)
 {
   time=t;
   power=p;
@@ -50,8 +62,10 @@ bool Soju::bombObject(){
 }
 
 
-Block::Block(QGraphicsScene* scene, MainWindow* window, int pos, bool bre, Item* it): Unit(scene, window, pos)
+Block::Block(Qneed* need, int pos, bool bre, Item* it): Unit(need, pos)
 {
+  loadImage(":images/ingame/map/map_block.png");
+  setPos(cell_xy[pos]);
   breakable=bre;
   if(it==NULL){
       hasItem=false;

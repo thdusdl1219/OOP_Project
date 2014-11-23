@@ -1,5 +1,6 @@
 #ifndef TYPES_H
 #define TYPES_H
+#include <QPoint>
 
 namespace SceneType
 {
@@ -18,7 +19,8 @@ namespace Team
 
 namespace ItemType
 {
-  enum Stat_Type {BOMB_NUM, BOMB_POWER, SPEED, LIFE};
+  enum Type {BOMB_NUM, BOMB_POWER, SPEED, LIFE};
 }
 
+extern QPoint cell_xy[130];
 #endif // TYPES_H

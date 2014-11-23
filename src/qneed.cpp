@@ -8,11 +8,26 @@ Qneed::Qneed(QGraphicsScene *scene, MainWindow *window)
     this->window = window;
 }
 
-Qneed::Qneed(QObject *parent) :
+Qneed::Qneed(Qneed *parent) :
     QObject(parent)
 {
     image = NULL;
+    if(parent != NULL)
+       setParent(parent);
+
 }
+
+void Qneed::setParent(Qneed *parent)
+{
+  QObject::setParent(parent);
+  QGraphicsPixmapItem::setParentItem(parent);
+}
+
+void Qneed::additem(QGraphicsScene *scene)
+{
+  scene->addItem(this);
+}
+
 
 void Qneed::loadImage(const char* filename)
 {

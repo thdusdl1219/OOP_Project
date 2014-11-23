@@ -12,14 +12,16 @@ class Qneed : public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 public:
     Qneed(QGraphicsScene*, MainWindow*);
-    Qneed(QObject *parent = 0);
+    Qneed(Qneed *parent = 0);
     void loadImage(const char* filename);
     MainWindow* get_window();
+    void additem(QGraphicsScene*);
 signals:
 
 public slots:
 
 private:
+    void setParent(Qneed* parent);
     QPixmap* image;
     MainWindow* window;
 };

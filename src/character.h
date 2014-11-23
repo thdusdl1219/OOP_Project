@@ -5,6 +5,8 @@
 #include <string>
 #include "Types.h"
 #include "qneed.h"
+#include "unit.h"
+
 
 using namespace std;
 
@@ -12,15 +14,17 @@ using namespace std;
 #define MAXPOW_BOMB 8
 #define MAX_SPEED 8
 
-class Character {
+class Character : public Unit
+{
 private:
 	enum CharacterType::Type character_type;
 	enum Team::Type team;
 	int numbomb;
 	int powbomb;
 	int speed;
+	int position;
 public:
-	Character(enum CharacterType::Type, int _numbomb, int _powbomb, int _speed, enum Team::Type);
+	Character(Qneed* parent, enum CharacterType::Type, int _numbomb, int _powbomb, int _speed, enum Team::Type);
 	void setNumBomb(int);
 	void setPowBomb(int);
 	void setSpeed(int);

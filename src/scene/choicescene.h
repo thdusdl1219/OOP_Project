@@ -21,6 +21,7 @@ public:
     Character* player1;
     Character* player2;
     int map_cnt;
+    int map_kind;
     static ChoiceScene* get_ChoiceScene();
 signals:
 

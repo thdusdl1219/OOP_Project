@@ -1,12 +1,14 @@
 #include "character.h"
 
-Character::Character(enum CharacterType::Type _character_type, int _numbomb, int _powbomb, int _speed, enum Team::Type _team) {
+Character::Character(Qneed* parent, enum CharacterType::Type _character_type, int _numbomb, int _powbomb, int _speed, enum Team::Type _team)
+	: Unit(parent, 0)
+{
 	character_type = _character_type;
 	numbomb = _numbomb;
 	powbomb = _powbomb;
 	speed = _speed;
 	team = _team;
-	image = NULL;
+	position = 0;
 }
 
 void Character::setNumBomb(int cnumbomb) {
