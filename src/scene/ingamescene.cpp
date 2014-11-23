@@ -5,9 +5,10 @@
 InGameScene::InGameScene(QObject *parent) :
   Scene(parent)
 {
-  player1 = ChoiceScene::get_ChoiceScene()->player1;
-  player2 = ChoiceScene::get_ChoiceScene()->player2;
-  setupIngame();
+
+    player1 = ChoiceScene :: get_ChoiceScene()->player1;
+    player2 = ChoiceScene :: get_ChoiceScene()->player2;
+    setupIngame();
 }
 
 InGameScene::~InGameScene()
@@ -17,17 +18,52 @@ InGameScene::~InGameScene()
 
 void InGameScene::keyPressEvent(QKeyEvent *event)
 {
-	qDebug() << "PPP!" << event->key();
-	if(event->key() == 16777248)
-		{
-			map->cell[2] = new Soju(map, 2, 2);
-		}
+    int cur_position = player1->getPosition();
+    if(event->key() == 'W')
+    {
+        qDebug() << "w pressed";
+        if(cur_position >= 13*3)
+        {
+            player1->setPosition(cur_position-13*3);
+            player1->setPos(cell_xy[cur_position-13*3]);
+        }
+    }
+    if(event->key() == 'A')
+    {
+        qDebug() << "a pressed";
+        if(cur_position % (13*3) != 0)
+        {
+            player1->setPosition(cur_position-1);
+            player1->setPos(cell_xy[cur_position-1]);
+        }
+    }
+    if(event->key() == 'S')
+    {
+        qDebug() << "s pressed";
+        if(cur_position < 13*3*9*3)
+        {
+            player1->setPosition(cur_position+13*3);
+            player1->setPos(cell_xy[cur_position+13*3]);
+        }
+    }
+    if(event->key() == 'D')
+    {
+        qDebug() << "d pressed";
+        if(cur_position % (13*3) != (13*3-1))
+        {
+            player1->setPosition(cur_position+1);
+            player1->setPos(cell_xy[cur_position+1]);
+        }
+    }
 }
+
 
 void InGameScene::keyReleaseEvent(QKeyEvent *event)
 {
 	qDebug() << "RRR!" << event->key();
 }
+
+
 
 
 void InGameScene::setupIngame()

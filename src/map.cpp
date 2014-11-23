@@ -1,5 +1,5 @@
 #include "map.h"
-QPoint cell_xy[130];
+QPoint cell_xy[(13*3)*(10*3)];
 
 Map::Map(QGraphicsScene* scene, MainWindow* window, int map_kind) : Qneed(scene, window)
 {
@@ -154,9 +154,13 @@ void Map::mapInit1()
   cell[0] = ChoiceScene::get_ChoiceScene()->player1;
   cell[0] -> setParent(this);
   dynamic_cast<Character*>(cell[0])->setPosition(0);
+
+  cell[1] = new Block(this, 1*3, true, NULL);
+  cell[2] = new Soju(this, 2*3, 3);
+
   cell[129] = ChoiceScene::get_ChoiceScene()->player2;
   cell[129] -> setParent(this);
-  dynamic_cast<Character*>(cell[129])->setPosition(129);
+  dynamic_cast<Character*>(cell[129])->setPosition(129*3*3);
 
 }
 
@@ -441,12 +445,11 @@ void Map::mapInit3()
 void Map::map_xyInit()
 {
   using namespace Map_xy;
-   for(int i = 0; i < 10; i++)
+   for(int i = 0; i < 10*3; i++)
   {
-    for(int j = 0; j < 13; j++)
-
+    for(int j = 0; j < 13*3; j++)
     {
-      cell_xy[i*13 + j] = QPoint(j*cell_s, i*cell_s);
+      cell_xy[i*13*3 + j] = QPoint(j*cell_s, i*cell_s);
     }
   }
   for(int i = 0; i < 130; i++)
@@ -457,5 +460,5 @@ namespace Map_xy
 {
   const int map_w = 57;
   const int map_h = 34;
-  const int cell_s = 72;
+  const int cell_s = 72/3;
 }

@@ -5,7 +5,10 @@
 #include <QKeyEvent>
 #include "scene.h"
 #include "../qneed.h"
+#include "../character.h"
 class Map;
+
+
 class Character;
 class InGameScene : public Scene
 {
@@ -27,9 +30,11 @@ signals:
 public slots:
 
 private:
+
 	Character* player1;
 	Character* player2;
 	Map* map;
+
 };
 
 #endif // INGAMESCENE_H
