@@ -1,5 +1,7 @@
 #include "unit.h"
 #include <QTimer>
+#include "map.h"
+
 Unit::Unit(Qneed* need, int pos) : Qneed(need)
 {
   position = pos;

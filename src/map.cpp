@@ -5,8 +5,10 @@ Map::Map(QGraphicsScene* scene, MainWindow* window, int map_kind) : Qneed(scene,
 {
   loadImage(":images/ingame/map/map_background.png");
   map_xyInit();
+  map = this;
   this->scene = scene;
   this->window = window;
+
   switch(map_kind)
     {
       case 1:
@@ -20,6 +22,14 @@ Map::Map(QGraphicsScene* scene, MainWindow* window, int map_kind) : Qneed(scene,
         break;
     }
 }
+
+Map* Map::map = NULL;
+
+Map* Map::get_map()
+{
+  return map;
+}
+
 void Map::mapInit1()
 {
     cell[	1	]=new 	Unit	(this, 	0*(13*3*3)+3*1	);

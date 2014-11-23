@@ -11,7 +11,6 @@ class Unit: public Qneed
 	Q_OBJECT
 public:
 	Unit(Qneed*, int);		// row, col;
-
 	int getPostion();	// get row col of Unit;
 	virtual ~Unit();
 private:

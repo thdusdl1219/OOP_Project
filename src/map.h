@@ -14,6 +14,7 @@ public:
   Map(QGraphicsScene*, MainWindow *, int);
   Unit* cell[130];
 
+  static Map* get_map();
 public slots:
 private:
   void map_xyInit();
@@ -22,6 +23,7 @@ private:
   void mapInit3();
   QGraphicsScene* scene;
   MainWindow* window;
+  static Map* map;
 };
 
 namespace Map_xy
