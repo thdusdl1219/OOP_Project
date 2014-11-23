@@ -55,7 +55,7 @@ class Block: public Unit
 {
 	Q_OBJECT
 public:
-	Block(Qneed*, int, bool , Item*);	// row, col, imageSrc
+    Block(Qneed*, int, bool , Item*);
 	// get private member fct
 	//
 	//

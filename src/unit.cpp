@@ -66,7 +66,13 @@ bool Soju::bombObject(){
 
 Block::Block(Qneed* need, int pos, bool bre, Item* it): Unit(need, pos)
 {
-  loadImage(":images/ingame/map/map_block.png");
+    if(bre){
+        loadImage(":images/ingame/map/map_block.png");
+    }
+    else{
+        loadImage(":images/ingame/map/map_breakable.png");
+    }
+
   setPos(cell_xy[pos]);
   breakable=bre;
   if(it==NULL){
