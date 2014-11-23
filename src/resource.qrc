@@ -31,6 +31,7 @@
         <file>images/ingame/map/map_background.png</file>
         <file>images/ingame/map/map_block.png</file>
         <file>images/ingame/map/map_soju.png</file>
+
         <file>images/ingame/map/map_breakable.png</file>
         <file>images/ingame/character/alchoholic_kaist.png</file>
         <file>images/ingame/character/alchoholic_postech.png</file>
@@ -44,9 +45,11 @@
         <file>images/init/init_button_play_press.png</file>
 
 
+
         <file>images/choice/choice_button_go_press.png</file>
         <file>images/choice/choice_button_go.png</file>
         <file>images/init/init_button_play_press.png</file>
+
 
     </qresource>
 </RCC>
