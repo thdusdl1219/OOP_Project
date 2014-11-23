@@ -31,10 +31,6 @@
         <file>images/ingame/map/map_background.png</file>
         <file>images/ingame/map/map_block.png</file>
         <file>images/ingame/map/map_soju.png</file>
-<<<<<<< HEAD
-=======
-
->>>>>>> 의미 노노
         <file>images/ingame/map/map_breakable.png</file>
         <file>images/ingame/character/alchoholic_kaist.png</file>
         <file>images/ingame/character/alchoholic_postech.png</file>
@@ -42,16 +38,15 @@
         <file>images/ingame/character/liar_postech.png</file>
         <file>images/ingame/character/rich_kaist.png</file>
         <file>images/ingame/character/rich_postech.png</file>
-<<<<<<< HEAD
-        <file>images/choice/choice_button_go_press.png</file>
-        <file>images/choice/choice_button_go.png</file>
-        <file>images/init/init_button_play_press.png</file>
-=======
 
         <file>images/choice/choice_button_go_press.png</file>
         <file>images/choice/choice_button_go.png</file>
         <file>images/init/init_button_play_press.png</file>
 
->>>>>>> 의미 노노
+
+        <file>images/choice/choice_button_go_press.png</file>
+        <file>images/choice/choice_button_go.png</file>
+        <file>images/init/init_button_play_press.png</file>
+
     </qresource>
 </RCC>
