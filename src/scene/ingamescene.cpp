@@ -1,7 +1,7 @@
 #include "ingamescene.h"
 #include "choicescene.h"
 #include "../map.h"
-#include <Qtimer>
+#include <QTimer>
 InGameScene::InGameScene(QObject *parent) :
   Scene(parent)
 {
