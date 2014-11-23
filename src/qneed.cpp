@@ -9,7 +9,7 @@ Qneed::Qneed(QGraphicsScene *scene, MainWindow *window)
 }
 
 Qneed::Qneed(Qneed *parent) :
-    QWidget(parent)
+    QObject(parent)
 {
     image = NULL;
     if(parent != NULL)

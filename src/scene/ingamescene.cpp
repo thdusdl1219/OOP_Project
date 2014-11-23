@@ -2,6 +2,8 @@
 #include "choicescene.h"
 #include "../map.h"
 #include <QTimer>
+#include <Qsize>
+
 InGameScene::InGameScene(QObject *parent) :
   Scene(parent)
 {
@@ -19,7 +21,7 @@ InGameScene::~InGameScene()
 void InGameScene::keyPressEvent(QKeyEvent *event)
 {
     int cur_position = player1->getPosition();
-    if(event->key() == 'W')
+    if(event->key() == 'W' )
     {
         qDebug() << "w pressed";
         if(cur_position >= 13*3)
@@ -74,7 +76,6 @@ void InGameScene::setupIngame()
 
 	Map* newMap = new Map(this, get_window(), ChoiceScene::get_ChoiceScene()->map_kind);
 	newMap->setPos(44,24);
-	newMap->setFixedSize(936, 720);
 	map = newMap;
 //	ChoiceScene* scene = ChoiceScene::get_ChoiceScene(); // just test. you can call ChoiceScene!
 }

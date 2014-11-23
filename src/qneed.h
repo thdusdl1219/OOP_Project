@@ -1,13 +1,13 @@
 #ifndef QNEED_H
 #define QNEED_H
 
-#include <QWidget>
+#include <QObject>
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
 #include <QGraphicsScene>
 class MainWindow;
 
-class Qneed : public QWidget, public QGraphicsPixmapItem
+class Qneed : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
