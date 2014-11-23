@@ -5,7 +5,6 @@
 #include <QPixmap>
 #include "qneed.h"
 #include "Types.h"
-#include "map.h"
 
 class Unit: public Qneed
 {

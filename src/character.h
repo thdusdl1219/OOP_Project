@@ -21,9 +21,9 @@ private:
 	int powbomb;
 	int speed;
 	int position;
-	void setupCharacter();
 public:
 	Character(Qneed* parent, enum CharacterType::Type, int _numbomb, int _powbomb, int _speed, enum Team::Type);
+	void setupCharacter();
 	void setNumBomb(int);
 	void setPowBomb(int);
 	void setSpeed(int);

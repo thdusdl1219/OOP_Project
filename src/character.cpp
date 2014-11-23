@@ -9,6 +9,7 @@ Character::Character(Qneed* parent, enum CharacterType::Type _character_type, in
 	speed = _speed;
 	team = _team;
 	position = 0;
+	setupCharacter();
 }
 
 void Character::setupCharacter()
@@ -44,13 +45,13 @@ void Character::setupCharacter()
 				break;
 			}
 		}
-	setPos(cell_xy[position]);
 }
 
 
 void Character::setPosition(int pos)
 {
 	position = pos;
+	setPos(cell_xy[position]);
 }
 
 int Character::getPosition()
