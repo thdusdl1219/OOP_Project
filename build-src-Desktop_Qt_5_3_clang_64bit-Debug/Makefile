@@ -552,6 +552,7 @@ qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/init/init_button_creator.png \
 		../src/images/init/init_background1.png \
 		../src/images/init/init_background.png \
+		../src/images/init/init_button_play_press.png \
 		../src/images/init/init_button_play.png \
 		../src/images/ingame/ingame_background.png \
 		../src/images/ingame/character/rich_postech.png \
@@ -562,6 +563,7 @@ qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/ingame/character/alchoholic_kaist.png \
 		../src/images/ingame/map/map_soju.png \
 		../src/images/ingame/map/map_block.png \
+		../src/images/ingame/map/map_breakable.png \
 		../src/images/ingame/map/map_background.png \
 		../src/images/logo/logo_background.png \
 		../src/images/logo/logo.png \
@@ -575,6 +577,7 @@ qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/choice/choice_character3.png \
 		../src/images/choice/choice_character4.png \
 		../src/images/choice/choice_character5.png \
+		../src/images/choice/choice_button_go_press.png \
 		../src/images/choice/choice_background.png \
 		../src/images/choice/choice_map_clicked0.png \
 		../src/images/choice/choice_map_clicked1.png \
@@ -915,7 +918,9 @@ ingamescene.o: ../src/scene/ingamescene.cpp ../src/scene/ingamescene.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QImage \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qimage.h \
 		../src/Types.h \
-		../src/character.h
+		../src/character.h \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ingamescene.o ../src/scene/ingamescene.cpp
 
 endgamescene.o: ../src/scene/endgamescene.cpp ../src/scene/endgamescene.h \
@@ -945,7 +950,9 @@ unit.o: ../src/unit.cpp ../src/unit.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsscene.h \
 		../src/Types.h \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QPoint \
-		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qpoint.h
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qpoint.h \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o unit.o ../src/unit.cpp
 
 map.o: ../src/map.cpp ../src/map.h \

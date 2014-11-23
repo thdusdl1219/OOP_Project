@@ -48,7 +48,7 @@ void ChoiceScene::setupChoice()
 	set_background(background);
 
 	go_button = new GoButton(this, get_window());
-	go_button->setPos(285,150);
+    go_button->setPos(362,200);
 
 	player_button[0] = new PlayerButton(this, get_window(), 0);
 	player_button[0]->setPos(70, 100);
@@ -76,17 +76,19 @@ void ChoiceScene::setupChoice()
 GoButton::GoButton(QGraphicsScene *scene, MainWindow *window) : Qneed(scene,window)
 {
 	qDebug() << "Go Button created";
-	loadImage(":images/choice/choice_button_go.png");
+    loadImage(":images/choice/choice_button_go.png");
 	this->scene = dynamic_cast<ChoiceScene* >(scene);
 }
 
 void GoButton::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
 	qDebug() << "Go Button pressed";
+    loadImage(":images/choice/choice_button_go_press.png");
 }
 
 void GoButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
+    loadImage(":images/choice/choice_button_go.png");
 	QMessageBox message_box;
 	if(scene->player1_cnt == 1 && scene->player2_cnt == 1)
 		{

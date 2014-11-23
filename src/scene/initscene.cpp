@@ -42,10 +42,12 @@ PlayButton::PlayButton(QGraphicsScene *scene, MainWindow *window) : Qneed(scene,
 void PlayButton::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     qDebug() << "Play Button pressed";
+    this->loadImage(":images/init/init_button_play_press.png");
 }
 
 void PlayButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
+    this->loadImage(":images/init/init_button_play.png");
     get_window()->changeScene(SceneType::CHOICECHARACTER);
 }
 
