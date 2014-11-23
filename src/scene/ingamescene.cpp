@@ -1,9 +1,12 @@
 #include "ingamescene.h"
 #include "choicescene.h"
 #include "../map.h"
+#include <Qtimer>
 InGameScene::InGameScene(QObject *parent) :
   Scene(parent)
 {
+  player1 = ChoiceScene::get_ChoiceScene()->player1;
+  player2 = ChoiceScene::get_ChoiceScene()->player2;
   setupIngame();
 }
 
@@ -21,6 +24,10 @@ void InGameScene::keyPressEvent(QKeyEvent *event)
 		}
 }
 
+void InGameScene::keyReleaseEvent(QKeyEvent *event)
+{
+	qDebug() << "RRR!" << event->key();
+}
 
 
 void InGameScene::setupIngame()

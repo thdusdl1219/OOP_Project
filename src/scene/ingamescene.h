@@ -6,6 +6,7 @@
 #include "scene.h"
 #include "../qneed.h"
 class Map;
+class Character;
 class InGameScene : public Scene
 {
   Q_OBJECT
@@ -14,7 +15,7 @@ public:
 	void setupIngame();
 	virtual void action();
 
-
+	virtual void keyReleaseEvent(QKeyEvent* event);
 	virtual void keyPressEvent(QKeyEvent* event);
 	//
 	// a w d s
@@ -26,6 +27,8 @@ signals:
 public slots:
 
 private:
+	Character* player1;
+	Character* player2;
 	Map* map;
 };
 

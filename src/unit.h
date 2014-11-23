@@ -11,7 +11,6 @@ class Unit: public Qneed
 	Q_OBJECT
 public:
 	Unit(Qneed*, int);		// row, col;
-	virtual bool bombObject() {return true;}	// action for bombing Unit
 	int getPostion();	// get row col of Unit;
 	virtual ~Unit();
 private:
@@ -20,6 +19,8 @@ private:
 	//
 	Qneed* image;
 	int position;
+public slots:
+	virtual bool bombObject() {return true;}	// action for bombing Unit
 };
 
 class Item: public Unit
@@ -28,11 +29,13 @@ class Item: public Unit
 public:
 	Item(Qneed*, int, ItemType::Type);	// row, col, imageSrc
 	void setItemStat(int, int);	// stat_type, increasement
-	virtual bool bombObject();	// true - Item destroyed, false - Nothing happened
 private:
 	int type;
 	// 0 - bombNum, 1 - bombPower, 2 - Speed, 3 - Life
 	int stat[4];
+public slots:
+	virtual bool bombObject();	// action for bombing Unit
+
 };
 
 class Soju: public Unit
@@ -43,10 +46,12 @@ public:
 	// get private member function
 	int getTime();
 	int getPower();
-	virtual bool bombObject();
 private:
 	int time;			// zero for bomb
 	int power;			// power of soju
+public slots:
+	virtual bool bombObject();	// action for bombing Unit
+
 };
 
 
@@ -61,12 +66,13 @@ public:
 	Item* getItem();
 	bool isBreakable();
 	//////////////////////////
-	virtual bool bombObject();		// true : break block, false : nothing happened;
 	void placeItem(Item*);		// item setting
 private:
 	bool breakable;
 	bool hasItem;
 	Item* item;
+public slots:
+	virtual bool bombObject();	// action for bombing Unit
 };
 
 #endif

@@ -1,5 +1,5 @@
 #include "unit.h"
-
+#include <QTimer>
 Unit::Unit(Qneed* need, int pos) : Qneed(need)
 {
   position = pos;
@@ -45,8 +45,9 @@ Soju::Soju(Qneed* need, int pos, int p): Unit(need, pos)
 {
   loadImage(":images/ingame/map/map_soju.png");
   setPos(cell_xy[pos]);
-  time=10;
+  time=5;
   power=p;
+  QTimer::singleShot(5*1000, this, SLOT(bombObject()));
 }
 
 int Soju::getTime(){
