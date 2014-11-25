@@ -47,11 +47,17 @@ void Character::setupCharacter()
 		}
 }
 
+void Character::setCharPos(int pos)
+{
+	position = pos;
+	cell_x = ((pos / 37) + 1) / 3;
+	cell_y = ((pos % 37) + 1) / 3;
+}
 
 void Character::setPosition(int pos)
 {
-	position = pos;
-	setPos(cell_xy[position]);
+	setCharPos(pos);
+	setPos(cell_xy[getPosition()]);
 }
 
 int Character::getPosition()

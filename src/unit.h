@@ -14,12 +14,12 @@ public:
 	int getPosition();	// get row col of Unit;
 	virtual ~Unit();
 	void setPosition(int, int);
+	int cell_x, cell_y;
 private:
 	//
 	//	image size = 70 * 70 pixel
 	//
 	Qneed* image;
-	int cell_x, cell_y;
 	int position;
 public slots:
 	virtual bool bombObject() {return true;}	// action for bombing Unit

@@ -27,16 +27,14 @@ void InGameScene::keyPressEvent(QKeyEvent *event)
         if(cur_position >= 13*3-2)
         {
             player1->setPosition(cur_position-13*3+2);
-            player1->setPos(cell_xy[cur_position-13*3 + 2]);
         }
     }
     if(event->key() == 'A')
     {
         qDebug() << "a pressed";
-        if(cur_position % (13*3) != 0)
+        if(cur_position % (13*3-2) != 0)
         {
             player1->setPosition(cur_position-1);
-            player1->setPos(cell_xy[cur_position-1]);
         }
     }
     if(event->key() == 'S')
@@ -45,7 +43,6 @@ void InGameScene::keyPressEvent(QKeyEvent *event)
         if(cur_position < (13*3-2)*9*3)
         {
             player1->setPosition(cur_position+13*3-2);
-            player1->setPos(cell_xy[cur_position+13*3-2]);
         }
     }
     if(event->key() == 'D')
@@ -54,7 +51,6 @@ void InGameScene::keyPressEvent(QKeyEvent *event)
         if(cur_position % (13*3 - 2) != (13*3-3))
         {
             player1->setPosition(cur_position+1);
-            player1->setPos(cell_xy[cur_position+1]);
         }
     }
     if(event->key() == 16777248)
