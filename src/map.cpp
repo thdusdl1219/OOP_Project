@@ -1,5 +1,5 @@
 #include "map.h"
-QPoint cell_xy[(13*3)*(10*3)];
+QPoint cell_xy[(13*3-2)*(10*3)];
 
 Map::Map(QGraphicsScene* scene, MainWindow* window, int map_kind) : Qneed(scene, window)
 {
@@ -32,15 +32,15 @@ Map* Map::get_map()
 
 void Map::mapInit1()
 {
-    cell[	1	]=new 	Unit	(this, 	0*(13*3*3)+3*1	);
-    cell[	2	]=new 	Block	(this, 	0*(13*3*3)+3*2	, 	true,	NULL);
-    cell[	3	]=new 	Block	(this, 	0*(13*3*3)+3*3	, 	true,	NULL);
-    cell[	4	]=new 	Block	(this, 	0*(13*3*3)+3*4	, 	true,	NULL);
-    cell[	5	]=new 	Block	(this, 	0*(13*3*3)+3*5  , 	true,	NULL);
-    cell[	6	]=new 	Unit	(this, 	0*(13*3*3)+3*6	);
-    cell[	7	]=new 	Unit	(this, 	0*(13*3*3)+3*7	);
-    cell[	8	]=new 	Block	(this, 	0*(13*3*3)+3*8	, 	true,	NULL);
-    cell[	9	]=new 	Block	(this, 	0*(13*3*3)+3*9, 	true,	NULL);
+    cell[0][1]=new 	Unit	(this, 	0, 1	);
+    cell[0][2]=new 	Block	(this, 	0, 2	, 	true,	NULL);
+    cell[0][3]=new 	Block	(this, 	0, 3	, 	true,	NULL);
+    cell[0][4]=new 	Block	(this, 	0, 4	, 	true,	NULL);
+/*    cell[	5	]=new 	Block	(this, 	0, 5  , 	true,	NULL);
+    cell[	6	]=new 	Unit	(this, 	0, 6	);
+    cell[	7	]=new 	Unit	(this, 	0, 7	);
+    cell[	8	]=new 	Block	(this, 	0, 8	, 	true,	NULL);
+    cell[	9	]=new 	Block	(this, 	0, 9, 	true,	NULL);
     cell[	10	]=new 	Block	(this, 	0*(13*3*3)+3*10	, 	true,	NULL);
     cell[	11	]=new 	Unit	(this, 	0*(13*3*3)+3*11	);
     cell[	12	]=new 	Unit	(this, 	0*(13*3*3)+3*12	);
@@ -160,18 +160,19 @@ void Map::mapInit1()
     cell[	126	]=new 	Block	(this, 	9*(13*3*3)+3*9	, 	true,	NULL);
     cell[	127	]=new 	Block	(this, 	9*(13*3*3)+3*10	, 	true,	NULL);
     cell[	128	]=new 	Unit	(this, 	9*(13*3*3)+3*11	);
-
-  cell[0] = ChoiceScene::get_ChoiceScene()->player1;
-  cell[0] -> setParent(this);
-  dynamic_cast<Character*>(cell[0])->setPosition(0);
-  cell[129] = ChoiceScene::get_ChoiceScene()->player2;
-  cell[129] -> setParent(this);
-  dynamic_cast<Character*>(cell[129])->setPosition(9*(13*3*3)+3*12);
+*/
+  cell[0][0] = ChoiceScene::get_ChoiceScene()->player1;
+  cell[0][0] -> setParent(this);
+  dynamic_cast<Character*>(cell[0][0])->setPosition(0);
+  cell[9][12] = ChoiceScene::get_ChoiceScene()->player2;
+  cell[9][12] -> setParent(this);
+  dynamic_cast<Character*>(cell[9][12])->setPosition(9*(13*3-2)*3+3*12);
 
 }
 
 void Map::mapInit2()
 {
+  /*
     cell[	1	]=new 	Unit	(this, 	0*(13*3*3)+3*1	);
     cell[	2	]=new 	Block	(this, 	0*(13*3*3)+3*2	, 	true,	NULL);
     cell[	3	]=new 	Block	(this, 	0*(13*3*3)+3*3	, 	true,	NULL);
@@ -307,10 +308,12 @@ void Map::mapInit2()
     cell[129] = ChoiceScene::get_ChoiceScene()->player2;
     cell[129] -> setParent(this);
     dynamic_cast<Character*>(cell[129])->setPosition(9*(13*3*3)+3*12);
+*/
 }
 
 void Map::mapInit3()
 {
+  /*
     cell[	1	]=new 	Unit	(this, 	1*3	);
     cell[	2	]=new 	Block	(this, 	2*3	, 	true,	NULL);
     cell[	3	]=new 	Block	(this, 	3*3	, 	true,	NULL);
@@ -446,6 +449,7 @@ void Map::mapInit3()
     cell[129] = ChoiceScene::get_ChoiceScene()->player2;
     cell[129] -> setParent(this);
     dynamic_cast<Character*>(cell[129])->setPosition(9*(13*3*3)+3*12);
+*/
 }
 
 void Map::map_xyInit()
@@ -453,13 +457,18 @@ void Map::map_xyInit()
   using namespace Map_xy;
    for(int i = 0; i < 10*3; i++)
   {
-    for(int j = 0; j < 13*3; j++)
+    for(int j = 0; j < 13*3 - 2; j++)
     {
-      cell_xy[i*13*3 + j] = QPoint(j*cell_s, i*cell_s);
+      cell_xy[i*(13*3 - 2) + j] = QPoint(j*cell_s, i*cell_s);
     }
   }
-  for(int i = 0; i < 130; i++)
-    cell[i] = NULL;
+  for(int i = 0; i < 10; i++)
+  {
+    for(int j = 0; j < 13; j++)
+      {
+        cell[i][j] = NULL;
+      }
+  }
 }
 
 namespace Map_xy

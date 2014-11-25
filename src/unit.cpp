@@ -2,9 +2,11 @@
 #include <QTimer>
 #include "map.h"
 
-Unit::Unit(Qneed* need, int pos) : Qneed(need)
+Unit::Unit(Qneed* need, int x, int y) : Qneed(need)
 {
-  position = pos;
+  cell_x = x;
+  cell_y = y;
+  position = x *(13*3-2)*3 + 3 * y;
 }
 
 Unit::~Unit()
@@ -12,12 +14,20 @@ Unit::~Unit()
 
 }
 
-int Unit::getPostion()
+
+void Unit::setPosition(int x, int y)
+{
+  cell_x = x;
+  cell_y = y;
+  position = x*(13*3 - 2)*3 + 3 * y;
+}
+
+int Unit::getPosition()
 {
   return position;
 }
 
-Item::Item(Qneed* need, int pos, ItemType::Type type): Unit(need, pos)
+Item::Item(Qneed* need, int x, int y, ItemType::Type type): Unit(need, x, y)
 {
   for(int i=0; i<4; i++)  stat[i]=0;
   switch(type)
@@ -43,10 +53,11 @@ bool Item::bombObject(){
   return true;
 }
 
-Soju::Soju(Qneed* need, int pos, int p): Unit(need, pos)
+Soju::Soju(Qneed* need, int x, int y, int p): Unit(need, x, y)
 {
+  setPosition(x, y);
   loadImage(":images/ingame/map/map_soju.png");
-  setPos(cell_xy[pos]);
+  setPos(cell_xy[getPosition()]);
   time=5;
   power=p;
   QTimer::singleShot(5*1000, this, SLOT(bombObject()));
@@ -61,12 +72,24 @@ int Soju::getPower(){
 }
 
 bool Soju::bombObject(){
+  bomb();
   delete this;
   return true;
 }
 
+void Soju::bomb()
+{
+	Map* map = Map::get_map();
+	int pos = getPosition();
 
-Block::Block(Qneed* need, int pos, bool bre, Item* it): Unit(need, pos)
+	for(int i = 0; i <= power; i++ )
+		{
+			QTimer::singleShot(i*100,map->cell[0][i], SLOT(bombObject()));
+		}
+
+}
+
+Block::Block(Qneed* need, int x, int y, bool bre, Item* it): Unit(need, x, y)
 {
     if(bre){
         loadImage(":images/ingame/map/map_block.png");
@@ -74,8 +97,8 @@ Block::Block(Qneed* need, int pos, bool bre, Item* it): Unit(need, pos)
     else{
         loadImage(":images/ingame/map/map_breakable.png");
     }
-
-  setPos(cell_xy[pos]);
+  setPosition(x,y);
+  setPos(cell_xy[getPosition()]);
   breakable=bre;
   if(it==NULL){
       hasItem=false;

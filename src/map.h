@@ -12,7 +12,7 @@ class Map : public Qneed
 {
 public:
   Map(QGraphicsScene*, MainWindow *, int);
-  Unit* cell[130];
+  Unit* cell[10][13];
 
   static Map* get_map();
 public slots:

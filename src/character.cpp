@@ -1,7 +1,7 @@
 #include "character.h"
 
 Character::Character(Qneed* parent, enum CharacterType::Type _character_type, int _numbomb, int _powbomb, int _speed, enum Team::Type _team)
-	: Unit(parent, 0)
+	: Unit(parent, 0, 0)
 {
 	character_type = _character_type;
 	numbomb = _numbomb;

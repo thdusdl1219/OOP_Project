@@ -24,10 +24,10 @@ void InGameScene::keyPressEvent(QKeyEvent *event)
     if(event->key() == 'W' )
     {
         qDebug() << "w pressed";
-        if(cur_position >= 13*3)
+        if(cur_position >= 13*3-2)
         {
-            player1->setPosition(cur_position-13*3);
-            player1->setPos(cell_xy[cur_position-13*3]);
+            player1->setPosition(cur_position-13*3+2);
+            player1->setPos(cell_xy[cur_position-13*3 + 2]);
         }
     }
     if(event->key() == 'A')
@@ -42,21 +42,26 @@ void InGameScene::keyPressEvent(QKeyEvent *event)
     if(event->key() == 'S')
     {
         qDebug() << "s pressed";
-        if(cur_position < 13*3*9*3)
+        if(cur_position < (13*3-2)*9*3)
         {
-            player1->setPosition(cur_position+13*3);
-            player1->setPos(cell_xy[cur_position+13*3]);
+            player1->setPosition(cur_position+13*3-2);
+            player1->setPos(cell_xy[cur_position+13*3-2]);
         }
     }
     if(event->key() == 'D')
     {
         qDebug() << "d pressed";
-        if(cur_position % (13*3) != (13*3-1))
+        if(cur_position % (13*3 - 2) != (13*3-3))
         {
             player1->setPosition(cur_position+1);
             player1->setPos(cell_xy[cur_position+1]);
         }
     }
+    if(event->key() == 16777248)
+      {
+//        delete map->cell[2];
+        map->cell[0][0] = new Soju(map, 0, 0, 27);
+      }
 }
 
 

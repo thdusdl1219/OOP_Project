@@ -10,14 +10,16 @@ class Unit: public Qneed
 {
 	Q_OBJECT
 public:
-	Unit(Qneed*, int);		// row, col;
-	int getPostion();	// get row col of Unit;
+	Unit(Qneed*, int, int);		// row, col;
+	int getPosition();	// get row col of Unit;
 	virtual ~Unit();
+	void setPosition(int, int);
 private:
 	//
 	//	image size = 70 * 70 pixel
 	//
 	Qneed* image;
+	int cell_x, cell_y;
 	int position;
 public slots:
 	virtual bool bombObject() {return true;}	// action for bombing Unit
@@ -27,7 +29,7 @@ class Item: public Unit
 {
 	Q_OBJECT
 public:
-	Item(Qneed*, int, ItemType::Type);	// row, col, imageSrc
+	Item(Qneed*, int, int, ItemType::Type);	// row, col, imageSrc
 	void setItemStat(int, int);	// stat_type, increasement
 private:
 	int type;
@@ -42,10 +44,11 @@ class Soju: public Unit
 {
 	Q_OBJECT
 public:
-	Soju(Qneed*, int , int);	// row, col, imageSrc;
+	Soju(Qneed*, int, int , int);	// row, col, imageSrc;
 	// get private member function
 	int getTime();
 	int getPower();
+	void bomb();
 private:
 	int time;			// zero for bomb
 	int power;			// power of soju
@@ -59,7 +62,7 @@ class Block: public Unit
 {
 	Q_OBJECT
 public:
-    Block(Qneed*, int, bool , Item*);
+		Block(Qneed*, int, int, bool , Item*);
 	// get private member fct
 	//
 	//

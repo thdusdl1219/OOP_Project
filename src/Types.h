@@ -23,5 +23,5 @@ namespace ItemType
 }
 
 
-extern QPoint cell_xy[(13*3)*(10*3)];
+extern QPoint cell_xy[(13*3 - 2)*(10*3)];
 #endif // TYPES_H
