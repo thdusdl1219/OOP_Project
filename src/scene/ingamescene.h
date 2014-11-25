@@ -3,10 +3,10 @@
 
 #include <QDebug>
 #include <QKeyEvent>
+#include <QWidget>
 #include "scene.h"
 #include "../qneed.h"
 #include "../character.h"
-#include <QWidget>
 
 class Map;
 
@@ -40,7 +40,7 @@ private:
   Map* map;
   bool keyLeft, keyRight, keyUp, keyDown;
   bool keyW, keyA, keyS, keyD;
-
+  bool bomb1, bomb2;
 };
 
 #endif // INGAMESCENE_H

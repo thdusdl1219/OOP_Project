@@ -31,11 +31,14 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(1030, 770);
+        MainWindow->setMaximumSize(QSize(1030, 770));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        centralWidget->setMaximumSize(QSize(1030, 770));
         graphicsView = new QGraphicsView(centralWidget);
         graphicsView->setObjectName(QStringLiteral("graphicsView"));
         graphicsView->setGeometry(QRect(0, 0, 1030, 770));
+        graphicsView->setMaximumSize(QSize(1030, 770));
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);

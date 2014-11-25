@@ -4,16 +4,18 @@
 #include <QTimer>
 #include <Qsize>
 #include <QObject>
+#include <QWidget>
+
 InGameScene::InGameScene(QObject *parent) :
 	Scene(parent)
 {
-
 	player1 = ChoiceScene :: get_ChoiceScene()->player1;
 	player2 = ChoiceScene :: get_ChoiceScene()->player2;
 	keyUp = keyDown = keyLeft = keyRight = false;
 	keyW = keyA = keyS = keyD = false;
+    bomb1 = bomb2 = false;
 	setupIngame();
-//	setFocusPolicy(Qt::StrongFocus);
+//    setFocusPolicy(Qt::StrongFocus);
 	QObject::startTimer(1000/20);
 }
 
@@ -58,6 +60,14 @@ void InGameScene::keyPressEvent(QKeyEvent *e)
 				{
 					keyS=true;
 				}
+            if(e->key()==Qt::Key_Shift)
+            {
+                bomb1 = true;
+            }
+            if(e->key()==Qt::Key_Slash)
+            {
+                bomb2 = true;
+            }
 			QGraphicsScene::keyPressEvent(e);
 		}
 	/*
@@ -103,8 +113,7 @@ void InGameScene::keyPressEvent(QKeyEvent *e)
 			*/
 }
 
-
-void InGameScene::keyReleaseEvent(QKeyEvent * e)
+void InGameScene::keyReleaseEvent(QKeyEvent *e)
 {
 	if(e->isAutoRepeat()==false)
 		{
@@ -140,6 +149,14 @@ void InGameScene::keyReleaseEvent(QKeyEvent * e)
 				{
 					keyS=false;
 				}
+            if(e->key()==Qt::Key_Shift)
+            {
+                bomb1 = false;
+            }
+            if(e->key()==Qt::Key_Slash)
+            {
+                bomb2 = false;
+            }
 			QGraphicsScene::keyReleaseEvent(e);
 		}
 	//	qDebug() << "RRR!" << event->key();
@@ -149,7 +166,18 @@ void InGameScene::timerEvent(QTimerEvent *)
  {
      int cur_position1 = player1->getPosition();
      int cur_position2 = player2->getPosition();
-
+     int x1 = player1->cell_x;
+     int y1 = player1->cell_y;
+     int x2 = player2->cell_x;
+     int y2 = player2->cell_y;
+    if(bomb1)
+    {
+        new Soju(map, x1, y1, 2);
+    }
+    if(bomb2)
+    {
+        new Soju(map, x2, y2, 2);
+    }
     if(keyUp && cur_position2 >= 13*3-2)
     {
         qDebug() << "Up";
