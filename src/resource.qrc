@@ -1,7 +1,13 @@
-﻿<RCC>
+<RCC>
     <qresource prefix="/">
         <file>images/choice/choice_background.png</file>
         <file>images/choice/choice_background1.png</file>
+        <file>images/choice/choice_background2.png</file>
+        <file>images/choice/choice_background3.png</file>
+        <file>images/choice/choice_background4.png</file>
+        <file>images/choice/choice_button_go_press.png</file>
+        <file>images/choice/choice_button_go.png</file>
+        <file>images/choice/choice_button_go1.png</file>
         <file>images/choice/choice_character_clicked0.png</file>
         <file>images/choice/choice_character_clicked1.png</file>
         <file>images/choice/choice_character_clicked2.png</file>
@@ -20,35 +26,39 @@
         <file>images/choice/choice_map0.png</file>
         <file>images/choice/choice_map1.png</file>
         <file>images/choice/choice_map2.png</file>
-        <file>images/ingame/ingame_background.png</file>
-        <file>images/init/init_background.png</file>
-        <file>images/init/init_background1.png</file>
-        <file>images/init/init_button_creator.png</file>
-        <file>images/init/init_button_play.png</file>
-        <file>images/init/init_button_play2.png</file>
-        <file>images/logo/logo.png</file>
-        <file>images/logo/logo_background.png</file>
-        <file>images/ingame/map/map_background.png</file>
-        <file>images/ingame/map/map_block.png</file>
-        <file>images/ingame/map/map_soju.png</file>
-        <file>images/ingame/map/map_breakable.png</file>
         <file>images/ingame/character/alchoholic_kaist.png</file>
         <file>images/ingame/character/alchoholic_postech.png</file>
         <file>images/ingame/character/liar_kaist.png</file>
         <file>images/ingame/character/liar_postech.png</file>
         <file>images/ingame/character/rich_kaist.png</file>
         <file>images/ingame/character/rich_postech.png</file>
-        <file>images/choice/choice_button_go_press.png</file>
-        <file>images/choice/choice_button_go.png</file>
-        <file>images/init/init_button_play_press.png</file>
-        <file>images/choice/choice_button_go_press.png</file>
-        <file>images/choice/choice_button_go.png</file>
-        <file>images/init/init_button_play_press.png</file>
-        <file>images/ingame/map/map_unit.png</file>
+        <file>images/ingame/ingame_background.png</file>
+        <file>images/ingame/map/map_background.png</file>
+        <file>images/ingame/map/map_block.png</file>
         <file>images/ingame/map/map_bn.png</file>
-        <file>images/ingame/map/map_bp.png</file>
-        <file>images/ingame/map/map_life.png</file>
-        <file>images/ingame/map/map_speed.png</file>
         <file>images/ingame/map/map_bomb.png</file>
+        <file>images/ingame/map/map_bp.png</file>
+        <file>images/ingame/map/map_breakable.png</file>
+        <file>images/ingame/map/map_life.png</file>
+        <file>images/ingame/map/map_soju.png</file>
+        <file>images/ingame/map/map_speed.png</file>
+        <file>images/ingame/map/map_unit.png</file>
+        <file>images/init/init_background.png</file>
+        <file>images/init/init_background1.png</file>
+        <file>images/init/init_background2.png</file>
+        <file>images/init/init_button_creator.png</file>
+        <file>images/init/init_button_creator1.png</file>
+        <file>images/init/init_button_creator2.png</file>
+        <file>images/init/init_button_creator3.png</file>
+        <file>images/init/init_button_play_press.png</file>
+        <file>images/init/init_button_play.png</file>
+        <file>images/init/init_button_play1.png</file>
+        <file>images/init/init_button_play2.png</file>
+        <file>images/init/init_button_play3.png</file>
+        <file>images/init/init_button_play4.png</file>
+        <file>images/init/init_button_play5.png</file>
+        <file>images/init/start2button.png</file>
+        <file>images/logo/logo.png</file>
+        <file>images/logo/logo_background.png</file>
     </qresource>
 </RCC>

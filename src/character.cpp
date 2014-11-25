@@ -45,6 +45,7 @@ void Character::setupCharacter()
 				break;
 			}
 		}
+	this->setParent(need);
 }
 
 void Character::setCharPos(int pos)

@@ -548,13 +548,21 @@ compiler_rcc_make_all: qrc_resource.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resource.cpp
 qrc_resource.cpp: ../src/resource.qrc \
+		../src/images/init/init_button_creator3.png \
 		../src/images/init/init_button_play2.png \
+		../src/images/init/init_background2.png \
 		../src/images/init/init_button_creator.png \
+		../src/images/init/init_button_creator2.png \
+		../src/images/init/init_button_play1.png \
 		../src/images/init/init_background1.png \
+		../src/images/init/init_button_play5.png \
+		../src/images/init/init_button_creator1.png \
 		../src/images/init/init_background.png \
 		../src/images/init/init_button_play_press.png \
-		../src/images/init/init_button_play_press.png \
+		../src/images/init/init_button_play4.png \
+		../src/images/init/start2button.png \
 		../src/images/init/init_button_play.png \
+		../src/images/init/init_button_play3.png \
 		../src/images/ingame/ingame_background.png \
 		../src/images/ingame/character/rich_postech.png \
 		../src/images/ingame/character/liar_kaist.png \
@@ -578,15 +586,16 @@ qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/choice/choice_character_clicked5.png \
 		../src/images/choice/choice_character0.png \
 		../src/images/choice/choice_button_go.png \
-		../src/images/choice/choice_button_go.png \
 		../src/images/choice/choice_character1.png \
 		../src/images/choice/choice_character2.png \
 		../src/images/choice/choice_background1.png \
+		../src/images/choice/choice_background2.png \
 		../src/images/choice/choice_character3.png \
+		../src/images/choice/choice_background3.png \
 		../src/images/choice/choice_character4.png \
+		../src/images/choice/choice_button_go_press.png \
+		../src/images/choice/choice_background4.png \
 		../src/images/choice/choice_character5.png \
-		../src/images/choice/choice_button_go_press.png \
-		../src/images/choice/choice_button_go_press.png \
 		../src/images/choice/choice_background.png \
 		../src/images/choice/choice_map_clicked0.png \
 		../src/images/choice/choice_map_clicked1.png \
@@ -594,6 +603,7 @@ qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/choice/choice_map0.png \
 		../src/images/choice/choice_map1.png \
 		../src/images/choice/choice_map2.png \
+		../src/images/choice/choice_button_go1.png \
 		../src/images/choice/choice_character_clicked0.png \
 		../src/images/choice/choice_character_clicked1.png \
 		../src/images/choice/choice_character_clicked2.png \

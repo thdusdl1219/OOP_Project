@@ -45,7 +45,6 @@ int Unit::getPosition()
 Item::Item(Qneed* need, int x, int y, ItemType::Type type): Unit(need, x, y)
 {
   for(int i=0; i<4; i++)  stat[i]=0;
-  setPos(cell_xy[getPosition()]);
   switch(type)
     {
     case ItemType::BOMB_NUM:
@@ -62,6 +61,7 @@ Item::Item(Qneed* need, int x, int y, ItemType::Type type): Unit(need, x, y)
       break;
     }
 
+//  setPos(cell_xy[getPosition()]);
 }
 
 void Item::setItemStat(int s, int quantity){
@@ -81,7 +81,6 @@ bool Item::bombObject(){
 Soju::Soju(Qneed* need, int x, int y, int p): Unit(need, x, y)
 {
   loadImage(":images/ingame/map/map_soju.png");
-  setPos(cell_xy[getPosition()]);
   time=2;
   power=p;
   QTimer::singleShot(time*1000, this, SLOT(bombObject()));
@@ -138,7 +137,6 @@ Block::Block(Qneed* need, int x, int y, bool bre, bool it): Unit(need, x, y)
         loadImage(":images/ingame/map/map_breakable.png");
     }
   setPosition(x,y);
-  setPos(cell_xy[getPosition()]);
   breakable=bre;
   item = it;
 }
