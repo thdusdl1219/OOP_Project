@@ -162,6 +162,7 @@ void InGameScene::keyReleaseEvent(QKeyEvent *e)
 	//	qDebug() << "RRR!" << event->key();
 }
 
+
 void InGameScene::timerEvent(QTimerEvent *)
  {
      int cur_position1 = player1->getPosition();
