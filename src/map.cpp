@@ -172,9 +172,11 @@ void Map::mapInit1()
 */
   player1 = ChoiceScene::get_ChoiceScene()->player1;
   player1 -> setParent(this);
+  player1 -> setNeed(this);
   dynamic_cast<Character*>(player1)->setPosition(0);
   player2 = ChoiceScene::get_ChoiceScene()->player2;
   player2 -> setParent(this);
+  player2	-> setNeed(this);
   dynamic_cast<Character*>(player2)->setPosition(9*(13*3-2)*3+3*12);
 
 }

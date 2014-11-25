@@ -2,6 +2,7 @@
 #define SCENE_H
 
 #include <QGraphicsScene>
+#include <QWidget>
 #include "../qneed.h"
 class MainWindow;
 

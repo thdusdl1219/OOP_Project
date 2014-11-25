@@ -6,6 +6,8 @@
 #include "scene.h"
 #include "../qneed.h"
 #include "../character.h"
+#include <QWidget>
+
 class Map;
 
 

@@ -12,6 +12,7 @@ using namespace std;
 #define MAXNUM_BOMB 8
 #define MAXPOW_BOMB 8
 #define MAX_SPEED 8
+class Map;
 class Character : public Unit
 {
 private:
@@ -29,6 +30,7 @@ public:
 	void setPowBomb(int);
 	void setSpeed(int);
 	void setPosition(int);
+	void setNeed(Map* map);
 	int getPosition();
 	enum CharacterType::Type getType();
 	enum Team::Type getTeam() const;

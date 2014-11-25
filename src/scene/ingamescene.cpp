@@ -3,7 +3,7 @@
 #include "../map.h"
 #include <QTimer>
 #include <Qsize>
-
+#include <QObject>
 InGameScene::InGameScene(QObject *parent) :
 	Scene(parent)
 {
@@ -13,7 +13,7 @@ InGameScene::InGameScene(QObject *parent) :
 	keyUp = keyDown = keyLeft = keyRight = false;
 	keyW = keyA = keyS = keyD = false;
 	setupIngame();
-	setFocusPolicy(Qt::StrongFocus);
+//	setFocusPolicy(Qt::StrongFocus);
 	QObject::startTimer(1000/20);
 }
 
@@ -22,7 +22,7 @@ InGameScene::~InGameScene()
 
 }
 
-void InGameScene::keyPressEvent(QKeyEvent *event)
+void InGameScene::keyPressEvent(QKeyEvent *e)
 {
 	if(e->isAutoRepeat() == false)
 		{
@@ -58,7 +58,7 @@ void InGameScene::keyPressEvent(QKeyEvent *event)
 				{
 					keyS=true;
 				}
-			QWidget::keyPressEvent(e);
+			QGraphicsScene::keyPressEvent(e);
 		}
 	/*
 		int cur_position = player1->getPosition();
@@ -104,7 +104,7 @@ void InGameScene::keyPressEvent(QKeyEvent *event)
 }
 
 
-void InGameScene::keyReleaseEvent(QKeyEvent *event)
+void InGameScene::keyReleaseEvent(QKeyEvent * e)
 {
 	if(e->isAutoRepeat()==false)
 		{
@@ -140,7 +140,7 @@ void InGameScene::keyReleaseEvent(QKeyEvent *event)
 				{
 					keyS=false;
 				}
-			QWidget::keyReleaseEvent(e);
+			QGraphicsScene::keyReleaseEvent(e);
 		}
 	//	qDebug() << "RRR!" << event->key();
 }
