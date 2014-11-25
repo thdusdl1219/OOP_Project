@@ -15,6 +15,8 @@ public:
 	virtual ~Unit();
 	void setPosition(int, int);
 	int cell_x, cell_y;
+	bool Null;
+	Qneed* need;
 private:
 	//
 	//	image size = 70 * 70 pixel
@@ -22,7 +24,8 @@ private:
 	Qneed* image;
 	int position;
 public slots:
-	virtual bool bombObject() {return true;}	// action for bombing Unit
+	virtual bool bombObject();	// action for bombing Unit
+	void bombrecover();
 };
 
 class Item: public Unit
@@ -62,18 +65,17 @@ class Block: public Unit
 {
 	Q_OBJECT
 public:
-		Block(Qneed*, int, int, bool , Item*);
+		Block(Qneed*, int, int, bool , bool);
 	// get private member fct
 	//
 	//
-	Item* getItem();
+	bool getItem();
 	bool isBreakable();
 	//////////////////////////
 	void placeItem(Item*);		// item setting
 private:
 	bool breakable;
-	bool hasItem;
-	Item* item;
+	bool item;
 public slots:
 	virtual bool bombObject();	// action for bombing Unit
 };

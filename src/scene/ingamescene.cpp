@@ -21,6 +21,8 @@ InGameScene::~InGameScene()
 void InGameScene::keyPressEvent(QKeyEvent *event)
 {
     int cur_position = player1->getPosition();
+    int x = player1->cell_x;
+    int y = player1->cell_y;
     if(event->key() == 'W' )
     {
         qDebug() << "w pressed";
@@ -55,8 +57,7 @@ void InGameScene::keyPressEvent(QKeyEvent *event)
     }
     if(event->key() == 16777248)
       {
-//        delete map->cell[2];
-        map->cell[0][0] = new Soju(map, 0, 0, 27);
+          new Soju(map, x, y, 2);
       }
 }
 

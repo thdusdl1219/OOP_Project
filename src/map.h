@@ -17,6 +17,8 @@ public:
   static Map* get_map();
 public slots:
 private:
+  Character* player1;
+  Character* player2;
   void map_xyInit();
   void mapInit1();
   void mapInit2();

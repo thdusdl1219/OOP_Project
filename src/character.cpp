@@ -56,6 +56,7 @@ void Character::setCharPos(int pos)
 
 void Character::setPosition(int pos)
 {
+	setupCharacter();
 	setCharPos(pos);
 	setPos(cell_xy[getPosition()]);
 }
