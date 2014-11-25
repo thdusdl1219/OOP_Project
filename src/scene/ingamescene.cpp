@@ -5,12 +5,16 @@
 #include <Qsize>
 
 InGameScene::InGameScene(QObject *parent) :
-  Scene(parent)
+	Scene(parent)
 {
 
-    player1 = ChoiceScene :: get_ChoiceScene()->player1;
-    player2 = ChoiceScene :: get_ChoiceScene()->player2;
-    setupIngame();
+	player1 = ChoiceScene :: get_ChoiceScene()->player1;
+	player2 = ChoiceScene :: get_ChoiceScene()->player2;
+	keyUp = keyDown = keyLeft = keyRight = false;
+	keyW = keyA = keyS = keyD = false;
+	setupIngame();
+	setFocusPolicy(Qt::StrongFocus);
+	QObject::startTimer(1000/20);
 }
 
 InGameScene::~InGameScene()
@@ -20,54 +24,182 @@ InGameScene::~InGameScene()
 
 void InGameScene::keyPressEvent(QKeyEvent *event)
 {
-    int cur_position = player1->getPosition();
-    int x = player1->cell_x;
-    int y = player1->cell_y;
-    if(event->key() == 'W' )
-    {
-        qDebug() << "w pressed";
-        if(cur_position >= 13*3-2)
-        {
-            player1->setPosition(cur_position-13*3+2);
-        }
-    }
-    if(event->key() == 'A')
-    {
-        qDebug() << "a pressed";
-        if(cur_position % (13*3-2) != 0)
-        {
-            player1->setPosition(cur_position-1);
-        }
-    }
-    if(event->key() == 'S')
-    {
-        qDebug() << "s pressed";
-        if(cur_position < (13*3-2)*9*3)
-        {
-            player1->setPosition(cur_position+13*3-2);
-        }
-    }
-    if(event->key() == 'D')
-    {
-        qDebug() << "d pressed";
-        if(cur_position % (13*3 - 2) != (13*3-3))
-        {
-            player1->setPosition(cur_position+1);
-        }
-    }
-    if(event->key() == 16777248)
-      {
-          new Soju(map, x, y, 2);
-      }
+	if(e->isAutoRepeat() == false)
+		{
+			if(e->key()==Qt::Key_Left)
+				{
+					keyLeft=true;
+				}
+			else if(e->key()==Qt::Key_Right)
+				{
+					keyRight=true;
+				}
+			else if(e->key()==Qt::Key_Up)
+				{
+					keyUp=true;
+				}
+			else if(e->key()==Qt::Key_Down)
+				{
+					keyDown=true;
+				}
+			if(e->key()==Qt::Key_A)
+				{
+					keyA=true;
+				}
+			else if(e->key()==Qt::Key_D)
+				{
+					keyD=true;
+				}
+			else if(e->key()==Qt::Key_W)
+				{
+					keyW=true;
+				}
+			else if(e->key()==Qt::Key_S)
+				{
+					keyS=true;
+				}
+			QWidget::keyPressEvent(e);
+		}
+	/*
+		int cur_position = player1->getPosition();
+		int x = player1->cell_x;
+		int y = player1->cell_y;
+		if(event->key() == 'W' )
+		{
+	qDebug() << "w pressed";
+	if(cur_position >= 13*3-2)
+	{
+			player1->setPosition(cur_position-13*3+2);
+	}
+		}
+		if(event->key() == 'A')
+		{
+	qDebug() << "a pressed";
+	if(cur_position % (13*3-2) != 0)
+	{
+			player1->setPosition(cur_position-1);
+	}
+		}
+		if(event->key() == 'S')
+		{
+	qDebug() << "s pressed";
+	if(cur_position < (13*3-2)*9*3)
+	{
+			player1->setPosition(cur_position+13*3-2);
+	}
+		}
+		if(event->key() == 'D')
+		{
+	qDebug() << "d pressed";
+	if(cur_position % (13*3 - 2) != (13*3-3))
+	{
+			player1->setPosition(cur_position+1);
+	}
+		}
+		if(event->key() == 16777248)
+			{
+		new Soju(map, x, y, 2);
+			}
+			*/
 }
 
 
 void InGameScene::keyReleaseEvent(QKeyEvent *event)
 {
-	qDebug() << "RRR!" << event->key();
+	if(e->isAutoRepeat()==false)
+		{
+			if(e->key()==Qt::Key_Left)
+				{
+					keyLeft=false;
+				}
+			else if(e->key()==Qt::Key_Right)
+				{
+					keyRight=false;
+				}
+			else if(e->key()==Qt::Key_Up)
+				{
+					keyUp=false;
+				}
+			else if(e->key()==Qt::Key_Down)
+				{
+					keyDown=false;
+				}
+			if(e->key()==Qt::Key_A)
+				{
+					keyA=false;
+				}
+			else if(e->key()==Qt::Key_D)
+				{
+					keyD=false;
+				}
+			else if(e->key()==Qt::Key_W)
+				{
+					keyW=false;
+				}
+			else if(e->key()==Qt::Key_S)
+				{
+					keyS=false;
+				}
+			QWidget::keyReleaseEvent(e);
+		}
+	//	qDebug() << "RRR!" << event->key();
 }
 
+void InGameScene::timerEvent(QTimerEvent *)
+ {
+     int cur_position1 = player1->getPosition();
+     int cur_position2 = player2->getPosition();
 
+    if(keyUp && cur_position2 >= 13*3-2)
+    {
+        qDebug() << "Up";
+        player2->setPosition(cur_position2-13*3+2);
+        player2->setPos(cell_xy[cur_position2-13*3+2]);
+    }
+    if(keyDown && cur_position2 < (13*3-2)*9*3)
+    {
+        qDebug() << "Down";
+        player2->setPosition(cur_position2+13*3-2);
+        player2->setPos(cell_xy[cur_position2+13*3-2]);
+    }
+    if(keyLeft && cur_position2 % (13*3-2) != 0)
+    {
+        qDebug() << "Left";
+        player2->setPosition(cur_position2-1);
+        player2->setPos(cell_xy[cur_position2-1]);
+    }
+    if(keyRight && cur_position2 % (13*3 - 2) != (13*3-3))
+    {
+        qDebug() << "Right";
+        player2->setPosition(cur_position2+1);
+        player2->setPos(cell_xy[cur_position2+1]);
+    }
+
+    if(keyW && cur_position1 >= 13*3-2)
+    {
+        qDebug() << "W";
+        player1->setPosition(cur_position1-13*3+2);
+        player1->setPos(cell_xy[cur_position1-13*3+2]);
+    }
+    if(keyS && cur_position1 < (13*3-2)*9*3)
+    {
+        qDebug() << "S";
+        player1->setPosition(cur_position1+13*3-2);
+        player1->setPos(cell_xy[cur_position1+13*3-2]);
+    }
+    if(keyA && cur_position1 % (13*3-2) != 0)
+    {
+        qDebug() << "A";
+        player1->setPosition(cur_position1-1);
+        player1->setPos(cell_xy[cur_position1-1]);
+    }
+    if(keyD && cur_position1 % (13*3 - 2) != (13*3-3))
+    {
+        qDebug() << "D";
+        player1->setPosition(cur_position1+1);
+        player1->setPos(cell_xy[cur_position1+1]);
+    }
+}
 
 
 void InGameScene::setupIngame()

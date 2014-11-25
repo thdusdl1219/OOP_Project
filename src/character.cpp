@@ -1,5 +1,5 @@
 #include "character.h"
-
+#include "map.h"
 Character::Character(Qneed* parent, enum CharacterType::Type _character_type, int _numbomb, int _powbomb, int _speed, enum Team::Type _team)
 	: Unit(parent, 0, 0)
 {
@@ -45,7 +45,6 @@ void Character::setupCharacter()
 				break;
 			}
 		}
-	this->setParent(need);
 }
 
 void Character::setCharPos(int pos)
@@ -57,9 +56,15 @@ void Character::setCharPos(int pos)
 
 void Character::setPosition(int pos)
 {
-	setupCharacter();
+//	setupCharacter();
 	setCharPos(pos);
+	this->setParent(need);
 	setPos(cell_xy[getPosition()]);
+}
+
+void Character::setNeed(Map* map)
+{
+	need = map;
 }
 
 int Character::getPosition()
