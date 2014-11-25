@@ -9,13 +9,11 @@
         <file>images/choice/choice_button_go.png</file>
         <file>images/choice/choice_button_go1.png</file>
         <file>images/choice/choice_character_clicked0.png</file>
-        <file>images/choice/choice_character_clicked1.png</file>
         <file>images/choice/choice_character_clicked2.png</file>
         <file>images/choice/choice_character_clicked3.png</file>
         <file>images/choice/choice_character_clicked4.png</file>
         <file>images/choice/choice_character_clicked5.png</file>
         <file>images/choice/choice_character0.png</file>
-        <file>images/choice/choice_character1.png</file>
         <file>images/choice/choice_character2.png</file>
         <file>images/choice/choice_character3.png</file>
         <file>images/choice/choice_character4.png</file>
@@ -42,6 +40,7 @@
         <file>images/ingame/map/map_life.png</file>
         <file>images/ingame/map/map_soju.png</file>
         <file>images/ingame/map/map_speed.png</file>
+<<<<<<< HEAD
         <file>images/ingame/map/map_unit.png</file>
         <file>images/init/init_background.png</file>
         <file>images/init/init_background1.png</file>
@@ -60,5 +59,10 @@
         <file>images/init/start2button.png</file>
         <file>images/logo/logo.png</file>
         <file>images/logo/logo_background.png</file>
+=======
+        <file>images/ingame/map/map_bomb.png</file>
+        <file>images/choice/choice_character1.png</file>
+        <file>images/choice/choice_character_clicked1.png</file>
+>>>>>>> postech character 2
     </qresource>
 </RCC>

@@ -5,6 +5,7 @@
 #include <QPixmap>
 #include "qneed.h"
 #include "Types.h"
+#include "ctime"
 
 class Unit: public Qneed
 {
