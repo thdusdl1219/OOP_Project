@@ -3,13 +3,20 @@
 Character::Character(Qneed* parent, enum CharacterType::Type _character_type, int _numbomb, int _powbomb, int _speed, enum Team::Type _team)
 	: Unit(parent, 0, 0)
 {
+    Null = false;
 	character_type = _character_type;
 	numbomb = _numbomb;
 	powbomb = _powbomb;
 	speed = _speed;
 	team = _team;
 	position = 0;
-	setupCharacter();
+    setupCharacter();
+    setZValue(10);
+}
+
+bool Character::bombObject()
+{
+
 }
 
 void Character::setupCharacter()
@@ -58,8 +65,7 @@ void Character::setPosition(int pos)
 {
 //	setupCharacter();
 	setCharPos(pos);
-	this->setParent(need);
-	setPos(cell_xy[getPosition()]);
+    setPos(cell_xy[getPosition()]);
 }
 
 void Character::setNeed(Map* map)

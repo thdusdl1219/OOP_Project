@@ -9,7 +9,7 @@ Unit::Unit(Qneed* need, int x, int y) : Qneed(need)
   cell_y = y;
   position = x *(13*3-2)*3 + 3 * y;
   setPos(cell_xy[position]);
-  Null = false;
+  Null = true;
 }
 
 Unit::~Unit()
@@ -44,6 +44,7 @@ int Unit::getPosition()
 
 Item::Item(Qneed* need, int x, int y, ItemType::Type type): Unit(need, x, y)
 {
+  Null = false;
   for(int i=0; i<4; i++)  stat[i]=0;
   switch(type)
     {
@@ -80,6 +81,8 @@ bool Item::bombObject(){
 
 Soju::Soju(Qneed* need, int x, int y, int p): Unit(need, x, y)
 {
+  Map::get_map()->cell[x][y]->Null = false;
+  Null = false;
   loadImage(":images/ingame/map/map_soju.png");
   time=2;
   power=p;
@@ -96,6 +99,7 @@ int Soju::getPower(){
 
 bool Soju::bombObject(){
   bomb();
+  Map::get_map()->cell[cell_x][cell_y]->Null = true;
   delete this;
   return true;
 }
@@ -104,7 +108,6 @@ void Soju::bomb()
 {
   Map* map = Map::get_map();
   int pos = getPosition();
-
 	for(int i = cell_y + 1; i <= cell_y + power; i++ )
 		{
 			if(i < 13)
@@ -130,6 +133,7 @@ void Soju::bomb()
 
 Block::Block(Qneed* need, int x, int y, bool bre, bool it): Unit(need, x, y)
 {
+    Null = false;
     if(bre){
         loadImage(":images/ingame/map/map_block.png");
     }

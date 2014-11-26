@@ -5,7 +5,7 @@
 #include <Qsize>
 #include <QObject>
 #include <QWidget>
-
+#include "../unit.h"
 InGameScene::InGameScene(QObject *parent) :
 	Scene(parent)
 {
@@ -173,10 +173,12 @@ void InGameScene::timerEvent(QTimerEvent *)
      int y2 = player2->cell_y;
     if(bomb1)
     {
+      if((map->cell[x1][y1])->Null)
         new Soju(map, x1, y1, 2);
     }
     if(bomb2)
     {
+      if((map->cell[x2][y2])->Null)
         new Soju(map, x2, y2, 2);
     }
     if(keyUp && cur_position2 >= 13*3-2)

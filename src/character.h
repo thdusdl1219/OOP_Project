@@ -37,6 +37,8 @@ public:
 	int getNumBomb() const;
 	int getPowBomb() const;
 	int getSpeed() const;
-	Qneed* image;
+    Qneed* image;
+public slots:
+    virtual bool bombObject();
 };
 #endif

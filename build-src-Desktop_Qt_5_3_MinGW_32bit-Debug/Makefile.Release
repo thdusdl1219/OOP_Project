@@ -144,25 +144,54 @@ compiler_rcc_make_all: release/qrc_resource.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_resource.cpp
 release/qrc_resource.cpp: ../src/resource.qrc \
+		../src/images/init/init_button_creator3.png \
 		../src/images/init/init_button_play2.png \
+		../src/images/init/init_background2.png \
 		../src/images/init/init_button_creator.png \
+		../src/images/init/init_button_creator2.png \
+		../src/images/init/init_button_play1.png \
 		../src/images/init/init_background1.png \
+		../src/images/init/init_button_play5.png \
+		../src/images/init/init_button_creator1.png \
 		../src/images/init/init_background.png \
+		../src/images/init/init_button_play_press.png \
+		../src/images/init/init_button_play4.png \
+		../src/images/init/start2button.png \
 		../src/images/init/init_button_play.png \
+		../src/images/init/init_button_play3.png \
 		../src/images/ingame/ingame_background.png \
+		../src/images/ingame/character/rich_postech.png \
+		../src/images/ingame/character/liar_kaist.png \
+		../src/images/ingame/character/alchoholic_postech.png \
+		../src/images/ingame/character/liar_postech.png \
+		../src/images/ingame/character/rich_kaist.png \
+		../src/images/ingame/character/alchoholic_kaist.png \
+		../src/images/ingame/map/map_speed.png \
+		../src/images/ingame/map/map_bn.png \
+		../src/images/ingame/map/map_life.png \
+		../src/images/ingame/map/map_bomb.png \
+		../src/images/ingame/map/map_bomb.png \
 		../src/images/ingame/map/map_soju.png \
 		../src/images/ingame/map/map_block.png \
+		../src/images/ingame/map/map_breakable.png \
+		../src/images/ingame/map/map_bp.png \
+		../src/images/ingame/map/map_unit.png \
 		../src/images/ingame/map/map_background.png \
 		../src/images/logo/logo_background.png \
 		../src/images/logo/logo.png \
 		../src/images/choice/choice_character_clicked4.png \
 		../src/images/choice/choice_character_clicked5.png \
 		../src/images/choice/choice_character0.png \
+		../src/images/choice/choice_button_go.png \
 		../src/images/choice/choice_character1.png \
 		../src/images/choice/choice_character2.png \
 		../src/images/choice/choice_background1.png \
 		../src/images/choice/choice_character3.png \
+		../src/images/choice/choice_background2.png \
 		../src/images/choice/choice_character4.png \
+		../src/images/choice/choice_background3.png \
+		../src/images/choice/choice_button_go_press.png \
+		../src/images/choice/choice_background4.png \
 		../src/images/choice/choice_character5.png \
 		../src/images/choice/choice_background.png \
 		../src/images/choice/choice_map_clicked0.png \
@@ -171,6 +200,7 @@ release/qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/choice/choice_map0.png \
 		../src/images/choice/choice_map1.png \
 		../src/images/choice/choice_map2.png \
+		../src/images/choice/choice_button_go1.png \
 		../src/images/choice/choice_character_clicked0.png \
 		../src/images/choice/choice_character_clicked1.png \
 		../src/images/choice/choice_character_clicked2.png \
@@ -287,13 +317,14 @@ release/moc_mainwindow.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow 
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
 		../src/scene/scene.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		../src/qneed.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
 		../src/mainwindow.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/SEC/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\mainwindow.h -o release\moc_mainwindow.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Soyeon/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\mainwindow.h -o release\moc_mainwindow.cpp
 
 release/moc_scene.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsScene \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsscene.h \
@@ -376,10 +407,15 @@ release/moc_scene.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsScene \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qhash.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		../src/qneed.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
@@ -387,9 +423,19 @@ release/moc_scene.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsScene \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
+		../src/qneed.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
 		../src/scene/scene.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/SEC/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\scene.h -o release\moc_scene.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Soyeon/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\scene.h -o release\moc_scene.cpp
 
 release/moc_initscene.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qobject.h \
@@ -474,9 +520,15 @@ release/moc_initscene.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qhash.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		../src/qneed.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
@@ -484,9 +536,18 @@ release/moc_initscene.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
+		../src/qneed.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
 		../src/scene/initscene.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/SEC/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\initscene.h -o release\moc_initscene.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Soyeon/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\initscene.h -o release\moc_initscene.cpp
 
 release/moc_qneed.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qobject.h \
@@ -581,7 +642,7 @@ release/moc_qneed.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
 		../src/qneed.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/SEC/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\qneed.h -o release\moc_qneed.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Soyeon/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\qneed.h -o release\moc_qneed.cpp
 
 release/moc_logoscene.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qobject.h \
@@ -666,9 +727,15 @@ release/moc_logoscene.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qhash.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		../src/qneed.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
@@ -676,9 +743,18 @@ release/moc_logoscene.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
+		../src/qneed.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
 		../src/scene/logoscene.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/SEC/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\logoscene.h -o release\moc_logoscene.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Soyeon/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\logoscene.h -o release\moc_logoscene.cpp
 
 release/moc_choicescene.cpp: ../src/scene/scene.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsScene \
@@ -762,10 +838,15 @@ release/moc_choicescene.cpp: ../src/scene/scene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qhash.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		../src/qneed.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
@@ -773,9 +854,19 @@ release/moc_choicescene.cpp: ../src/scene/scene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
+		../src/qneed.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
 		../src/scene/choicescene.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/SEC/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\choicescene.h -o release\moc_choicescene.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Soyeon/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\choicescene.h -o release\moc_choicescene.cpp
 
 release/moc_ingamescene.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QDebug \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
@@ -858,31 +949,43 @@ release/moc_ingamescene.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QDebug \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
-		../src/scene/scene.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsScene \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsscene.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qbrush.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpaintdevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qcolor.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qrgb.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qbrush.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qmatrix.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpolygon.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qline.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtransform.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpainterpath.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qimage.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qpaintdevice.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpixmap.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qsharedpointer.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qsharedpointer_impl.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
+		../src/scene/scene.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsScene \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
 		../src/qneed.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
+		../src/character.h \
+		../src/Types.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
+		../src/unit.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
 		../src/scene/ingamescene.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/SEC/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\ingamescene.h -o release\moc_ingamescene.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Soyeon/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\ingamescene.h -o release\moc_ingamescene.cpp
 
 release/moc_endgamescene.cpp: ../src/scene/scene.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsScene \
@@ -966,10 +1069,15 @@ release/moc_endgamescene.cpp: ../src/scene/scene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qhash.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		../src/qneed.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
@@ -977,9 +1085,19 @@ release/moc_endgamescene.cpp: ../src/scene/scene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
+		../src/qneed.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
 		../src/scene/endgamescene.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/SEC/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\endgamescene.h -o release\moc_endgamescene.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Soyeon/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\scene\endgamescene.h -o release\moc_endgamescene.cpp
 
 release/moc_unit.cpp: C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qimage.h \
@@ -1078,7 +1196,7 @@ release/moc_unit.cpp: C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
 		../src/Types.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
 		../src/unit.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/SEC/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\unit.h -o release\moc_unit.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Soyeon/Documents/Projectzzang/src -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore -I. ..\src\unit.h -o release\moc_unit.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1208,6 +1326,7 @@ release/main.o: ../src/main.cpp ../src/mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
 		../src/scene/scene.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		../src/qneed.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
@@ -1331,6 +1450,7 @@ release/mainwindow.o: ../src/mainwindow.cpp ../src/mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
 		../src/scene/scene.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		../src/qneed.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
@@ -1372,7 +1492,6 @@ release/mainwindow.o: ../src/mainwindow.cpp ../src/mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyle.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		../src/Types.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
 		../src/scene/initscene.h \
@@ -1380,7 +1499,10 @@ release/mainwindow.o: ../src/mainwindow.cpp ../src/mainwindow.h \
 		../src/scene/logoscene.h \
 		../src/scene/ingamescene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QDebug \
-		C:/Qt/5.3/mingw482_32/include/QtGui/QKeyEvent
+		C:/Qt/5.3/mingw482_32/include/QtGui/QKeyEvent \
+		../src/character.h \
+		../src/unit.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/QImage
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\src\mainwindow.cpp
 
 release/character.o: ../src/character.cpp ../src/character.h \
@@ -1480,7 +1602,25 @@ release/character.o: ../src/character.cpp ../src/character.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
 		../src/unit.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/QImage
+		C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
+		../src/map.h \
+		../src/scene/choicescene.h \
+		../src/scene/scene.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\character.o ..\src\character.cpp
 
 release/scene.o: ../src/scene/scene.cpp ../src/scene/scene.h \
@@ -1565,21 +1705,7 @@ release/scene.o: ../src/scene/scene.cpp ../src/scene/scene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qhash.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		../src/qneed.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qtextstream.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
-		../src/mainwindow.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmainwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
@@ -1588,12 +1714,27 @@ release/scene.o: ../src/scene/scene.cpp ../src/scene/scene.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qtextstream.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
+		../src/qneed.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
+		../src/mainwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qicon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\scene.o ..\src\scene\scene.cpp
@@ -1682,23 +1823,7 @@ release/initscene.o: ../src/scene/initscene.cpp ../src/scene/initscene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qhash.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		../src/qneed.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qtextstream.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QDebug \
-		../src/Types.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
-		../src/mainwindow.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmainwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
@@ -1707,12 +1832,29 @@ release/initscene.o: ../src/scene/initscene.cpp ../src/scene/initscene.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qtextstream.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
+		../src/qneed.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QDebug \
+		../src/Types.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
+		../src/mainwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qicon.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QKeyEvent
@@ -1898,9 +2040,15 @@ release/logoscene.o: ../src/scene/logoscene.cpp ../src/scene/logoscene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qhash.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		../src/qneed.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
@@ -1908,6 +2056,15 @@ release/logoscene.o: ../src/scene/logoscene.cpp ../src/scene/logoscene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
+		../src/qneed.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\logoscene.o ..\src\scene\logoscene.cpp
@@ -1995,23 +2152,7 @@ release/choicescene.o: ../src/scene/choicescene.cpp ../src/scene/choicescene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qhash.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		../src/qneed.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qtextstream.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
-		../src/Types.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
-		../src/mainwindow.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmainwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
@@ -2020,12 +2161,29 @@ release/choicescene.o: ../src/scene/choicescene.cpp ../src/scene/choicescene.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qtextstream.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
+		../src/qneed.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
+		../src/Types.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
+		../src/mainwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qicon.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QDebug \
@@ -2119,39 +2277,47 @@ release/ingamescene.o: ../src/scene/ingamescene.cpp ../src/scene/ingamescene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
-		../src/scene/scene.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsScene \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsscene.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qbrush.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpaintdevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qcolor.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qrgb.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qbrush.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qmatrix.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpolygon.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qline.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtransform.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpainterpath.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qimage.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qpaintdevice.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpixmap.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qsharedpointer.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qsharedpointer_impl.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
+		../src/scene/scene.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsScene \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
 		../src/qneed.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
-		../src/scene/choicescene.h \
-		../src/map.h \
+		../src/character.h \
+		../src/Types.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
 		../src/unit.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
-		../src/Types.h \
-		../src/character.h \
+		../src/scene/choicescene.h \
+		../src/map.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QTimer \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qtimer.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qbasictimer.h
+		C:/Qt/5.3/mingw482_32/include/QtCore/qbasictimer.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/Qsize
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ingamescene.o ..\src\scene\ingamescene.cpp
 
 release/endgamescene.o: ../src/scene/endgamescene.cpp ../src/scene/endgamescene.h \
@@ -2237,10 +2403,15 @@ release/endgamescene.o: ../src/scene/endgamescene.cpp ../src/scene/endgamescene.
 		C:/Qt/5.3/mingw482_32/include/QtCore/qhash.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		../src/qneed.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qvariant.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmap.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qdebug.h \
@@ -2248,6 +2419,16 @@ release/endgamescene.o: ../src/scene/endgamescene.cpp ../src/scene/endgamescene.
 		C:/Qt/5.3/mingw482_32/include/QtCore/qlocale.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qset.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
+		../src/qneed.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\endgamescene.o ..\src\scene\endgamescene.cpp
 
@@ -2350,7 +2531,26 @@ release/unit.o: ../src/unit.cpp ../src/unit.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPoint \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QTimer \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qtimer.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qbasictimer.h
+		C:/Qt/5.3/mingw482_32/include/QtCore/qbasictimer.h \
+		../src/map.h \
+		../src/scene/choicescene.h \
+		../src/scene/scene.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
+		../src/character.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\unit.o ..\src\unit.cpp
 
 release/map.o: ../src/map.cpp ../src/map.h \
@@ -2453,6 +2653,21 @@ release/map.o: ../src/map.cpp ../src/map.h \
 		../src/Types.h \
 		../src/scene/choicescene.h \
 		../src/scene/scene.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpalette.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qcursor.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qkeysequence.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qevent.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurl.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
 		../src/character.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\map.o ..\src\map.cpp
 

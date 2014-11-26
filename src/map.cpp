@@ -32,6 +32,7 @@ Map* Map::get_map()
 
 void Map::mapInit1()
 {
+    cell[0][0]=new Unit (this, 0, 0);
     cell[0][1]=new 	Unit	(this, 	0, 1	);
     cell[0][2]=new 	Block	(this, 	0, 2	, 	true,	true);
     cell[0][3]=new 	Block	(this, 	0, 3	, 	true,	false);
