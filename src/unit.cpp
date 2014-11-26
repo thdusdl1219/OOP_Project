@@ -28,7 +28,7 @@ void Unit::setPosition(int x, int y)
 bool Unit::bombObject()
 {
   loadImage(":images/ingame/map/map_bomb.png");
-  QTimer::singleShot(10,this, SLOT(bombrecover()));
+  QTimer::singleShot(50,this, SLOT(bombrecover()));
   return true;
 }
 
@@ -74,18 +74,20 @@ bool Item::bombObject(){
 		{
 			Null = true;
 			loadImage(":images/ingame/map/map_bomb.png");
-			QTimer::singleShot(10,this, SLOT(bombrecover()));
+            QTimer::singleShot(50,this, SLOT(bombrecover()));
 		}
 	return true;
 }
 
-Soju::Soju(Qneed* need, int x, int y, int p): Unit(need, x, y)
+Soju::Soju(Qneed* need, int x, int y, int p, Character* _player): Unit(need, x, y)
 {
   Map::get_map()->cell[x][y]->Null = false;
   Null = false;
   loadImage(":images/ingame/map/map_soju.png");
   time=2;
   power=p;
+  player = _player;
+  player->use_soju++;
   QTimer::singleShot(time*1000, this, SLOT(bombObject()));
 }
 
@@ -100,6 +102,8 @@ int Soju::getPower(){
 bool Soju::bombObject(){
   bomb();
   Map::get_map()->cell[cell_x][cell_y]->Null = true;
+  Map::get_map()->soju[cell_x][cell_y] = NULL;
+  player->use_soju--;
   delete this;
   return true;
 }
@@ -108,25 +112,49 @@ void Soju::bomb()
 {
   Map* map = Map::get_map();
   int pos = getPosition();
+  int num = 1;
 	for(int i = cell_y + 1; i <= cell_y + power; i++ )
 		{
 			if(i < 13)
-				QTimer::singleShot(i*10,map->cell[cell_x][i], SLOT(bombObject()));
-		}
+            {
+                QTimer::singleShot(num*50,map->cell[cell_x][i], SLOT(bombObject()));
+                if(map->soju[cell_x][i] != NULL)
+                    QTimer::singleShot(0, map->soju[cell_x][i], SLOT(bombObject()));
+                num++;
+            }
+        }
+  num = 1;
 	for(int i = cell_y - 1; i >= cell_y - power; i--)
 		{
-			if(i >= 0)
-				QTimer::singleShot(i*10,map->cell[cell_x][i], SLOT(bombObject()));
-		}
+            if(i >= 0)
+            {
+                QTimer::singleShot(num*50,map->cell[cell_x][i], SLOT(bombObject()));
+                 if(map->soju[cell_x][i] != NULL)
+                    QTimer::singleShot(0, map->soju[cell_x][i], SLOT(bombObject()));
+                num++;
+            }
+        }
+    num = 1;
 	for(int i = cell_x + 1; i <= cell_x + power; i++)
 		{
-			if(i < 10)
-				QTimer::singleShot(i*10,map->cell[i][cell_y], SLOT(bombObject()));
-		}
+            if(i < 10)
+            {
+                QTimer::singleShot(num*50,map->cell[i][cell_y], SLOT(bombObject()));
+                if(map->soju[i][cell_y] != NULL)
+                    QTimer::singleShot(0, map->soju[i][cell_y], SLOT(bombObject()));
+                num++;
+            }
+        }
+    num = 1;
 	for(int i = cell_x - 1; i >= cell_x - power; i--)
 		{
-			if(i >= 0)
-				QTimer::singleShot(i*10,map->cell[i][cell_y], SLOT(bombObject()));
+            if(i >= 0)
+            {
+                QTimer::singleShot(num*50,map->cell[i][cell_y], SLOT(bombObject()));
+                if(map->soju[i][cell_y] != NULL)
+                    QTimer::singleShot(0, map->soju[i][cell_y], SLOT(bombObject()));
+                num++;
+            }
 		}
 
 }
@@ -167,7 +195,7 @@ bool Block::bombObject(){
     else
     {
        loadImage(":images/ingame/map/map_bomb.png");
-       QTimer::singleShot(10,this, SLOT(bombrecover()));
+       QTimer::singleShot(50,this, SLOT(bombrecover()));
        return false;
     }
    }

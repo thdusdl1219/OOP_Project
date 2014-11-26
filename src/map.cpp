@@ -479,6 +479,7 @@ void Map::map_xyInit()
     for(int j = 0; j < 13; j++)
       {
         cell[i][j] = NULL;
+        soju[i][j] = NULL;
       }
   }
 }

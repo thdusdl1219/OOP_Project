@@ -12,6 +12,7 @@ Character::Character(Qneed* parent, enum CharacterType::Type _character_type, in
 	position = 0;
     setupCharacter();
     setZValue(10);
+    use_soju = 0;
 }
 
 bool Character::bombObject()

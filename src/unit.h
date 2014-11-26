@@ -6,7 +6,7 @@
 #include "qneed.h"
 #include "Types.h"
 #include "ctime"
-
+class Character;
 class Unit: public Qneed
 {
 	Q_OBJECT
@@ -48,12 +48,13 @@ class Soju: public Unit
 {
 	Q_OBJECT
 public:
-	Soju(Qneed*, int, int , int);	// row, col, imageSrc;
+    Soju(Qneed*, int, int , int, Character*);	// row, col, imageSrc;
 	// get private member function
 	int getTime();
 	int getPower();
 	void bomb();
 private:
+    Character* player;
 	int time;			// zero for bomb
 	int power;			// power of soju
 public slots:
