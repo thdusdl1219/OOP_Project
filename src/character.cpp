@@ -1,5 +1,6 @@
 #include "character.h"
 #include "map.h"
+#include <QDebug>
 Character::Character(Qneed* parent, enum CharacterType::Type _character_type, int _numbomb, int _powbomb, int _speed, enum Team::Type _team)
 	: Unit(parent, 0, 0)
 {
@@ -17,7 +18,7 @@ Character::Character(Qneed* parent, enum CharacterType::Type _character_type, in
 
 bool Character::bombObject()
 {
-
+    qDebug() << "AYA";
 }
 
 void Character::setupCharacter()
