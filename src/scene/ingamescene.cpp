@@ -6,6 +6,8 @@
 #include <QObject>
 #include <QWidget>
 #include "../unit.h"
+#include "../character.h"
+#include "../mainwindow.h"
 InGameScene::InGameScene(QObject *parent) :
 	Scene(parent)
 {
@@ -15,8 +17,15 @@ InGameScene::InGameScene(QObject *parent) :
 	keyW = keyA = keyS = keyD = false;
     bomb1 = bomb2 = false;
 	setupIngame();
+    scene = this;
 //    setFocusPolicy(Qt::StrongFocus);
 	QObject::startTimer(1000/20);
+}
+
+InGameScene* InGameScene::scene = NULL;
+InGameScene* InGameScene::get_InGameScene()
+{
+    return scene;
 }
 
 InGameScene::~InGameScene()
@@ -243,11 +252,67 @@ void InGameScene::setupIngame()
 
 	Map* newMap = new Map(this, get_window(), ChoiceScene::get_ChoiceScene()->map_kind);
 	newMap->setPos(44,24);
-	map = newMap;
+    map = newMap;
+
+    Heart* heart = new Heart(this, get_window(), Team::POSTECH);
+    heart->setPos(0, 0);
+    this->heart = heart;
+    Heart* heart2 = new Heart(this, get_window(), Team::KAIST);
+    heart2->setPos(980,0);
+    this->heart2 = heart2;
+    HeartNum* num1 = new HeartNum(this, get_window(), Team::POSTECH);
+    num1->setPos(0, 76);
+    QObject::connect(player1,SIGNAL(Aya()),num1,SLOT(bombLife()));
+    this->num1 = num1;
+    HeartNum* num2 = new HeartNum(this, get_window(), Team::KAIST);
+    num2->setPos(980, 76);
+    QObject::connect(player2, SIGNAL(Aya()), num2, SLOT(bombLife()));
+    this->num2 = num2;
+
 //	ChoiceScene* scene = ChoiceScene::get_ChoiceScene(); // just test. you can call ChoiceScene!
 }
 
 void InGameScene::action()
 {
+//    delete heart;
+//    delete heart2;
+//    delete num1;
+//    delete num2;
+//    delete map;
+    get_window()->changeScene(SceneType::ENDGAME);
+}
 
+
+Heart::Heart(QGraphicsScene *scene, MainWindow *mainwindow, Team::Type team) : Qneed(scene, mainwindow)
+{
+    this->team = team;
+    loadImage(":images/ingame/ingame_heart.png");
+}
+
+HeartNum::HeartNum(QGraphicsScene *scene, MainWindow *window, Team::Type team) :Qneed(scene, window)
+{
+    this->team = team;
+    loadImage(":images/ingame/ingame_3.png");
+}
+
+void HeartNum::bombLife()
+{
+    qDebug() << "bomb!";
+    Character* player;
+    if(team == Team::POSTECH)
+        player = Map::get_map()->player1;
+    else
+        player = Map::get_map()->player2;
+    switch(player->getLife())
+    {
+    case 1:
+        loadImage(":images/ingame/ingame_1.png");
+        break;
+    case 2:
+        loadImage(":images/ingame/ingame_2.png");
+        break;
+    case 3:
+        loadImage(":images/ingame/ingame_3.png");
+        break;
+    }
 }

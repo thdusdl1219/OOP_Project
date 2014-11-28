@@ -28,13 +28,15 @@ void Unit::setPosition(int x, int y)
 bool Unit::bombObject()
 {
     loadImage(":images/ingame/map/map_bomb.png");
+    setOpacity(1);
     QTimer::singleShot(50,this, SLOT(bombrecover()));
     return true;
 }
 
 void Unit::bombrecover()
 {
-    loadImage(":images/ingame/map/map_unit.png");
+    setOpacity(0);
+   // loadImage(":images/ingame/map/map_unit.png");
 }
 
 int Unit::getPosition()
@@ -73,9 +75,10 @@ bool Item::bombObject(){
     if(Null == false)
     {
         Null = true;
-        loadImage(":images/ingame/map/map_bomb.png");
-        QTimer::singleShot(50,this, SLOT(bombrecover()));
     }
+        loadImage(":images/ingame/map/map_bomb.png");
+        setOpacity(1);
+        QTimer::singleShot(50,this, SLOT(bombrecover()));
     return true;
 }
 
@@ -202,6 +205,8 @@ bool Block::isBreakable(){
 
 
 bool Block::bombObject(){
+  if(isBreakable())
+  {
   srand(time(0));
   if(Null == false)
   {
@@ -209,13 +214,24 @@ bool Block::bombObject(){
     if(item == true)
     {
       dynamic_cast<Map *>(need)->cell[cell_x][cell_y] = new Item(need, cell_x, cell_y, (ItemType::Type)(rand()%4));
+      bombrecover();
       return true;
     }
     else
     {
        loadImage(":images/ingame/map/map_bomb.png");
+       setOpacity(1);
        QTimer::singleShot(50,this, SLOT(bombrecover()));
        return false;
     }
    }
+  else
+  {
+       loadImage(":images/ingame/map/map_bomb.png");
+       setOpacity(1);
+       QTimer::singleShot(50,this, SLOT(bombrecover()));
+       return false;
+
+  }
+  }
 }

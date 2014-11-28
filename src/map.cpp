@@ -36,8 +36,9 @@ void Map::mapInit1()
     cell[0][1]=new 	Unit	(this, 	0, 1	);
     cell[0][2]=new 	Block	(this, 	0, 2	, 	true,	true);
     cell[0][3]=new 	Block	(this, 	0, 3	, 	true,	false);
-    cell[0][4]=new 	Block	(this, 	0, 4	, 	true,	false);
-    for(int i = 5; i < 13; i++)
+    cell[0][4]=new 	Block	(this, 	0, 4	, 	true,	true);
+    cell[0][5]=new Block (this, 0, 5, false, false);
+    for(int i = 6; i < 13; i++)
       cell[0][i] = new Unit(this, 0, i);
     for(int i = 1; i < 10; i++)
       {

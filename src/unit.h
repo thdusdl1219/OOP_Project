@@ -26,7 +26,9 @@ private:
 	int position;
 public slots:
 	virtual bool bombObject();	// action for bombing Unit
-	void bombrecover();
+    virtual void bombrecover();
+signals:
+    void Aya();
 };
 
 class Item: public Unit

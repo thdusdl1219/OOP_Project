@@ -1,6 +1,9 @@
 #include "character.h"
 #include "map.h"
 #include <QDebug>
+#include <QTimer>
+#include "scene/ingamescene.h"
+#include "mainwindow.h"
 Character::Character(Qneed* parent, enum CharacterType::Type _character_type, int _numbomb, int _powbomb, int _speed, enum Team::Type _team)
 	: Unit(parent, 0, 0)
 {
@@ -14,11 +17,28 @@ Character::Character(Qneed* parent, enum CharacterType::Type _character_type, in
     setupCharacter();
     setZValue(10);
     use_soju = 0;
+    life = 3;
 }
 
 bool Character::bombObject()
 {
     qDebug() << "AYA";
+    life--;
+    if(life == 0)
+    {
+        InGameScene::get_InGameScene()->action();
+    }
+    else
+    {
+        setOpacity(0);
+        QTimer::singleShot(75, this, SLOT(bombrecover()));
+        emit Aya();
+    }
+}
+
+void Character::bombrecover()
+{
+    setOpacity(1);
 }
 
 void Character::setupCharacter()
@@ -78,6 +98,18 @@ void Character::setNeed(Map* map)
 int Character::getPosition()
 {
 	return position;
+}
+
+int Character::getLife()
+{
+    return life;
+}
+
+
+void Character::setLife(int l)
+{
+    if(numbomb <= MAX_LIFE)
+        life += l;
 }
 
 void Character::setNumBomb(int cnumbomb) {

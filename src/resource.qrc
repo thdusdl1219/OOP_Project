@@ -62,5 +62,9 @@
         <file>images/choice/choice_character_clicked1.png</file>
         <file>images/init/init_button_creator_press.png</file>
         <file>images/init/init_button_play.png</file>
+        <file>images/ingame/ingame_heart.png</file>
+        <file>images/ingame/ingame_1.png</file>
+        <file>images/ingame/ingame_2.png</file>
+        <file>images/ingame/ingame_3.png</file>
     </qresource>
 </RCC>

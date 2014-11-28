@@ -12,6 +12,7 @@ using namespace std;
 #define MAXNUM_BOMB 8
 #define MAXPOW_BOMB 8
 #define MAX_SPEED 8
+#define MAX_LIFE 3
 class Map;
 class Character : public Unit
 {
@@ -21,7 +22,8 @@ private:
 	int numbomb;
 	int powbomb;
 	int speed;
-	int position;
+    int position;
+    int life;
     void setCharPos(int);
 public:
 	Character(Qneed* parent, enum CharacterType::Type, int _numbomb, int _powbomb, int _speed, enum Team::Type);
@@ -36,10 +38,17 @@ public:
 	enum Team::Type getTeam() const;
 	int getNumBomb() const;
 	int getPowBomb() const;
-	int getSpeed() const;
+    int getSpeed() const;
+    int getLife();
+    void setLife(int);
     Qneed* image;
     int use_soju;
 public slots:
     virtual bool bombObject();
+    virtual void bombrecover();
+
+//signals:
+//    void Aya(){}
+
 };
 #endif
