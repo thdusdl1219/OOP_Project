@@ -215,7 +215,7 @@ bool Block::bombObject(){
     if(item == true)
     {
       dynamic_cast<Map *>(need)->cell[cell_x][cell_y] = new Item(need, cell_x, cell_y, (ItemType::Type)(rand()%4));
-      bombrecover();
+      delete this;
       return true;
     }
     else

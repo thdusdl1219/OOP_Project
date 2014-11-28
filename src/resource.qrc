@@ -66,5 +66,6 @@
         <file>images/ingame/ingame_1.png</file>
         <file>images/ingame/ingame_2.png</file>
         <file>images/ingame/ingame_3.png</file>
+        <file>images/ingame/ingame_0.png</file>
     </qresource>
 </RCC>

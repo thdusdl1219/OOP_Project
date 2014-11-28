@@ -9,8 +9,8 @@ Scene::Scene(QObject *parent) :
 
 Scene::~Scene()
 {
-	if(background != NULL)
-		delete background;
+    if(background != NULL)
+        delete background;
 }
 
 MainWindow* Scene::get_window()

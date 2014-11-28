@@ -12,7 +12,7 @@ class Scene : public QGraphicsScene
 public:
     explicit Scene(QObject *parent = 0);
     virtual void action(){}
-    ~Scene();
+    virtual ~Scene();
     MainWindow* get_window();
     Qneed* get_background();
     void set_background(Qneed *);

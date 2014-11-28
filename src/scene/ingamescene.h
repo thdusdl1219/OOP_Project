@@ -19,7 +19,6 @@ class InGameScene : public Scene
 public:
   InGameScene(QObject *parent = 0);
   void setupIngame();
-  virtual void action();
 
   virtual void keyReleaseEvent(QKeyEvent* event);
   virtual void keyPressEvent(QKeyEvent* event);
@@ -37,6 +36,7 @@ signals:
 
 public slots:
 
+  virtual void zero();
 private:
   static InGameScene* scene;
   Character* player1;

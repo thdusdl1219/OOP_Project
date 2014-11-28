@@ -26,7 +26,9 @@ bool Character::bombObject()
     life--;
     if(life == 0)
     {
-        InGameScene::get_InGameScene()->action();
+        emit Aya();
+
+        QTimer::singleShot(1000,InGameScene::get_InGameScene(), SLOT(zero()));
     }
     else
     {

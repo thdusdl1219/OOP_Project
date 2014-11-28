@@ -145,6 +145,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_resource.cpp
 debug/qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/init/init_button_creator3.png \
+		../src/images/init/init_button_creator_press.png \
 		../src/images/init/init_button_play2.png \
 		../src/images/init/init_background2.png \
 		../src/images/init/init_button_creator.png \
@@ -157,9 +158,13 @@ debug/qrc_resource.cpp: ../src/resource.qrc \
 		../src/images/init/init_button_play_press.png \
 		../src/images/init/init_button_play4.png \
 		../src/images/init/start2button.png \
-		../src/images/init/init_button_play.png \
 		../src/images/init/init_button_play3.png \
+		../src/images/init/init_button_play.png \
+		../src/images/ingame/ingame_heart.png \
 		../src/images/ingame/ingame_background.png \
+		../src/images/ingame/ingame_1.png \
+		../src/images/ingame/ingame_3.png \
+		../src/images/ingame/ingame_2.png \
 		../src/images/ingame/character/rich_postech.png \
 		../src/images/ingame/character/liar_kaist.png \
 		../src/images/ingame/character/alchoholic_postech.png \
@@ -1502,7 +1507,8 @@ debug/mainwindow.o: ../src/mainwindow.cpp ../src/mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QKeyEvent \
 		../src/character.h \
 		../src/unit.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/QImage
+		C:/Qt/5.3/mingw482_32/include/QtGui/QImage \
+		../src/scene/endgamescene.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\src\mainwindow.cpp
 
 debug/character.o: ../src/character.cpp ../src/character.h \
@@ -1620,7 +1626,18 @@ debug/character.o: ../src/character.cpp ../src/character.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qfile.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QDebug \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QTimer \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qtimer.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qbasictimer.h \
+		../src/scene/ingamescene.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/QKeyEvent \
+		../src/mainwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmainwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qicon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\character.o ..\src\character.cpp
 
 debug/scene.o: ../src/scene/scene.cpp ../src/scene/scene.h \
@@ -2317,7 +2334,12 @@ debug/ingamescene.o: ../src/scene/ingamescene.cpp ../src/scene/ingamescene.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QTimer \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qtimer.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qbasictimer.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/Qsize
+		C:/Qt/5.3/mingw482_32/include/QtCore/Qsize \
+		../src/mainwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmainwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qicon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\ingamescene.o ..\src\scene\ingamescene.cpp
 
 debug/endgamescene.o: ../src/scene/endgamescene.cpp ../src/scene/endgamescene.h \

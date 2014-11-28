@@ -272,7 +272,7 @@ void InGameScene::setupIngame()
 //	ChoiceScene* scene = ChoiceScene::get_ChoiceScene(); // just test. you can call ChoiceScene!
 }
 
-void InGameScene::action()
+void InGameScene::zero()
 {
 //    delete heart;
 //    delete heart2;
@@ -305,6 +305,9 @@ void HeartNum::bombLife()
         player = Map::get_map()->player2;
     switch(player->getLife())
     {
+    case 0:
+        loadImage(":images/ingame/ingame_0.png");
+        break;
     case 1:
         loadImage(":images/ingame/ingame_1.png");
         break;
