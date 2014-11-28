@@ -65,7 +65,7 @@ private:
 public:
     HeartNum(QGraphicsScene*, MainWindow *, enum Team::Type);
 public slots:
-    void bombLife();
+    virtual void bombLife();
 };
 
 #endif // INGAMESCENE_H
