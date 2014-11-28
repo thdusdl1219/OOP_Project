@@ -113,6 +113,7 @@ bool Soju::bombObject(){
 
 void Soju::bomb()
 {
+<<<<<<< HEAD
     Map* map = Map::get_map();
     int pos = getPosition();
     int num = 1;
@@ -131,6 +132,20 @@ void Soju::bomb()
             if(player2->cell_x == cell_x && player2->cell_y == i)
                 QTimer::singleShot(num*50, player2, SLOT(bombObject()));
             num++;
+=======
+  Map* map = Map::get_map();
+  int pos = getPosition();
+  int num = 1;
+  for(int i = cell_y; i <= cell_y + power; i++ )
+		{
+			if(i < 13)
+            {
+                QTimer::singleShot(num*50,map->cell[cell_x][i], SLOT(bombObject()));
+                if(map->soju[cell_x][i] != NULL)
+                    QTimer::singleShot(0, map->soju[cell_x][i], SLOT(bombObject()));
+                num++;
+            }
+>>>>>>> just commit
         }
     }
     num = 1;
