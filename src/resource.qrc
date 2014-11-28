@@ -67,5 +67,8 @@
         <file>images/ingame/ingame_2.png</file>
         <file>images/ingame/ingame_3.png</file>
         <file>images/ingame/ingame_0.png</file>
+        <file>images/endgame/endgame_draw.png</file>
+        <file>images/endgame/endgame_kaist.png</file>
+        <file>images/endgame/endgame_postech.png</file>
     </qresource>
 </RCC>
