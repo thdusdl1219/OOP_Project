@@ -24,5 +24,5 @@ void LogoScene::setupLogo()
 
     logo = new Qneed(this, get_window());
     logo->loadImage(":images/logo/logo.png");
-    logo->setPos(200, 200);
+    logo->setPos(256, 192);
 }
