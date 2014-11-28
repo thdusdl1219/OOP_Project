@@ -49,7 +49,6 @@
         <file>images/init/init_button_creator2.png</file>
         <file>images/init/init_button_creator3.png</file>
         <file>images/init/init_button_play_press.png</file>
-        <file>images/init/init_button_play.png</file>
         <file>images/init/init_button_play1.png</file>
         <file>images/init/init_button_play2.png</file>
         <file>images/init/init_button_play3.png</file>
@@ -61,5 +60,7 @@
         <file>images/ingame/map/map_bomb.png</file>
         <file>images/choice/choice_character1.png</file>
         <file>images/choice/choice_character_clicked1.png</file>
+        <file>images/init/init_button_creator_press.png</file>
+        <file>images/init/init_button_play.png</file>
     </qresource>
 </RCC>

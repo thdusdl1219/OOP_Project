@@ -60,9 +60,11 @@ CreatorButton::CreatorButton(QGraphicsScene *scene, MainWindow *window) : Qneed(
 void CreatorButton::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     qDebug() << "creator Button pressed";
+    this->loadImage(":images/init/init_button_creator_press.png");
 }
 
 void CreatorButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
+    this->loadImage(":images/init/init_button_creator.png");
     get_window()->changeScene(SceneType::LOGO);
 }
