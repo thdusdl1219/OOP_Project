@@ -1,6 +1,7 @@
 #include "endgamescene.h"
 #include "../map.h"
 #include "../character.h"
+#include "../mainwindow.h"
 EndgameScene::EndgameScene(QObject *parent) :
   Scene(parent)
 {
@@ -28,6 +29,9 @@ void EndgameScene::setupEndgame()
         win->loadImage(":images/endgame/endgame_kaist.png");
     else
         win->loadImage(":images/endgame/endgame_postech.png");
+    win->setPos(10,10);
+    OnemoreButton* one = new OnemoreButton(this,get_window());
+    one->setPos(425, 600);
 }
 
 void EndgameScene::action()
@@ -37,15 +41,16 @@ void EndgameScene::action()
 
 OnemoreButton::OnemoreButton(QGraphicsScene *scene, MainWindow *window) : Qneed(scene, window)
 {
-
+	loadImage(":images/endgame/endgame_button_replay.png");
 }
 
 void OnemoreButton::mousePressEvent(QGraphicsSceneMouseEvent *e)
 {
-
+	loadImage(":images/endgame/endgame_button_replay_press.png");
 }
 
 void OnemoreButton::mouseReleaseEvent(QGraphicsSceneMouseEvent* e)
 {
-
+	loadImage(":images/endgame/endgame_button_replay.png");
+	get_window()->changeScene(SceneType::CHOICECHARACTER);
 }

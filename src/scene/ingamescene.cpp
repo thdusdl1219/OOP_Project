@@ -79,47 +79,6 @@ void InGameScene::keyPressEvent(QKeyEvent *e)
             }
 			QGraphicsScene::keyPressEvent(e);
 		}
-	/*
-		int cur_position = player1->getPosition();
-		int x = player1->cell_x;
-		int y = player1->cell_y;
-		if(event->key() == 'W' )
-		{
-	qDebug() << "w pressed";
-	if(cur_position >= 13*3-2)
-	{
-			player1->setPosition(cur_position-13*3+2);
-	}
-		}
-		if(event->key() == 'A')
-		{
-	qDebug() << "a pressed";
-	if(cur_position % (13*3-2) != 0)
-	{
-			player1->setPosition(cur_position-1);
-	}
-		}
-		if(event->key() == 'S')
-		{
-	qDebug() << "s pressed";
-	if(cur_position < (13*3-2)*9*3)
-	{
-			player1->setPosition(cur_position+13*3-2);
-	}
-		}
-		if(event->key() == 'D')
-		{
-	qDebug() << "d pressed";
-	if(cur_position % (13*3 - 2) != (13*3-3))
-	{
-			player1->setPosition(cur_position+1);
-	}
-		}
-		if(event->key() == 16777248)
-			{
-		new Soju(map, x, y, 2);
-			}
-			*/
 }
 
 void InGameScene::keyReleaseEvent(QKeyEvent *e)
@@ -254,12 +213,6 @@ void InGameScene::setupIngame()
 	newMap->setPos(44,24);
     map = newMap;
 
-    Heart* heart = new Heart(this, get_window(), Team::POSTECH);
-    heart->setPos(0, 0);
-    this->heart = heart;
-    Heart* heart2 = new Heart(this, get_window(), Team::KAIST);
-    heart2->setPos(980,0);
-    this->heart2 = heart2;
     HeartNum* num1 = new HeartNum(this, get_window(), Team::POSTECH);
     num1->setPos(0, 76);
     QObject::connect(player1,SIGNAL(Aya()),num1,SLOT(bombLife()));
@@ -274,8 +227,6 @@ void InGameScene::setupIngame()
 
 void InGameScene::zero()
 {
-//    delete heart;
-//    delete heart2;
 //    delete num1;
 //    delete num2;
 //    delete map;
@@ -283,11 +234,6 @@ void InGameScene::zero()
 }
 
 
-Heart::Heart(QGraphicsScene *scene, MainWindow *mainwindow, Team::Type team) : Qneed(scene, mainwindow)
-{
-    this->team = team;
-    loadImage(":images/ingame/ingame_heart.png");
-}
 
 HeartNum::HeartNum(QGraphicsScene *scene, MainWindow *window, Team::Type team) :Qneed(scene, window)
 {

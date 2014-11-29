@@ -11,7 +11,6 @@
 class Map;
 
 class HeartNum;
-class Heart;
 class Character;
 class InGameScene : public Scene
 {
@@ -42,20 +41,11 @@ private:
   Character* player1;
   Character* player2;
   Map* map;
-  Heart* heart;
-  Heart* heart2;
   bool keyLeft, keyRight, keyUp, keyDown;
   bool keyW, keyA, keyS, keyD;
   bool bomb1, bomb2;
 };
 
-class Heart : public Qneed
-{
-private:
-    enum Team::Type team;
-public :
-    Heart(QGraphicsScene*, MainWindow *, enum Team::Type);
-};
 
 class HeartNum : public Qneed
 {
