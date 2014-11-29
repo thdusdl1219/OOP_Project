@@ -57,7 +57,7 @@ Item::Item(Qneed* need, int x, int y, ItemType::Type type): Unit(need, x, y)
         loadImage(":images/ingame/map/map_bp.png");
         break;
     case ItemType::LIFE:
-        loadImage(":images/ingame/map/map_life.jpg");
+        loadImage(":images/ingame/map/map_life.png");
         break;
     case ItemType::SPEED:
         loadImage(":images/ingame/map/map_speed.png");
