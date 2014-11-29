@@ -2,6 +2,7 @@
 #include "../map.h"
 #include "../character.h"
 #include "../mainwindow.h"
+#include "initscene.h"
 EndgameScene::EndgameScene(QObject *parent) :
   Scene(parent)
 {
@@ -31,7 +32,9 @@ void EndgameScene::setupEndgame()
         win->loadImage(":images/endgame/endgame_postech.png");
     win->setPos(10,10);
     OnemoreButton* one = new OnemoreButton(this,get_window());
-    one->setPos(425, 600);
+    one->setPos(425, 528);
+    CreatorButton* cre = new CreatorButton(this, get_window());
+    cre->setPos(425, 624);
 }
 
 void EndgameScene::action()
