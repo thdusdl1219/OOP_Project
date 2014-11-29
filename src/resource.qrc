@@ -54,5 +54,21 @@
         <file>images/endgame/endgame_kaist.png</file>
         <file>images/endgame/endgame_postech.png</file>
         <file>images/ingame/map/map_life.jpg</file>
+        <file>images/init/init_button_creator3.png</file>
+        <file>images/init/init_button_play2.png</file>
+        <file>images/init/init_background2.png</file>
+        <file>images/init/init_button_creator2.png</file>
+        <file>images/init/init_background1.png</file>
+        <file>images/init/init_button_play1.png</file>
+        <file>images/init/init_button_creator1.png</file>
+        <file>images/init/init_button_play4.png</file>
+        <file>images/init/init_button_play5.png</file>
+        <file>images/init/start2button.png</file>
+        <file>images/init/init_button_play3.png</file>
+        <file>images/ingame/map/map_life.png</file>
+        <file>images/choice/choice_background1.png</file>
+        <file>images/choice/choice_background2.png</file>
+        <file>images/choice/choice_background3.png</file>
+        <file>images/choice/choice_button_go1.png</file>
     </qresource>
 </RCC>
