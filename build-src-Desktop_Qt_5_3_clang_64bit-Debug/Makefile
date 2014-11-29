@@ -548,57 +548,73 @@ compiler_rcc_make_all: qrc_resource.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resource.cpp
 qrc_resource.cpp: ../src/resource.qrc \
-		../src/images/init/init_button_creator3.png \
-		../src/images/init/init_button_creator_press.png \
-		../src/images/init/init_button_play2.png \
-		../src/images/init/init_background2.png \
-		../src/images/init/init_button_creator.png \
-		../src/images/init/init_button_creator2.png \
-		../src/images/init/init_button_play1.png \
+		../src/images/init/start2button.png \
 		../src/images/init/init_background1.png \
+		../src/images/init/init_background2.png \
+		../src/images/init/init_button_creator_press.png \
+		../src/images/init/init_button_play_press(1).png \
+		../src/images/init/init_button_play.png \
+		../src/images/init/init_button_play_press.png \
+		../src/images/init/init_background.png \
+		../src/images/init/init_button_play1.png \
+		../src/images/init/init_button_play2.png \
+		../src/images/init/init_button_play3.png \
+		../src/images/init/init_button_play4.png \
 		../src/images/init/init_button_play5.png \
 		../src/images/init/init_button_creator1.png \
-		../src/images/init/init_background.png \
-		../src/images/init/init_button_play_press.png \
-		../src/images/init/init_button_play4.png \
-		../src/images/init/start2button.png \
-		../src/images/init/init_button_play3.png \
-		../src/images/init/init_button_play.png \
+		../src/images/init/init_button_creator2.png \
+		../src/images/init/init_button_creator3.png \
+		../src/images/init/init_button_creator.png \
 		../src/images/ingame/ingame_heart.png \
 		../src/images/ingame/ingame_background.png \
 		../src/images/ingame/ingame_1.png \
+		../src/images/ingame/ingame_0.png \
+		../src/images/ingame/ingame_background(2).png \
 		../src/images/ingame/ingame_3.png \
 		../src/images/ingame/ingame_2.png \
+		../src/images/ingame/character/rich_kaist(1).png \
 		../src/images/ingame/character/rich_postech.png \
 		../src/images/ingame/character/liar_kaist.png \
 		../src/images/ingame/character/alchoholic_postech.png \
 		../src/images/ingame/character/liar_postech.png \
+		../src/images/ingame/character/alchoholic_kaist(1).png \
+		../src/images/ingame/character/alchoholic_postech(1).png \
 		../src/images/ingame/character/rich_kaist.png \
+		../src/images/ingame/character/rich_postech(1).png \
 		../src/images/ingame/character/alchoholic_kaist.png \
+		../src/images/ingame/character/liar_postech(1).png \
+		../src/images/ingame/map/map_block(5).png \
 		../src/images/ingame/map/map_speed.png \
+		../src/images/ingame/map/map_unit(2).png \
 		../src/images/ingame/map/map_bn.png \
 		../src/images/ingame/map/map_life.png \
-		../src/images/ingame/map/map_bomb.png \
+		../src/images/ingame/map/map_block(1).png \
 		../src/images/ingame/map/map_bomb.png \
 		../src/images/ingame/map/map_soju.png \
 		../src/images/ingame/map/map_block.png \
+		../src/images/ingame/map/map_block(4).png \
+		../src/images/ingame/map/map_unit(1).png \
 		../src/images/ingame/map/map_breakable.png \
+		../src/images/ingame/map/map_life.jpg \
 		../src/images/ingame/map/map_bp.png \
 		../src/images/ingame/map/map_unit.png \
 		../src/images/ingame/map/map_background.png \
 		../src/images/logo/logo_background.png \
 		../src/images/logo/logo.png \
+		../src/images/endgame/endgame_draw.png \
+		../src/images/endgame/endgame_kaist.png \
+		../src/images/endgame/endgame_postech.png \
 		../src/images/choice/choice_character_clicked4.png \
+		../src/images/choice/choice_button_go.png \
 		../src/images/choice/choice_character_clicked5.png \
 		../src/images/choice/choice_character0.png \
-		../src/images/choice/choice_button_go.png \
 		../src/images/choice/choice_character1.png \
-		../src/images/choice/choice_character2.png \
 		../src/images/choice/choice_background1.png \
-		../src/images/choice/choice_character3.png \
+		../src/images/choice/choice_character2.png \
 		../src/images/choice/choice_background2.png \
-		../src/images/choice/choice_character4.png \
+		../src/images/choice/choice_character3.png \
 		../src/images/choice/choice_background3.png \
+		../src/images/choice/choice_character4.png \
 		../src/images/choice/choice_button_go_press.png \
 		../src/images/choice/choice_background4.png \
 		../src/images/choice/choice_character5.png \
@@ -1020,7 +1036,16 @@ endgamescene.o: ../src/scene/endgamescene.cpp ../src/scene/endgamescene.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QGraphicsPixmapItem \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsitem.h \
 		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QPixmap \
-		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h \
+		../src/map.h \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QPoint \
+		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qpoint.h \
+		../src/unit.h \
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QImage \
+		../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qimage.h \
+		../src/Types.h \
+		../src/scene/choicescene.h \
+		../src/character.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o endgamescene.o ../src/scene/endgamescene.cpp
 
 unit.o: ../src/unit.cpp ../src/unit.h \

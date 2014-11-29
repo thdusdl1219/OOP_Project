@@ -23,6 +23,8 @@ Character::Character(Qneed* parent, enum CharacterType::Type _character_type, in
 bool Character::bombObject()
 {
     qDebug() << "AYA";
+    if(life == 0)
+      life = 1;
     life--;
     if(life == 0)
     {
