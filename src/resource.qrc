@@ -1,7 +1,6 @@
 ﻿<RCC>
     <qresource prefix="/">
         <file>images/choice/choice_background.png</file>
-        <file>images/choice/choice_background1.png</file>
         <file>images/choice/choice_background2.png</file>
         <file>images/choice/choice_background3.png</file>
         <file>images/choice/choice_background4.png</file>
@@ -162,5 +161,6 @@
         <file>images/ingame/character/liar_kaist_down_3.png</file>
         <file>images/ingame/character/liar_kaist_down_2.png</file>
         <file>images/ingame/character/liar_kaist_down_1.png</file>
+        <file>images/choice/choice_background1.png</file>
     </qresource>
 </RCC>

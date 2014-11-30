@@ -51,7 +51,7 @@ void LogoScene::setupLogo()
     animation->setEndValue(1.0);
     animation->setEasingCurve(QEasingCurve::OutQuad);
 
-    connect(animation, SIGNAL(finished()), this, SLOT(showbutton()));
+    connect(animation, SIGNAL(finished()), this, SLOT(goinit()));
     animation->start();
 
 
@@ -62,7 +62,7 @@ void LogoScene::setupLogo()
 
 
 
-void LogoScene::showbutton(){
+void LogoScene::goinit(){
     get_window()->changeScene(SceneType::INIT);
 }
 
