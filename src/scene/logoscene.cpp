@@ -19,11 +19,6 @@ LogoScene::~LogoScene()
     delete logo;
 }
 
-void LogoScene::action()
-{
-
-}
-
 void LogoScene::setupLogo()
 {
     Qneed* background = new Qneed(this, get_window());

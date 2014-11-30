@@ -25,7 +25,13 @@ ChoiceScene::~ChoiceScene()
 {
 	qDebug() << "choiceScene deleted";
 	player1_cnt = 0;
-	player2_cnt = 0;
+    player2_cnt = 0;
+    delete player1;
+    delete player2;
+    for(int i = 0; i < 6; i++)
+        delete player_button[i];
+    for(int i = 0; i < 3; i++)
+        delete map_button[i];
 	delete go_button;
 }
 
@@ -36,10 +42,6 @@ ChoiceScene* ChoiceScene::get_ChoiceScene()
 	return scene;
 }
 
-void ChoiceScene::action()
-{
-
-}
 
 void ChoiceScene::setupChoice()
 {

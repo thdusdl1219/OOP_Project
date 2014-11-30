@@ -20,7 +20,7 @@ InGameScene::InGameScene(QObject *parent) :
 	setupIngame();
     scene = this;
 //    setFocusPolicy(Qt::StrongFocus);
-    QObject::startTimer(1000/80);
+    timerid = QObject::startTimer(1000/80);
 
 
     animation = new QTimeLine(500);
@@ -41,6 +41,8 @@ InGameScene* InGameScene::get_InGameScene()
 
 InGameScene::~InGameScene()
 {
+    killTimer(timerid);
+    delete map;
     delete animation;
 }
 

@@ -40,10 +40,6 @@ void EndgameScene::setupEndgame()
     cre->setPos(824, 649);
 }
 
-void EndgameScene::action()
-{
-
-}
 
 OnemoreButton::OnemoreButton(QGraphicsScene *scene, MainWindow *window) : Qneed(scene, window)
 {
@@ -58,6 +54,7 @@ void OnemoreButton::mousePressEvent(QGraphicsSceneMouseEvent *e)
 void OnemoreButton::mouseReleaseEvent(QGraphicsSceneMouseEvent* e)
 {
     loadImage(":images/endgame/endgame_button_replay.png");
+    get_window()->replay();
 	get_window()->changeScene(SceneType::CHOICECHARACTER);
 }
 

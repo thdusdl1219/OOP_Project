@@ -16,11 +16,6 @@ InitScene::~InitScene()
    delete creator_button;
 }
 
-void InitScene::action()
-{
-
-}
-
 void InitScene::setupInit()
 {
     Qneed* background = new Qneed(this, get_window());
@@ -66,5 +61,6 @@ void CreatorButton::mousePressEvent(QGraphicsSceneMouseEvent *event)
 void CreatorButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     this->loadImage(":images/init/init_button_creator.png");
+    get_window()->replay();
     get_window()->changeScene(SceneType::LOGO);
 }

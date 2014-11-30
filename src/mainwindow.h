@@ -17,12 +17,15 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     void changeScene(int scenetype);
     ~MainWindow();
-
+    void replay();
 private:
     Ui::MainWindow *ui;
-    Scene* scene;
+    Scene* scene1;
+    Scene* scene2;
+    Scene* scene3;
+    Scene* scene4;
+    Scene* scene5;
 
-    void actionScene();
 };
 
 #endif // MAINWINDOW_H
