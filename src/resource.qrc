@@ -1,4 +1,4 @@
-<RCC>
+﻿<RCC>
     <qresource prefix="/">
         <file>images/choice/choice_background.png</file>
         <file>images/choice/choice_background1.png</file>
@@ -95,7 +95,6 @@
         <file>images/ingame/character/rich_postech_down_3.png</file>
         <file>images/ingame/character/rich_postech_down_2.png</file>
         <file>images/ingame/character/rich_postech_down_1.png</file>
-<<<<<<< HEAD
         <file>images/ingame/character/rich_postech_stay_3.png</file>
         <file>images/ingame/character/rich_postech_stay_2.png</file>
         <file>images/ingame/character/rich_postech_stay_1.png</file>
@@ -129,9 +128,7 @@
         <file>images/ingame/character/alchoholic_kaist_down_3.png</file>
         <file>images/ingame/character/alchoholic_kaist_down_2.png</file>
         <file>images/ingame/character/alchoholic_kaist_down_1.png</file>
-=======
         <file>images/endgame/endgame_button_replay.png</file>
         <file>images/endgame/endgame_button_replay_press.png</file>
->>>>>>> 재시작 버튼 이미지 추가
     </qresource>
 </RCC>
