@@ -27,7 +27,7 @@ void LogoScene::setupLogo()
 
     logo = new Qneed(this, get_window());
     logo->loadImage(":images/logo/logo.png");
-    logo->setPos(256, 192);
+    logo->setPos(307, 240);
 
     OnemoreButton* one = new OnemoreButton(this,get_window());
     one->setPos(400, 553);
