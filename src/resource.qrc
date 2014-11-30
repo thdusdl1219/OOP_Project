@@ -162,5 +162,20 @@
         <file>images/ingame/character/liar_kaist_down_2.png</file>
         <file>images/ingame/character/liar_kaist_down_1.png</file>
         <file>images/choice/choice_background1.png</file>
+        <file>images/ingame/character/alchoholic_postech_up_3.png</file>
+        <file>images/ingame/character/alchoholic_postech_up_2.png</file>
+        <file>images/ingame/character/alchoholic_postech_up_1.png</file>
+        <file>images/ingame/character/alchoholic_postech_stay_3.png</file>
+        <file>images/ingame/character/alchoholic_postech_stay_2.png</file>
+        <file>images/ingame/character/alchoholic_postech_stay_1.png</file>
+        <file>images/ingame/character/alchoholic_postech_right_3.png</file>
+        <file>images/ingame/character/alchoholic_postech_right_2.png</file>
+        <file>images/ingame/character/alchoholic_postech_right_1.png</file>
+        <file>images/ingame/character/alchoholic_postech_left_3.png</file>
+        <file>images/ingame/character/alchoholic_postech_left_2.png</file>
+        <file>images/ingame/character/alchoholic_postech_left_1.png</file>
+        <file>images/ingame/character/alchoholic_postech_down_3.png</file>
+        <file>images/ingame/character/alchoholic_postech_down_2.png</file>
+        <file>images/ingame/character/alchoholic_postech_down_1.png</file>
     </qresource>
 </RCC>
