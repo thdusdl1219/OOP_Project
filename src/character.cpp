@@ -142,6 +142,9 @@ void Character::moveUp(){
         }
         return;
     }
+    if(map->soju[(temp_pos/37)/3][(temp_pos%37)/3] != NULL ||
+            map->soju[(temp_pos/37)/3][((temp_pos%37)+2)/3] != NULL)
+        return;
     setPosition(temp_pos);
 }
 
@@ -164,6 +167,10 @@ void Character::moveDown(){
         }
         return;
     }
+    if(map->soju[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3] != NULL ||
+            map->soju[((temp_pos/37)+2)/3][(temp_pos%37)/3] != NULL)
+        return;
+
     setPosition(temp_pos);
 }
 
@@ -185,6 +192,10 @@ void Character::moveLeft(){
         }
         return;
     }
+    if(map->soju[((temp_pos/37)+2)/3][(temp_pos%37)/3] != NULL ||
+            map->soju[(temp_pos/37)/3][(temp_pos%37)/3] != NULL)
+        return;
+
     setPosition(temp_pos);
 }
 
@@ -206,6 +217,9 @@ void Character::moveRight(){
         }
         return;
     }
+    if(map->soju[(temp_pos/37)/3][((temp_pos%37)+2)/3] != NULL ||
+            map->soju[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3] != NULL)
+        return;
 
     setPosition(temp_pos);
 

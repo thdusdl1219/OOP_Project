@@ -97,10 +97,10 @@ bool Item::bombObject(){
 
 Soju::Soju(Qneed* need, int x, int y, int p, Character* _player): Unit(need, x, y)
 {
-    Map::get_map()->cell[x][y]->Null = false;
-    Null = false;
+//    Map::get_map()->cell[x][y]->Null = false;
     loadImage(":images/ingame/map/map_soju.png");
     time=2;
+    Null = false;
     power=p;
     player = _player;
     player->use_soju++;
@@ -138,7 +138,7 @@ void Soju::bomb()
         {
 
             QTimer::singleShot(num*50,map->cell[cell_x][i], SLOT(bombObject()));
-            if(map->cell[cell_x][i]->Null == false && i != cell_y)
+            if(map->cell[cell_x][i]->Null == false)
                 break;
             if(map->soju[cell_x][i] != NULL)
                 QTimer::singleShot(0, map->soju[cell_x][i], SLOT(bombObject()));
@@ -230,7 +230,7 @@ bool Block::isBreakable(){
 bool Block::bombObject(){
   if(isBreakable())
   {
-  srand(time(0));
+  srand((cell_x + cell_y)*time(0));
   if(Null == false)
   {
       Null = true;

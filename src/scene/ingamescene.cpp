@@ -169,13 +169,13 @@ void InGameScene::timerEvent(QTimerEvent *)
      int y2 = player2->cell_y;
     if(bomb1)
     {
-      if((map->cell[x1][y1])->Null)
+      if((map->soju[x1][y1]) == NULL)
         if(player1->use_soju < player1->getNumBomb())
         map->soju[x1][y1] = new Soju(map, x1, y1, player1->getPowBomb(), player1);
     }
     if(bomb2)
     {
-      if((map->cell[x2][y2])->Null)
+      if((map->soju[x2][y2]) == NULL)
         if(player2->use_soju < player2->getNumBomb())
         map->soju[x2][y2] = new Soju(map, x2, y2, player2->getPowBomb(), player2);
     }
