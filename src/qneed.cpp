@@ -37,6 +37,13 @@ void Qneed::loadImage(const char* filename)
     setPixmap(*image);
 }
 
+void Qneed::loadImage(QString filename){
+    if(image != NULL)
+        delete image;
+    image = new QPixmap(filename);
+    setPixmap(*image);
+}
+
 MainWindow* Qneed::get_window()
 {
     return window;

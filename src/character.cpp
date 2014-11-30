@@ -9,6 +9,7 @@ Character::Character(Qneed* parent, enum CharacterType::Type _character_type, in
 {
     Null = false;
 	character_type = _character_type;
+    character_dir = Direction::STAY;
 	numbomb = _numbomb;
 	powbomb = _powbomb;
 	speed = _speed;
@@ -78,6 +79,11 @@ void Character::setupCharacter()
 				break;
 			}
 		}
+}
+
+
+void Character::setUnitDir(enum Direction::Type d){
+    character_dir=d;
 }
 
 void Character::setCharPos(int pos)
@@ -150,3 +156,71 @@ int Character::getPowBomb() const {
 int Character::getSpeed() const {
 	return speed;
 }
+
+
+void Character::animateImage(int frame){
+    QString filename = QString(":images/ingame/character/");
+
+    qDebug() << frame ;
+    using namespace CharacterType;
+    switch(character_type){
+    case LIAR:
+        filename += QString("liar_");
+        break;
+    case RICH:
+        filename += QString("rich_");
+        break;
+    case ALCHOHOLIC:
+        filename += QString("alchoholic_");
+        break;
+    }
+    switch(team){
+    case Team::POSTECH:
+        filename += QString("postech_");
+        break;
+    case Team::KAIST:
+        filename += QString("kaist_");
+        break;
+    }
+
+    using namespace Direction;
+    switch(character_dir){
+    case UP:
+        filename += QString("up_");
+        break;
+    case DOWN:
+        filename += QString("down_");
+        break;
+    case LEFT:
+        filename += QString("left_");
+        break;
+    case RIGHT:
+        filename += QString("right_");
+        break;
+    case STAY:
+        filename += QString("stay_");
+        break;
+    }
+
+    filename += QString::number(frame) + QString(".png");
+
+    qDebug() << filename;
+    Qneed::loadImage(filename);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -22,6 +22,9 @@ namespace ItemType
   enum Type {BOMB_NUM, BOMB_POWER, SPEED, LIFE};
 }
 
-
+namespace Direction
+{
+    enum Type {UP, DOWN, RIGHT, LEFT, STAY};
+}
 extern QPoint cell_xy[(13*3 - 2)*(10*3)];
 #endif // TYPES_H

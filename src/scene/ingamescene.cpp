@@ -2,7 +2,7 @@
 #include "choicescene.h"
 #include "../map.h"
 #include <QTimer>
-#include <Qsize>
+#include <QSize>
 #include <QObject>
 #include <QWidget>
 #include "../unit.h"
@@ -20,6 +20,16 @@ InGameScene::InGameScene(QObject *parent) :
     scene = this;
 //    setFocusPolicy(Qt::StrongFocus);
 	QObject::startTimer(1000/20);
+
+
+    animation = new QTimeLine(500);
+    animation->setFrameRange(1,4);
+    connect(animation, SIGNAL(finished()), animation, SLOT(start()));
+    animation->start();
+
+    connect(animation, SIGNAL(frameChanged(int)), player1, SLOT(animateImage(int)));
+    connect(animation, SIGNAL(frameChanged(int)), player2, SLOT(animateImage(int)));
+
 }
 
 InGameScene* InGameScene::scene = NULL;
@@ -30,7 +40,7 @@ InGameScene* InGameScene::get_InGameScene()
 
 InGameScene::~InGameScene()
 {
-
+    delete animation;
 }
 
 void InGameScene::keyPressEvent(QKeyEvent *e)
@@ -39,42 +49,52 @@ void InGameScene::keyPressEvent(QKeyEvent *e)
 		{
 			if(e->key()==Qt::Key_Left)
 				{
+                    player2->setUnitDir(Direction::LEFT);
 					keyLeft=true;
 				}
 			else if(e->key()==Qt::Key_Right)
 				{
+                player2->setUnitDir(Direction::RIGHT);
 					keyRight=true;
 				}
 			else if(e->key()==Qt::Key_Up)
 				{
+                player2->setUnitDir(Direction::UP);
 					keyUp=true;
 				}
 			else if(e->key()==Qt::Key_Down)
-				{
+                {
+                player2->setUnitDir(Direction::DOWN);
 					keyDown=true;
 				}
 			if(e->key()==Qt::Key_A)
 				{
+                player1->setUnitDir(Direction::LEFT);
 					keyA=true;
 				}
 			else if(e->key()==Qt::Key_D)
 				{
+                player1->setUnitDir(Direction::RIGHT);
 					keyD=true;
 				}
 			else if(e->key()==Qt::Key_W)
 				{
+                player1->setUnitDir(Direction::UP);
 					keyW=true;
 				}
 			else if(e->key()==Qt::Key_S)
 				{
+                player1->setUnitDir(Direction::DOWN);
 					keyS=true;
 				}
             if(e->key()==Qt::Key_Shift)
             {
+                player1->setUnitDir(Direction::STAY);
                 bomb1 = true;
             }
             if(e->key()==Qt::Key_Slash)
             {
+                player2->setUnitDir(Direction::STAY);
                 bomb2 = true;
             }
 			QGraphicsScene::keyPressEvent(e);
@@ -87,34 +107,42 @@ void InGameScene::keyReleaseEvent(QKeyEvent *e)
 		{
 			if(e->key()==Qt::Key_Left)
 				{
+                player2->setUnitDir(Direction::STAY);
 					keyLeft=false;
 				}
 			else if(e->key()==Qt::Key_Right)
 				{
+                player2->setUnitDir(Direction::STAY);
 					keyRight=false;
 				}
 			else if(e->key()==Qt::Key_Up)
-				{
+                {
+                player2->setUnitDir(Direction::STAY);
 					keyUp=false;
 				}
 			else if(e->key()==Qt::Key_Down)
 				{
+                player2->setUnitDir(Direction::STAY);
 					keyDown=false;
 				}
 			if(e->key()==Qt::Key_A)
 				{
+                player1->setUnitDir(Direction::STAY);
 					keyA=false;
 				}
 			else if(e->key()==Qt::Key_D)
 				{
+                player1->setUnitDir(Direction::STAY);
 					keyD=false;
 				}
 			else if(e->key()==Qt::Key_W)
 				{
+                player1->setUnitDir(Direction::STAY);
 					keyW=false;
 				}
 			else if(e->key()==Qt::Key_S)
 				{
+                player1->setUnitDir(Direction::STAY);
 					keyS=false;
 				}
             if(e->key()==Qt::Key_Shift)

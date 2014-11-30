@@ -3,10 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include <QTimeLine>
+#include <QString>
 #include "Types.h"
 #include "qneed.h"
 #include "unit.h"
-
+#include <QDir>
 using namespace std;
 
 #define MAXNUM_BOMB 8
@@ -16,9 +18,11 @@ using namespace std;
 class Map;
 class Character : public Unit
 {
+    Q_OBJECT
 private:
 	enum CharacterType::Type character_type;
 	enum Team::Type team;
+    enum Direction::Type character_dir;
 	int numbomb;
 	int powbomb;
 	int speed;
@@ -28,6 +32,7 @@ private:
 public:
 	Character(Qneed* parent, enum CharacterType::Type, int _numbomb, int _powbomb, int _speed, enum Team::Type);
 	void setupCharacter();
+    void setUnitDir(enum Direction::Type);
 	void setNumBomb(int);
 	void setPowBomb(int);
 	void setSpeed(int);
@@ -46,7 +51,7 @@ public:
 public slots:
     virtual bool bombObject();
     virtual void bombrecover();
-
+    void animateImage(int);
 //signals:
 //    void Aya(){}
 

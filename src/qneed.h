@@ -14,6 +14,7 @@ public:
     Qneed(QGraphicsScene*, MainWindow*);
     Qneed(Qneed *parent = 0);
     void loadImage(const char* filename);
+    void loadImage(QString);
     MainWindow* get_window();
     void additem(QGraphicsScene*);
     void setParent(Qneed* parent);

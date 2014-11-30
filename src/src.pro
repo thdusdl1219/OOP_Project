@@ -90,4 +90,16 @@ OTHER_FILES += \
     images/choice/choice_character0.png \
     images/choice/choice_button_go.png \
     images/choice/choice_background1.png \
-    images/choice/choice_background.png
+    images/choice/choice_background.png \
+    images/ingame/character/rich_postech_up_3.png \
+    images/ingame/character/rich_postech_up_2.png \
+    images/ingame/character/rich_postech_up_1.png \
+    images/ingame/character/rich_postech_right_3.png \
+    images/ingame/character/rich_postech_right_2.png \
+    images/ingame/character/rich_postech_right_1.png \
+    images/ingame/character/rich_postech_left_3.png \
+    images/ingame/character/rich_postech_left_2.png \
+    images/ingame/character/rich_postech_left_1.png \
+    images/ingame/character/rich_postech_down_3.png \
+    images/ingame/character/rich_postech_down_2.png \
+    images/ingame/character/rich_postech_down_1.png
