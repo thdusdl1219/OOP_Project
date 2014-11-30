@@ -161,7 +161,6 @@ int Character::getSpeed() const {
 void Character::animateImage(int frame){
     QString filename = QString(":images/ingame/character/");
 
-    qDebug() << frame ;
     using namespace CharacterType;
     switch(character_type){
     case LIAR:
@@ -204,23 +203,5 @@ void Character::animateImage(int frame){
 
     filename += QString::number(frame) + QString(".png");
 
-    qDebug() << filename;
     Qneed::loadImage(filename);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
