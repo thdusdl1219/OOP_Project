@@ -140,6 +140,10 @@ void Character::moveUp(){
             consumeItem(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]));
             setPosition(temp_pos);
         }
+        else
+        {
+            setPosition((cell_x*3)*37+cell_y*3);
+        }
         return;
     }
     if(map->soju[(temp_pos/37)/3][(temp_pos%37)/3] != NULL ||
@@ -165,6 +169,11 @@ void Character::moveDown(){
             consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37))/3]));
             setPosition(temp_pos);
         }
+        else
+        {
+            setPosition((cell_x*3)*37+cell_y*3);
+        }
+
         return;
     }
     if(map->soju[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3] != NULL ||
@@ -190,6 +199,11 @@ void Character::moveLeft(){
             consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37))/3][(temp_pos%37)/3]));
             setPosition(temp_pos);
         }
+        else
+        {
+            setPosition((cell_x*3)*37+cell_y*3);
+        }
+
         return;
     }
     if(map->soju[((temp_pos/37)+2)/3][(temp_pos%37)/3] != NULL ||
@@ -215,6 +229,11 @@ void Character::moveRight(){
             consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]));
             setPosition(temp_pos);
         }
+        else
+        {
+            setPosition((cell_x*3)*37+cell_y*3);
+        }
+
         return;
     }
     if(map->soju[(temp_pos/37)/3][((temp_pos%37)+2)/3] != NULL ||
