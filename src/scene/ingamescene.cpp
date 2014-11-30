@@ -269,9 +269,6 @@ void InGameScene::setupIngame()
 
 void InGameScene::zero()
 {
-//    delete num1;
-//    delete num2;
-//    delete map;
     get_window()->changeScene(SceneType::ENDGAME);
 }
 

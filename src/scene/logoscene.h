@@ -17,7 +17,7 @@ private:
     Qneed* logo;
 
 public slots:
-    void showbutton();
+    void goinit();
 };
 
 
