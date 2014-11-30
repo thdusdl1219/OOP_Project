@@ -15,8 +15,6 @@ public:
     void setupInit();
     ~InitScene();
 private:
-    PlayButton* play_button;
-    CreatorButton* creator_button;
 };
 
 class PlayButton : public Qneed

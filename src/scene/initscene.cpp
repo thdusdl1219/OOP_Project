@@ -12,8 +12,6 @@ InitScene::InitScene(QObject* parent) : Scene(parent)
 InitScene::~InitScene()
 {
    qDebug() << "InitScene Die";
-   delete play_button;
-   delete creator_button;
 }
 
 void InitScene::setupInit()
@@ -22,10 +20,10 @@ void InitScene::setupInit()
     background->loadImage(":/images/init/init_background.png");
     set_background(background);
 
-    play_button = new PlayButton(this, get_window());
+    PlayButton* play_button = new PlayButton(this, get_window());
     play_button->setPos(425, 528);
 
-    creator_button = new CreatorButton(this, get_window());
+    CreatorButton* creator_button = new CreatorButton(this, get_window());
     creator_button->setPos(425, 624);
 }
 

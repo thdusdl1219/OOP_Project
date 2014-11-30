@@ -55,11 +55,6 @@ void MainWindow::changeScene(int scenetype)
 
 void MainWindow::replay()
 {
-    if(scene1 != NULL)
-    {
-        delete scene1;
-        scene1 = NULL;
-    }
     if(scene2 != NULL)
     {
         delete scene2;
