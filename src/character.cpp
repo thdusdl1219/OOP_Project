@@ -113,6 +113,7 @@ void Character::consumeItem(Item* i){
         break;
     case ItemType::LIFE:
         life++;
+        emit Aya();
         break;
     case ItemType::SPEED:
         speed++;
