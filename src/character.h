@@ -40,6 +40,7 @@ public:
 	void setPosition(int);
 	void setNeed(Map* map);
 	int getPosition();
+    void consumeItem(Item*);
     void moveUp();
     void moveDown();
     void moveLeft();

@@ -52,15 +52,23 @@ Item::Item(Qneed* need, int x, int y, ItemType::Type type): Unit(need, x, y)
     {
     case ItemType::BOMB_NUM:
         loadImage(":images/ingame/map/map_bn.png");
+        type=ItemType::BOMB_NUM;
+        stat[0]=1;
         break;
     case ItemType::BOMB_POWER:
         loadImage(":images/ingame/map/map_bp.png");
+        type=ItemType::BOMB_POWER;
+        stat[1]=1;
         break;
     case ItemType::LIFE:
         loadImage(":images/ingame/map/map_life.png");
+        type=ItemType::LIFE;
+        stat[2]=1;
         break;
     case ItemType::SPEED:
+        type=ItemType::SPEED;
         loadImage(":images/ingame/map/map_speed.png");
+        stat[3]=1;
         break;
     }
 
@@ -70,6 +78,11 @@ Item::Item(Qneed* need, int x, int y, ItemType::Type type): Unit(need, x, y)
 void Item::setItemStat(int s, int quantity){
     stat[s] = quantity;
 }
+
+ItemType::Type Item::getItemStat(){
+    return type;
+}
+
 
 bool Item::bombObject(){
     if(Null == false)

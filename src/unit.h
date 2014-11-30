@@ -37,10 +37,11 @@ class Item: public Unit
 public:
 	Item(Qneed*, int, int, ItemType::Type);	// row, col, imageSrc
 	void setItemStat(int, int);	// stat_type, increasement
+    ItemType::Type getItemStat();
 private:
-	int type;
-	// 0 - bombNum, 1 - bombPower, 2 - Speed, 3 - Life
-	int stat[4];
+    ItemType::Type type;
+    // 0 - bombNum, 1 - bombPower, 2 - Life, 3 - Speed
+    int stat[4];
 public slots:
 	virtual bool bombObject();	// action for bombing Unit
 

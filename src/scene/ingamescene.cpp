@@ -207,25 +207,25 @@ void InGameScene::timerEvent(QTimerEvent *)
     if(keyW && cur_position1 >= 13*3-2)
     {
         qDebug() << "W";
-        player1->setPosition(cur_position1-13*3+2);
+        player1->moveUp();
         //player1->setPos(cell_xy[cur_position1-13*3+2]);
     }
     if(keyS && cur_position1 < (13*3-2)*9*3)
     {
         qDebug() << "S";
-        player1->setPosition(cur_position1+13*3-2);
+        player1->moveDown();
         //player1->setPos(cell_xy[cur_position1+13*3-2]);
     }
     if(keyA && cur_position1 % (13*3-2) != 0)
     {
         qDebug() << "A";
-        player1->setPosition(cur_position1-1);
+        player1->moveLeft();
         //player1->setPos(cell_xy[cur_position1-1]);
     }
     if(keyD && cur_position1 % (13*3 - 2) != (13*3-3))
     {
         qDebug() << "D";
-        player1->setPosition(cur_position1+1);
+        player1->moveRight();
         //player1->setPos(cell_xy[cur_position1+1]);
     }
 }

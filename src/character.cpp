@@ -89,8 +89,8 @@ void Character::setUnitDir(enum Direction::Type d){
 void Character::setCharPos(int pos)
 {
 	position = pos;
-    cell_x = ((pos / 37) ) / 3;
-    cell_y = ((pos % 37) ) / 3;
+    cell_x = ((pos / 37) + 1) / 3;
+    cell_y = ((pos % 37) + 1) / 3;
 }
 
 void Character::setPosition(int pos)
@@ -101,20 +101,50 @@ void Character::setPosition(int pos)
 }
 
 
+void Character::consumeItem(Item* i){
+    int pos=i->getPosition();
+    switch(i->getItemStat()){
+    case ItemType::BOMB_NUM:
+        numbomb++;
+        break;
+    case ItemType::BOMB_POWER:
+        powbomb++;
+        break;
+    case ItemType::LIFE:
+        life++;
+        break;
+    case ItemType::SPEED:
+        speed++;
+        break;
+    }
+
+    map->cell[pos/37/3][(pos%37)/3]=new Unit(need, pos/37/3, (pos%37)/3);
+    delete i;
+}
+
+
+
 void Character::moveUp(){
     int temp_pos=position-37;
     if(temp_pos < 0){
         return;
     }   // Upper bound
 
-    if(map->cell[(temp_pos/37)/3][(temp_pos%37)/3]->Null == false){
-        qDebug() << (temp_pos/37)/3 << "  " << (temp_pos%37)/3;
+    if(map->cell[(temp_pos/37)/3][(temp_pos%37)/3]->Null == false || map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]->Null == false){
+        //qDebug() << (temp_pos/37)/3 << "  " << (temp_pos%37)/3;
+        if(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][(temp_pos%37)/3]) != NULL){
+            consumeItem(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][(temp_pos%37)/3]));
+            setPosition(temp_pos);
+        }
+        else if(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]) != NULL){
+            consumeItem(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]));
+            setPosition(temp_pos);
+        }
         return;
     }
-
-
     setPosition(temp_pos);
 }
+
 
 void Character::moveDown(){
     int temp_pos=position+37;
@@ -122,11 +152,18 @@ void Character::moveDown(){
         return;
     }   // Bottom bound
 
-    if(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]->Null == false){
-        qDebug() << ((temp_pos/37)+2)/3 << "  " << (temp_pos%37)/3;
+    if(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]->Null == false || map->cell[((temp_pos/37)+2)/3][((temp_pos%37))/3]->Null == false){
+        //qDebug() << ((temp_pos/37)+2)/3 << "  " << (temp_pos%37)/3;
+        if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]) != NULL){
+            consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]));
+            setPosition(temp_pos);
+        }
+        else if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37))/3]) != NULL){
+            consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37))/3]));
+            setPosition(temp_pos);
+        }
         return;
     }
-
     setPosition(temp_pos);
 }
 
@@ -136,11 +173,18 @@ void Character::moveLeft(){
         return;
     }   // Leftward bound
 
-    if(map->cell[((temp_pos/37)+2)/3][(temp_pos%37)/3]->Null == false){
-        qDebug() << (temp_pos/37)/3 << "  " << (temp_pos%37)/3;
+    if(map->cell[((temp_pos/37)+2)/3][(temp_pos%37)/3]->Null == false || map->cell[((temp_pos/37))/3][(temp_pos%37)/3]->Null == false){
+        //qDebug() << (temp_pos/37)/3 << "  " << (temp_pos%37)/3;
+        if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][(temp_pos%37)/3]) != NULL){
+            consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][(temp_pos%37)/3]));
+            setPosition(temp_pos);
+        }
+        else if(dynamic_cast<Item*>(map->cell[((temp_pos/37))/3][(temp_pos%37)/3]) != NULL){
+            consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37))/3][(temp_pos%37)/3]));
+            setPosition(temp_pos);
+        }
         return;
     }
-
     setPosition(temp_pos);
 }
 
@@ -150,8 +194,16 @@ void Character::moveRight(){
         return;
     }   // Rightward bound
 
-    if(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]->Null == false){
-        qDebug() << (temp_pos/37)/3 << "  " << ((temp_pos%37)+2)/3;
+    if(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]->Null == false || map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]->Null == false){
+        //qDebug() << (temp_pos/37)/3 << "  " << ((temp_pos%37)+2)/3;
+        if(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]) != NULL){
+            consumeItem(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]));
+            setPosition(temp_pos);
+        }
+        else if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]) != NULL){
+            consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]));
+            setPosition(temp_pos);
+        }
         return;
     }
 
