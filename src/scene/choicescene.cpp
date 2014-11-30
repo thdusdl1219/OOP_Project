@@ -51,24 +51,24 @@ void ChoiceScene::setupChoice()
     go_button->setPos(365,200);
 
 	player_button[0] = new PlayerButton(this, get_window(), 0);
-    player_button[0]->setPos(10, 100);
+    player_button[0]->setPos(50, 100);
 	player_button[1] = new PlayerButton(this, get_window(), 1);
-    player_button[1]->setPos(10, 300);
+    player_button[1]->setPos(50, 250);
 	player_button[2] = new PlayerButton(this, get_window(), 2);
-    player_button[2] ->setPos(10, 500);
+    player_button[2] ->setPos(50, 400);
 	player_button[3] = new PlayerButton(this, get_window(), 3);
-    player_button[3]->setPos(764, 100);
+    player_button[3]->setPos(784, 100);
 	player_button[4] = new PlayerButton(this, get_window(), 4);
-    player_button[4]->setPos(764, 300);
+    player_button[4]->setPos(784, 250);
 	player_button[5] = new PlayerButton(this, get_window(), 5);
-    player_button[5]->setPos(764, 500);
+    player_button[5]->setPos(784, 400);
 
 	map_button[0] = new MapButton(this, get_window(), 0);
-    map_button[0] ->setPos(215, 600);
+    map_button[0] ->setPos(215, 550);
 	map_button[1] = new MapButton(this, get_window(), 1);
-    map_button[1] ->setPos(415, 600);
+    map_button[1] ->setPos(415, 550);
 	map_button[2] = new MapButton(this, get_window(), 2);
-    map_button[2] ->setPos(615, 600);
+    map_button[2] ->setPos(615, 550);
 
 
 }
