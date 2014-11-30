@@ -102,4 +102,22 @@ OTHER_FILES += \
     images/ingame/character/rich_postech_left_1.png \
     images/ingame/character/rich_postech_down_3.png \
     images/ingame/character/rich_postech_down_2.png \
-    images/ingame/character/rich_postech_down_1.png
+    images/ingame/character/rich_postech_down_1.png \
+    images/ingame/character/rich_postech_stay_3.png \
+    images/ingame/character/rich_postech_stay_2.png \
+    images/ingame/character/rich_postech_stay_1.png \
+    images/ingame/character/rich_kaist_up_3.png \
+    images/ingame/character/rich_kaist_up_2.png \
+    images/ingame/character/rich_kaist_up_1.png \
+    images/ingame/character/rich_kaist_stay_3.png \
+    images/ingame/character/rich_kaist_stay_2.png \
+    images/ingame/character/rich_kaist_stay_1.png \
+    images/ingame/character/rich_kaist_right_3.png \
+    images/ingame/character/rich_kaist_right_2.png \
+    images/ingame/character/rich_kaist_right_1.png \
+    images/ingame/character/rich_kaist_left_3.png \
+    images/ingame/character/rich_kaist_left_2.png \
+    images/ingame/character/rich_kaist_left_1.png \
+    images/ingame/character/rich_kaist_down_3.png \
+    images/ingame/character/rich_kaist_down_2.png \
+    images/ingame/character/rich_kaist_down_1.png
