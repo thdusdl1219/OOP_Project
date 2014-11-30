@@ -132,5 +132,20 @@
         <file>images/endgame/endgame_button_replay_press.png</file>
         <file>images/logo/init_button_press.png</file>
         <file>images/logo/init_button.png</file>
+        <file>images/ingame/character/liar_postech_up_3.png</file>
+        <file>images/ingame/character/liar_postech_up_2.png</file>
+        <file>images/ingame/character/liar_postech_up_1.png</file>
+        <file>images/ingame/character/liar_postech_stay_3.png</file>
+        <file>images/ingame/character/liar_postech_stay_2.png</file>
+        <file>images/ingame/character/liar_postech_stay_1.png</file>
+        <file>images/ingame/character/liar_postech_right_3.png</file>
+        <file>images/ingame/character/liar_postech_right_2.png</file>
+        <file>images/ingame/character/liar_postech_right_1.png</file>
+        <file>images/ingame/character/liar_postech_left_3.png</file>
+        <file>images/ingame/character/liar_postech_left_2.png</file>
+        <file>images/ingame/character/liar_postech_left_1.png</file>
+        <file>images/ingame/character/liar_postech_down_3.png</file>
+        <file>images/ingame/character/liar_postech_down_2.png</file>
+        <file>images/ingame/character/liar_postech_down_1.png</file>
     </qresource>
 </RCC>
