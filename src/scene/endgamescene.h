@@ -20,10 +20,13 @@ private:
 
 class OnemoreButton : public Qneed
 {
+    Q_OBJECT
 public:
     OnemoreButton(QGraphicsScene*, MainWindow*);
     virtual void mousePressEvent(QGraphicsSceneMouseEvent*);
     virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
+public slots:
+    void showbutton();
 };
 
 #endif // ENDGAMESCENE_H

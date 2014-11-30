@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 3.2.2, 2014-11-30T12:59:28. -->
-=======
-<!-- Written by QtCreator 3.2.2, 2014-11-30T12:52:47. -->
->>>>>>> 재시작 버튼 이미지 추가
+<!-- Written by QtCreator 3.2.2, 2014-11-30T18:06:55. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>

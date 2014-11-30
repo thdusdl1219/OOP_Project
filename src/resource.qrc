@@ -130,5 +130,7 @@
         <file>images/ingame/character/alchoholic_kaist_down_1.png</file>
         <file>images/endgame/endgame_button_replay.png</file>
         <file>images/endgame/endgame_button_replay_press.png</file>
+        <file>images/logo/init_button_press.png</file>
+        <file>images/logo/init_button.png</file>
     </qresource>
 </RCC>

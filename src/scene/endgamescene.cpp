@@ -3,6 +3,8 @@
 #include "../character.h"
 #include "../mainwindow.h"
 #include "initscene.h"
+#include <QPropertyAnimation>
+
 EndgameScene::EndgameScene(QObject *parent) :
   Scene(parent)
 {
@@ -50,11 +52,15 @@ OnemoreButton::OnemoreButton(QGraphicsScene *scene, MainWindow *window) : Qneed(
 
 void OnemoreButton::mousePressEvent(QGraphicsSceneMouseEvent *e)
 {
-	loadImage(":images/endgame/endgame_button_replay_press.png");
+    loadImage(":images/endgame/endgame_button_replay_press.png");
 }
 
 void OnemoreButton::mouseReleaseEvent(QGraphicsSceneMouseEvent* e)
 {
-	loadImage(":images/endgame/endgame_button_replay.png");
+    loadImage(":images/endgame/endgame_button_replay.png");
 	get_window()->changeScene(SceneType::CHOICECHARACTER);
+}
+
+void OnemoreButton::showbutton(){
+    this->show();
 }

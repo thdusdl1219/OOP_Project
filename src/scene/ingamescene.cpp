@@ -181,50 +181,50 @@ void InGameScene::timerEvent(QTimerEvent *)
     }
     if(keyUp && cur_position2 >= 13*3-2)
     {
-        qDebug() << "Up";
+        //qDebug() << "Up";
         player2->moveUp();
         //player2->setPos(cell_xy[cur_position2-13*3+2]);
     }
     if(keyDown && cur_position2 < (13*3-2)*9*3)
     {
-        qDebug() << "Down";
+        //qDebug() << "Down";
         player2->moveDown();
         //player2->setPos(cell_xy[cur_position2+13*3-2]);
     }
     if(keyLeft && cur_position2 % (13*3-2) != 0)
     {
-        qDebug() << "Left";
+        //qDebug() << "Left";
         player2->moveLeft();
         //player2->setPos(cell_xy[cur_position2-1]);
     }
     if(keyRight && (cur_position2+1) % (13*3 - 2) != 0)
     {
-        qDebug() << "Right";
+        //qDebug() << "Right";
         player2->moveRight();
         //player2->setPos(cell_xy[cur_position2+1]);
     }
 
     if(keyW && cur_position1 >= 13*3-2)
     {
-        qDebug() << "W";
+        //qDebug() << "W";
         player1->moveUp();
         //player1->setPos(cell_xy[cur_position1-13*3+2]);
     }
     if(keyS && cur_position1 < (13*3-2)*9*3)
     {
-        qDebug() << "S";
+        //qDebug() << "S";
         player1->moveDown();
         //player1->setPos(cell_xy[cur_position1+13*3-2]);
     }
     if(keyA && cur_position1 % (13*3-2) != 0)
     {
-        qDebug() << "A";
+        //qDebug() << "A";
         player1->moveLeft();
         //player1->setPos(cell_xy[cur_position1-1]);
     }
     if(keyD && cur_position1 % (13*3 - 2) != (13*3-3))
     {
-        qDebug() << "D";
+        //qDebug() << "D";
         player1->moveRight();
         //player1->setPos(cell_xy[cur_position1+1]);
     }
