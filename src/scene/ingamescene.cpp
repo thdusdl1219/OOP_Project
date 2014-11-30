@@ -15,7 +15,7 @@ InGameScene::InGameScene(QObject *parent) :
 	player1 = ChoiceScene :: get_ChoiceScene()->player1;
 	player2 = ChoiceScene :: get_ChoiceScene()->player2;
 	keyUp = keyDown = keyLeft = keyRight = false;
-	keyW = keyA = keyS = keyD = false;
+    keyT = keyF = keyG = keyH = false;
     bomb1 = bomb2 = false;
 	setupIngame();
     scene = this;
@@ -70,27 +70,27 @@ void InGameScene::keyPressEvent(QKeyEvent *e)
                 player2->setUnitDir(Direction::DOWN);
 					keyDown=true;
 				}
-			if(e->key()==Qt::Key_A)
+            if(e->key()==Qt::Key_F)
 				{
                 player1->setUnitDir(Direction::LEFT);
-					keyA=true;
+                    keyF=true;
 				}
-			else if(e->key()==Qt::Key_D)
+            else if(e->key()==Qt::Key_H)
 				{
                 player1->setUnitDir(Direction::RIGHT);
-					keyD=true;
+                    keyH=true;
 				}
-			else if(e->key()==Qt::Key_W)
+            else if(e->key()==Qt::Key_T)
 				{
                 player1->setUnitDir(Direction::UP);
-					keyW=true;
+                    keyT=true;
 				}
-			else if(e->key()==Qt::Key_S)
+            else if(e->key()==Qt::Key_G)
 				{
                 player1->setUnitDir(Direction::DOWN);
-					keyS=true;
+                    keyG=true;
 				}
-            if(e->key()==Qt::Key_Shift)
+            if(e->key()==Qt::Key_A)
             {
                 player1->setUnitDir(Direction::STAY);
                 bomb1 = true;
@@ -128,27 +128,27 @@ void InGameScene::keyReleaseEvent(QKeyEvent *e)
                 player2->setUnitDir(Direction::STAY);
 					keyDown=false;
 				}
-			if(e->key()==Qt::Key_A)
+            if(e->key()==Qt::Key_F)
 				{
                 player1->setUnitDir(Direction::STAY);
-					keyA=false;
+                    keyF=false;
 				}
-			else if(e->key()==Qt::Key_D)
+            else if(e->key()==Qt::Key_H)
 				{
                 player1->setUnitDir(Direction::STAY);
-					keyD=false;
+                    keyH=false;
 				}
-			else if(e->key()==Qt::Key_W)
+            else if(e->key()==Qt::Key_T)
 				{
                 player1->setUnitDir(Direction::STAY);
-					keyW=false;
+                    keyT=false;
 				}
-			else if(e->key()==Qt::Key_S)
+            else if(e->key()==Qt::Key_G)
 				{
                 player1->setUnitDir(Direction::STAY);
-					keyS=false;
+                    keyG=false;
 				}
-            if(e->key()==Qt::Key_Shift)
+            if(e->key()==Qt::Key_A)
             {
                 bomb1 = false;
             }
@@ -218,25 +218,25 @@ void InGameScene::timerEvent(QTimerEvent *)
     }
     if(delay1 == 0)
     {
-    if(keyW && cur_position1 >= 13*3-2)
+    if(keyT && cur_position1 >= 13*3-2)
     {
         //qDebug() << "W";
         player1->moveUp();
         //player1->setPos(cell_xy[cur_position1-13*3+2]);
     }
-    if(keyS && cur_position1 < (13*3-2)*9*3)
+    if(keyG && cur_position1 < (13*3-2)*9*3)
     {
         //qDebug() << "S";
         player1->moveDown();
         //player1->setPos(cell_xy[cur_position1+13*3-2]);
     }
-    if(keyA && cur_position1 % (13*3-2) != 0)
+    if(keyF && cur_position1 % (13*3-2) != 0)
     {
         //qDebug() << "A";
         player1->moveLeft();
         //player1->setPos(cell_xy[cur_position1-1]);
     }
-    if(keyD && cur_position1 % (13*3 - 2) != (13*3-3))
+    if(keyH && cur_position1 % (13*3 - 2) != (13*3-3))
     {
         //qDebug() << "D";
         player1->moveRight();

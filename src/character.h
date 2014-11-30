@@ -13,7 +13,7 @@ using namespace std;
 
 #define MAXNUM_BOMB 8
 #define MAXPOW_BOMB 8
-#define MAX_SPEED 8
+#define MAX_SPEED 6
 #define MAX_LIFE 3
 class Map;
 class Character : public Unit

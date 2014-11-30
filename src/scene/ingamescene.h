@@ -43,7 +43,7 @@ private:
   Character* player2;
   Map* map;
   bool keyLeft, keyRight, keyUp, keyDown;
-  bool keyW, keyA, keyS, keyD;
+  bool keyT, keyF, keyG, keyH;
   bool bomb1, bomb2;
   QTimeLine* animation;
 };
