@@ -5,16 +5,16 @@
 #include "scene/ingamescene.h"
 #include "mainwindow.h"
 Character::Character(Qneed* parent, enum CharacterType::Type _character_type, int _numbomb, int _powbomb, int _speed, enum Team::Type _team)
-	: Unit(parent, 0, 0)
+        : Unit(parent, 0, 0)
 {
     Null = false;
-	character_type = _character_type;
+    character_type = _character_type;
     character_dir = Direction::STAY;
-	numbomb = _numbomb;
-	powbomb = _powbomb;
-	speed = _speed;
-	team = _team;
-	position = 0;
+    numbomb = _numbomb;
+    powbomb = _powbomb;
+    speed = _speed;
+    team = _team;
+    position = 0;
     setupCharacter();
     setZValue(10);
     use_soju = 0;
@@ -25,7 +25,7 @@ bool Character::bombObject()
 {
     qDebug() << "AYA";
     if(life == 0)
-      life = 1;
+        life = 1;
     life--;
     if(life == 0)
     {
@@ -49,37 +49,37 @@ void Character::bombrecover()
 
 void Character::setupCharacter()
 {
-	using namespace CharacterType;
-	if(team == Team::POSTECH)
-		{
-		switch(character_type)
-			{
-			case LIAR:
-				loadImage(":images/ingame/character/liar_postech.png");
-				break;
-			case RICH:
-				loadImage(":images/ingame/character/rich_postech.png");
-				break;
-			case ALCHOHOLIC:
-				loadImage(":images/ingame/character/alchoholic_postech.png");
-				break;
-			}
-		}
-	else
-		{
-		switch(character_type)
-			{
-			case LIAR:
-				loadImage(":images/ingame/character/liar_kaist.png");
-				break;
-			case RICH:
-				loadImage(":images/ingame/character/rich_kaist.png");
-				break;
-			case ALCHOHOLIC:
-				loadImage(":images/ingame/character/alchoholic_kaist.png");
-				break;
-			}
-		}
+    using namespace CharacterType;
+    if(team == Team::POSTECH)
+    {
+        switch(character_type)
+        {
+        case LIAR:
+            loadImage(":images/ingame/character/liar_postech.png");
+            break;
+        case RICH:
+            loadImage(":images/ingame/character/rich_postech.png");
+            break;
+        case ALCHOHOLIC:
+            loadImage(":images/ingame/character/alchoholic_postech.png");
+            break;
+        }
+    }
+    else
+    {
+        switch(character_type)
+        {
+        case LIAR:
+            loadImage(":images/ingame/character/liar_kaist.png");
+            break;
+        case RICH:
+            loadImage(":images/ingame/character/rich_kaist.png");
+            break;
+        case ALCHOHOLIC:
+            loadImage(":images/ingame/character/alchoholic_kaist.png");
+            break;
+        }
+    }
 }
 
 
@@ -89,15 +89,15 @@ void Character::setUnitDir(enum Direction::Type d){
 
 void Character::setCharPos(int pos)
 {
-	position = pos;
+    position = pos;
     cell_x = ((pos / 37) + 1) / 3;
     cell_y = ((pos % 37) + 1) / 3;
 }
 
 void Character::setPosition(int pos)
 {
-//	setupCharacter();
-	setCharPos(pos);
+    //	setupCharacter();
+    setCharPos(pos);
     setPos(cell_xy[getPosition()]);
 }
 
@@ -137,22 +137,20 @@ void Character::moveUp(){
     }
     if(map->cell[(temp_pos/37)/3][(temp_pos%37)/3]->Null == false || map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]->Null == false){
         //qDebug() << (temp_pos/37)/3 << "  " << (temp_pos%37)/3;
-        if(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][(temp_pos%37)/3]) != NULL){
-            consumeItem(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][(temp_pos%37)/3]));
-            setPosition(temp_pos);
-        }
-        else if(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]) != NULL){
-            consumeItem(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]));
-            setPosition(temp_pos);
-        }
-        else
-        {
             setPosition((cell_x*3)*37+cell_y*3);
-        }
         return;
     }
+
+    if(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][(temp_pos%37)/3]) != NULL){
+        consumeItem(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][(temp_pos%37)/3]));
+        setPosition(temp_pos);
+    }
+    else if(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]) != NULL){
+        consumeItem(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]));
+        setPosition(temp_pos);
+    }
     if(map->soju[(temp_pos/37)/3][(temp_pos%37)/3] != NULL ||
-            map->soju[(temp_pos/37)/3][((temp_pos%37)+2)/3] != NULL)
+                    map->soju[(temp_pos/37)/3][((temp_pos%37)+2)/3] != NULL)
         return;
     setPosition(temp_pos);
 }
@@ -170,23 +168,21 @@ void Character::moveDown(){
     }
     if(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]->Null == false || map->cell[((temp_pos/37)+2)/3][((temp_pos%37))/3]->Null == false){
         //qDebug() << ((temp_pos/37)+2)/3 << "  " << (temp_pos%37)/3;
-        if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]) != NULL){
-            consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]));
-            setPosition(temp_pos);
-        }
-        else if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37))/3]) != NULL){
-            consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37))/3]));
-            setPosition(temp_pos);
-        }
-        else
-        {
             setPosition((cell_x*3)*37+cell_y*3);
-        }
 
         return;
     }
+    if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]) != NULL){
+        consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]));
+        setPosition(temp_pos);
+    }
+    else if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37))/3]) != NULL){
+        consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37))/3]));
+        setPosition(temp_pos);
+    }
+
     if(map->soju[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3] != NULL ||
-            map->soju[((temp_pos/37)+2)/3][(temp_pos%37)/3] != NULL)
+                    map->soju[((temp_pos/37)+2)/3][(temp_pos%37)/3] != NULL)
         return;
 
     setPosition(temp_pos);
@@ -204,23 +200,21 @@ void Character::moveLeft(){
     }
     if(map->cell[((temp_pos/37)+2)/3][(temp_pos%37)/3]->Null == false || map->cell[((temp_pos/37))/3][(temp_pos%37)/3]->Null == false){
         //qDebug() << (temp_pos/37)/3 << "  " << (temp_pos%37)/3;
-        if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][(temp_pos%37)/3]) != NULL){
-            consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][(temp_pos%37)/3]));
-            setPosition(temp_pos);
-        }
-        else if(dynamic_cast<Item*>(map->cell[((temp_pos/37))/3][(temp_pos%37)/3]) != NULL){
-            consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37))/3][(temp_pos%37)/3]));
-            setPosition(temp_pos);
-        }
-        else
-        {
             setPosition((cell_x*3)*37+cell_y*3);
-        }
 
         return;
     }
+    if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][(temp_pos%37)/3]) != NULL){
+        consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][(temp_pos%37)/3]));
+        setPosition(temp_pos);
+    }
+    else if(dynamic_cast<Item*>(map->cell[((temp_pos/37))/3][(temp_pos%37)/3]) != NULL){
+        consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37))/3][(temp_pos%37)/3]));
+        setPosition(temp_pos);
+    }
+
     if(map->soju[((temp_pos/37)+2)/3][(temp_pos%37)/3] != NULL ||
-            map->soju[(temp_pos/37)/3][(temp_pos%37)/3] != NULL)
+                    map->soju[(temp_pos/37)/3][(temp_pos%37)/3] != NULL)
         return;
 
     setPosition(temp_pos);
@@ -238,23 +232,21 @@ void Character::moveRight(){
     }
     if(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]->Null == false || map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]->Null == false){
         //qDebug() << (temp_pos/37)/3 << "  " << ((temp_pos%37)+2)/3;
-        if(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]) != NULL){
-            consumeItem(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]));
-            setPosition(temp_pos);
-        }
-        else if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]) != NULL){
-            consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]));
-            setPosition(temp_pos);
-        }
-        else
-        {
             setPosition((cell_x*3)*37+cell_y*3);
-        }
 
         return;
     }
+    if(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]) != NULL){
+        consumeItem(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]));
+        setPosition(temp_pos);
+    }
+    else if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]) != NULL){
+        consumeItem(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]));
+        setPosition(temp_pos);
+    }
+
     if(map->soju[(temp_pos/37)/3][((temp_pos%37)+2)/3] != NULL ||
-            map->soju[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3] != NULL)
+                    map->soju[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3] != NULL)
         return;
 
     setPosition(temp_pos);
@@ -263,7 +255,7 @@ void Character::moveRight(){
 
 void Character::setNeed(Map* map)
 {
-	need = map;
+    need = map;
     this->map=map;
 }
 

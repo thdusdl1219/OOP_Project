@@ -46,7 +46,7 @@ int Unit::getPosition()
 
 Item::Item(Qneed* need, int x, int y, ItemType::Type type): Unit(need, x, y)
 {
-    Null = false;
+    Null = true;
     for(int i=0; i<4; i++)  stat[i]=0;
     this->type = type;
     switch(type)
@@ -86,10 +86,6 @@ ItemType::Type Item::getItemStat(){
 
 
 bool Item::bombObject(){
-    if(Null == false)
-    {
-        Null = true;
-    }
         loadImage(":images/ingame/map/map_bomb.png");
         setOpacity(1);
         QTimer::singleShot(50,this, SLOT(bombrecover()));
