@@ -13,7 +13,6 @@ class ChoiceScene : public Scene
     Q_OBJECT
 public:
     ChoiceScene(QObject *parent = 0);
-    virtual void action();
     void setupChoice();
     ~ChoiceScene();
     int player1_cnt;

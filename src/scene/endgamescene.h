@@ -9,13 +9,10 @@ class EndgameScene : public Scene
 public:
 	EndgameScene(QObject *parent = 0);
 	void setupEndgame();
-	virtual void action();
 	~EndgameScene();
 signals:
 
 public slots:
-private:
-    Qneed* win;
 };
 
 class OnemoreButton : public Qneed

@@ -37,6 +37,7 @@ public slots:
 
   virtual void zero();
 private:
+  int timerid;
   static InGameScene* scene;
   Character* player1;
   Character* player2;
