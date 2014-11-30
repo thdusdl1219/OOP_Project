@@ -89,8 +89,8 @@ void Character::setUnitDir(enum Direction::Type d){
 void Character::setCharPos(int pos)
 {
 	position = pos;
-	cell_x = ((pos / 37) + 1) / 3;
-	cell_y = ((pos % 37) + 1) / 3;
+    cell_x = ((pos / 37) ) / 3;
+    cell_y = ((pos % 37) ) / 3;
 }
 
 void Character::setPosition(int pos)
@@ -100,9 +100,69 @@ void Character::setPosition(int pos)
     setPos(cell_xy[getPosition()]);
 }
 
+
+void Character::moveUp(){
+    int temp_pos=position-37;
+    if(temp_pos < 0){
+        return;
+    }   // Upper bound
+
+    if(map->cell[(temp_pos/37)/3][(temp_pos%37)/3]->Null == false){
+        qDebug() << (temp_pos/37)/3 << "  " << (temp_pos%37)/3;
+        return;
+    }
+
+
+    setPosition(temp_pos);
+}
+
+void Character::moveDown(){
+    int temp_pos=position+37;
+    if(temp_pos >= 37*3*10){
+        return;
+    }   // Bottom bound
+
+    if(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]->Null == false){
+        qDebug() << ((temp_pos/37)+2)/3 << "  " << (temp_pos%37)/3;
+        return;
+    }
+
+    setPosition(temp_pos);
+}
+
+void Character::moveLeft(){
+    int temp_pos=position-1;
+    if((temp_pos+1)%37 == 0){
+        return;
+    }   // Leftward bound
+
+    if(map->cell[((temp_pos/37)+2)/3][(temp_pos%37)/3]->Null == false){
+        qDebug() << (temp_pos/37)/3 << "  " << (temp_pos%37)/3;
+        return;
+    }
+
+    setPosition(temp_pos);
+}
+
+void Character::moveRight(){
+    int temp_pos=position+1;
+    if(temp_pos%37 == 0){
+        return;
+    }   // Rightward bound
+
+    if(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]->Null == false){
+        qDebug() << (temp_pos/37)/3 << "  " << ((temp_pos%37)+2)/3;
+        return;
+    }
+
+    setPosition(temp_pos);
+
+}
+
 void Character::setNeed(Map* map)
 {
 	need = map;
+    this->map=map;
 }
 
 int Character::getPosition()

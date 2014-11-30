@@ -28,6 +28,7 @@ private:
 	int speed;
     int position;
     int life;
+    Map* map;
     void setCharPos(int);
 public:
 	Character(Qneed* parent, enum CharacterType::Type, int _numbomb, int _powbomb, int _speed, enum Team::Type);
@@ -39,6 +40,10 @@ public:
 	void setPosition(int);
 	void setNeed(Map* map);
 	int getPosition();
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
 	enum CharacterType::Type getType();
 	enum Team::Type getTeam() const;
 	int getNumBomb() const;
