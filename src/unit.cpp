@@ -48,6 +48,7 @@ Item::Item(Qneed* need, int x, int y, ItemType::Type type): Unit(need, x, y)
 {
     Null = false;
     for(int i=0; i<4; i++)  stat[i]=0;
+    this->type = type;
     switch(type)
     {
     case ItemType::BOMB_NUM:
@@ -236,7 +237,9 @@ bool Block::bombObject(){
       Null = true;
     if(item == true)
     {
-      dynamic_cast<Map *>(need)->cell[cell_x][cell_y] = new Item(need, cell_x, cell_y, (ItemType::Type)(rand()%4));
+        int rand_num = rand()%4;
+      dynamic_cast<Map *>(need)->cell[cell_x][cell_y] = new Item(need, cell_x, cell_y, (ItemType::Type)rand_num);
+      //  dynamic_cast<Item*>(cell[cell_x][cell_y])->setItemStat((IteamType::Type)rand_num);
       delete this;
       return true;
     }
