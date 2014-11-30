@@ -136,7 +136,10 @@ void Soju::bomb()
     {
         if(i < 13)
         {
+
             QTimer::singleShot(num*50,map->cell[cell_x][i], SLOT(bombObject()));
+            if(map->cell[cell_x][i]->Null == false && i != cell_y)
+                break;
             if(map->soju[cell_x][i] != NULL)
                 QTimer::singleShot(0, map->soju[cell_x][i], SLOT(bombObject()));
             if(player1->cell_x == cell_x && player1->cell_y == i)
@@ -153,6 +156,8 @@ void Soju::bomb()
         if(i >= 0)
         {
             QTimer::singleShot(num*50,map->cell[cell_x][i], SLOT(bombObject()));
+            if(map->cell[cell_x][i]->Null == false)
+                break;
             if(map->soju[cell_x][i] != NULL)
                 QTimer::singleShot(0, map->soju[cell_x][i], SLOT(bombObject()));
             if(player1->cell_x == cell_x && player1->cell_y == i)
@@ -168,6 +173,8 @@ void Soju::bomb()
         if(i < 10)
         {
             QTimer::singleShot(num*50,map->cell[i][cell_y], SLOT(bombObject()));
+            if(map->cell[i][cell_y]->Null == false)
+                break;
             if(map->soju[i][cell_y] != NULL)
                 QTimer::singleShot(0, map->soju[i][cell_y], SLOT(bombObject()));
             if(player1->cell_x == i && player1->cell_y == cell_y)
@@ -183,6 +190,8 @@ void Soju::bomb()
         if(i >= 0)
         {
             QTimer::singleShot(num*50,map->cell[i][cell_y], SLOT(bombObject()));
+            if(map->cell[i][cell_y]->Null == false)
+                break;
             if(map->soju[i][cell_y] != NULL)
                 QTimer::singleShot(0, map->soju[i][cell_y], SLOT(bombObject()));
             if(player1->cell_x == i && player1->cell_y == cell_y)
