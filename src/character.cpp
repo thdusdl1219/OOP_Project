@@ -106,17 +106,23 @@ void Character::consumeItem(Item* i){
     int pos=i->getPosition();
     switch(i->getItemStat()){
     case ItemType::BOMB_NUM:
-        numbomb++;
+        if(this->getNumBomb() < 8)
+            numbomb++;
         break;
     case ItemType::BOMB_POWER:
-        powbomb++;
+        if(this->getPowBomb() < 8)
+            powbomb++;
         break;
     case ItemType::LIFE:
-        life++;
-        emit Aya();
+        if(this->getLife() < 3)
+        {
+            life++;
+            emit Aya();
+        }
         break;
     case ItemType::SPEED:
-        speed++;
+        if(this->getSpeed() < 8)
+            speed++;
         break;
     }
 

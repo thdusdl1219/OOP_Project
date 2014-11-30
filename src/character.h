@@ -25,7 +25,7 @@ private:
     enum Direction::Type character_dir;
 	int numbomb;
 	int powbomb;
-	int speed;
+    int speed;
     int position;
     int life;
     Map* map;

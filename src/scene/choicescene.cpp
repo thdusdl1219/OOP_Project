@@ -198,7 +198,7 @@ void PlayerButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 				{
 				case 0:
 					loadImage(":images/choice/choice_character_clicked0.png");
-					scene->player1 = new Character(NULL, CharacterType::LIAR, 1, 1, 2, Team::POSTECH);
+                    scene->player1 = new Character(NULL, CharacterType::LIAR, 1, 1, 2, Team::POSTECH);
 					break;
 				case 1:
 					loadImage(":images/choice/choice_character_clicked1.png");

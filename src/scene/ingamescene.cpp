@@ -20,7 +20,7 @@ InGameScene::InGameScene(QObject *parent) :
 	setupIngame();
     scene = this;
 //    setFocusPolicy(Qt::StrongFocus);
-	QObject::startTimer(1000/20);
+    QObject::startTimer(1000/80);
 
 
     animation = new QTimeLine(500);
@@ -164,10 +164,17 @@ void InGameScene::timerEvent(QTimerEvent *)
  {
      int cur_position1 = player1->getPosition();
      int cur_position2 = player2->getPosition();
+     static int delay1 = 0, delay2 = 0;
      int x1 = player1->cell_x;
      int y1 = player1->cell_y;
      int x2 = player2->cell_x;
      int y2 = player2->cell_y;
+    delay1 ++;
+    delay2 ++;
+    if(delay1 >= (9-player1->getSpeed()))
+        delay1 = 0;
+    if(delay2 >= (9-player2->getSpeed()))
+        delay2 = 0;
     if(bomb1)
     {
       if((map->soju[x1][y1]) == NULL)
@@ -180,6 +187,8 @@ void InGameScene::timerEvent(QTimerEvent *)
         if(player2->use_soju < player2->getNumBomb())
         map->soju[x2][y2] = new Soju(map, x2, y2, player2->getPowBomb(), player2);
     }
+    if(delay2 == 0)
+    {
     if(keyUp && cur_position2 >= 13*3-2)
     {
         //qDebug() << "Up";
@@ -204,7 +213,9 @@ void InGameScene::timerEvent(QTimerEvent *)
         player2->moveRight();
         //player2->setPos(cell_xy[cur_position2+1]);
     }
-
+    }
+    if(delay1 == 0)
+    {
     if(keyW && cur_position1 >= 13*3-2)
     {
         //qDebug() << "W";
@@ -229,6 +240,8 @@ void InGameScene::timerEvent(QTimerEvent *)
         player1->moveRight();
         //player1->setPos(cell_xy[cur_position1+1]);
     }
+    }
+
 }
 
 
