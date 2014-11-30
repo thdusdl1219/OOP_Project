@@ -5,6 +5,7 @@
 #include <QSize>
 #include <QObject>
 #include <QWidget>
+#include <QThread>
 #include "../unit.h"
 #include "../character.h"
 #include "../mainwindow.h"
