@@ -39,6 +39,7 @@ bool Character::bombObject()
         QTimer::singleShot(75, this, SLOT(bombrecover()));
         emit Aya();
     }
+    return true;
 }
 
 void Character::bombrecover()
@@ -129,7 +130,11 @@ void Character::moveUp(){
     if(temp_pos < 0){
         return;
     }   // Upper bound
-
+    if((position/37)%3 == 1)
+    {
+        setPosition(temp_pos);
+        return;
+    }
     if(map->cell[(temp_pos/37)/3][(temp_pos%37)/3]->Null == false || map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]->Null == false){
         //qDebug() << (temp_pos/37)/3 << "  " << (temp_pos%37)/3;
         if(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][(temp_pos%37)/3]) != NULL){
@@ -158,7 +163,11 @@ void Character::moveDown(){
     if(temp_pos >= 37*3*10){
         return;
     }   // Bottom bound
-
+    if((position/37)%3 == 2)
+    {
+        setPosition(temp_pos);
+        return;
+    }
     if(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]->Null == false || map->cell[((temp_pos/37)+2)/3][((temp_pos%37))/3]->Null == false){
         //qDebug() << ((temp_pos/37)+2)/3 << "  " << (temp_pos%37)/3;
         if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]) != NULL){
@@ -188,7 +197,11 @@ void Character::moveLeft(){
     if((temp_pos+1)%37 == 0){
         return;
     }   // Leftward bound
-
+    if((position%37)%3 == 1)
+    {
+        setPosition(temp_pos);
+        return;
+    }
     if(map->cell[((temp_pos/37)+2)/3][(temp_pos%37)/3]->Null == false || map->cell[((temp_pos/37))/3][(temp_pos%37)/3]->Null == false){
         //qDebug() << (temp_pos/37)/3 << "  " << (temp_pos%37)/3;
         if(dynamic_cast<Item*>(map->cell[((temp_pos/37)+2)/3][(temp_pos%37)/3]) != NULL){
@@ -218,7 +231,11 @@ void Character::moveRight(){
     if(temp_pos%37 == 0){
         return;
     }   // Rightward bound
-
+    if((position%37)%3 == 2)
+    {
+        setPosition(temp_pos);
+        return;
+    }
     if(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]->Null == false || map->cell[((temp_pos/37)+2)/3][((temp_pos%37)+2)/3]->Null == false){
         //qDebug() << (temp_pos/37)/3 << "  " << ((temp_pos%37)+2)/3;
         if(dynamic_cast<Item*>(map->cell[(temp_pos/37)/3][((temp_pos%37)+2)/3]) != NULL){
