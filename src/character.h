@@ -41,10 +41,6 @@ public:
 	void setNeed(Map* map);
 	int getPosition();
     void consumeItem(Item*);
-    void moveUp();
-    void moveDown();
-    void moveLeft();
-    void moveRight();
 	enum CharacterType::Type getType();
 	enum Team::Type getTeam() const;
 	int getNumBomb() const;
@@ -58,6 +54,11 @@ public slots:
     virtual bool bombObject();
     virtual void bombrecover();
     void animateImage(int);
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
+
 //signals:
 //    void Aya(){}
 

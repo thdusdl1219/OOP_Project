@@ -46,8 +46,9 @@ int Unit::getPosition()
 
 Item::Item(Qneed* need, int x, int y, ItemType::Type type): Unit(need, x, y)
 {
-    Null = false;
+    Null = true;
     for(int i=0; i<4; i++)  stat[i]=0;
+    this->type = type;
     switch(type)
     {
     case ItemType::BOMB_NUM:
@@ -85,10 +86,6 @@ ItemType::Type Item::getItemStat(){
 
 
 bool Item::bombObject(){
-    if(Null == false)
-    {
-        Null = true;
-    }
         loadImage(":images/ingame/map/map_bomb.png");
         setOpacity(1);
         QTimer::singleShot(50,this, SLOT(bombrecover()));
@@ -97,10 +94,10 @@ bool Item::bombObject(){
 
 Soju::Soju(Qneed* need, int x, int y, int p, Character* _player): Unit(need, x, y)
 {
-    Map::get_map()->cell[x][y]->Null = false;
-    Null = false;
+//    Map::get_map()->cell[x][y]->Null = false;
     loadImage(":images/ingame/map/map_soju.png");
     time=2;
+    Null = false;
     power=p;
     player = _player;
     player->use_soju++;
@@ -136,7 +133,10 @@ void Soju::bomb()
     {
         if(i < 13)
         {
+
             QTimer::singleShot(num*50,map->cell[cell_x][i], SLOT(bombObject()));
+            if(map->cell[cell_x][i]->Null == false)
+                break;
             if(map->soju[cell_x][i] != NULL)
                 QTimer::singleShot(0, map->soju[cell_x][i], SLOT(bombObject()));
             if(player1->cell_x == cell_x && player1->cell_y == i)
@@ -153,6 +153,8 @@ void Soju::bomb()
         if(i >= 0)
         {
             QTimer::singleShot(num*50,map->cell[cell_x][i], SLOT(bombObject()));
+            if(map->cell[cell_x][i]->Null == false)
+                break;
             if(map->soju[cell_x][i] != NULL)
                 QTimer::singleShot(0, map->soju[cell_x][i], SLOT(bombObject()));
             if(player1->cell_x == cell_x && player1->cell_y == i)
@@ -168,6 +170,8 @@ void Soju::bomb()
         if(i < 10)
         {
             QTimer::singleShot(num*50,map->cell[i][cell_y], SLOT(bombObject()));
+            if(map->cell[i][cell_y]->Null == false)
+                break;
             if(map->soju[i][cell_y] != NULL)
                 QTimer::singleShot(0, map->soju[i][cell_y], SLOT(bombObject()));
             if(player1->cell_x == i && player1->cell_y == cell_y)
@@ -183,6 +187,8 @@ void Soju::bomb()
         if(i >= 0)
         {
             QTimer::singleShot(num*50,map->cell[i][cell_y], SLOT(bombObject()));
+            if(map->cell[i][cell_y]->Null == false)
+                break;
             if(map->soju[i][cell_y] != NULL)
                 QTimer::singleShot(0, map->soju[i][cell_y], SLOT(bombObject()));
             if(player1->cell_x == i && player1->cell_y == cell_y)
@@ -221,13 +227,15 @@ bool Block::isBreakable(){
 bool Block::bombObject(){
   if(isBreakable())
   {
-  srand(time(0));
+  srand((cell_x + cell_y)*time(0));
   if(Null == false)
   {
       Null = true;
     if(item == true)
     {
-      dynamic_cast<Map *>(need)->cell[cell_x][cell_y] = new Item(need, cell_x, cell_y, (ItemType::Type)(rand()%4));
+        int rand_num = rand()%4;
+      dynamic_cast<Map *>(need)->cell[cell_x][cell_y] = new Item(need, cell_x, cell_y, (ItemType::Type)rand_num);
+      //  dynamic_cast<Item*>(cell[cell_x][cell_y])->setItemStat((IteamType::Type)rand_num);
       delete this;
       return true;
     }
