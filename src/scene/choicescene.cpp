@@ -64,11 +64,11 @@ void ChoiceScene::setupChoice()
     player_button[5]->setPos(764, 500);
 
 	map_button[0] = new MapButton(this, get_window(), 0);
-	map_button[0] ->setPos(200, 500);
+    map_button[0] ->setPos(215, 600);
 	map_button[1] = new MapButton(this, get_window(), 1);
-	map_button[1] ->setPos(400, 500);
+    map_button[1] ->setPos(415, 600);
 	map_button[2] = new MapButton(this, get_window(), 2);
-	map_button[2] ->setPos(600, 500);
+    map_button[2] ->setPos(615, 600);
 
 
 }
