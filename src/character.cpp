@@ -19,10 +19,30 @@ Character::Character(Qneed* parent, enum CharacterType::Type _character_type, in
     setZValue(10);
     use_soju = 0;
     life = 3;
+    mujuk = false;
+}
+
+bool Character::getMujuk()
+{
+  return mujuk;
+}
+
+void Character::setMujuk(bool _b)
+{
+  if(_b)
+      QTimer::singleShot(1000, this, SLOT(resetMujuk()));
+  mujuk = _b;
+}
+
+void Character::resetMujuk()
+{
+  setMujuk(false);
 }
 
 bool Character::bombObject()
 {
+  if(!mujuk)
+   {
     qDebug() << "AYA";
     if(life == 0)
         life = 1;
@@ -39,12 +59,30 @@ bool Character::bombObject()
         QTimer::singleShot(75, this, SLOT(bombrecover()));
         emit Aya();
     }
+    setMujuk(true);
+    }
     return true;
 }
 
 void Character::bombrecover()
 {
     setOpacity(1);
+    QTimer::singleShot(75, this, SLOT(bombrecover2()));
+}
+
+void Character::bombrecover2()
+{
+  static int i = 0;
+  i++;
+  setOpacity(0);
+  if(i == 3)
+    {
+      setOpacity(1);
+      i = 0;
+      return;
+    }
+  else
+    QTimer::singleShot(75, this, SLOT(bombrecover()));
 }
 
 void Character::setupCharacter()

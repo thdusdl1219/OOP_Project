@@ -136,9 +136,13 @@ void Soju::bomb()
             if(map->soju[cell_x][i] != NULL)
                 QTimer::singleShot(0, map->soju[cell_x][i], SLOT(bombObject()));
             if(player1->cell_x == cell_x && player1->cell_y == i)
+              {
                 QTimer::singleShot(num*30, player1, SLOT(bombObject()));
+              }
             if(player2->cell_x == cell_x && player2->cell_y == i)
+              {
                 QTimer::singleShot(num*30, player2, SLOT(bombObject()));
+              }
             num++;
 
         }
@@ -154,9 +158,13 @@ void Soju::bomb()
             if(map->soju[cell_x][i] != NULL)
                 QTimer::singleShot(0, map->soju[cell_x][i], SLOT(bombObject()));
             if(player1->cell_x == cell_x && player1->cell_y == i)
+              {
                 QTimer::singleShot(num*30, player1, SLOT(bombObject()));
+              }
             if(player2->cell_x == cell_x && player2->cell_y == i)
+              {
                 QTimer::singleShot(num*30, player2, SLOT(bombObject()));
+              }
             num++;
         }
     }
@@ -171,9 +179,13 @@ void Soju::bomb()
             if(map->soju[i][cell_y] != NULL)
                 QTimer::singleShot(0, map->soju[i][cell_y], SLOT(bombObject()));
             if(player1->cell_x == i && player1->cell_y == cell_y)
+              {
                 QTimer::singleShot(num*30, player1, SLOT(bombObject()));
+              }
             if(player2->cell_x == i && player2->cell_y == cell_y)
+              {
                 QTimer::singleShot(num*30, player2, SLOT(bombObject()));
+              }
             num++;
         }
     }
@@ -188,9 +200,13 @@ void Soju::bomb()
             if(map->soju[i][cell_y] != NULL)
                 QTimer::singleShot(0, map->soju[i][cell_y], SLOT(bombObject()));
             if(player1->cell_x == i && player1->cell_y == cell_y)
+              {
                 QTimer::singleShot(num*30, player1, SLOT(bombObject()));
+              }
             if(player2->cell_x == i && player2->cell_y == cell_y)
+              {
                 QTimer::singleShot(num*30, player2, SLOT(bombObject()));
+              }
             num++;
         }
     }

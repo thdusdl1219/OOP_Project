@@ -29,6 +29,7 @@ private:
     int position;
     int life;
     Map* map;
+    bool mujuk;
     void setCharPos(int);
 public:
 	Character(Qneed* parent, enum CharacterType::Type, int _numbomb, int _powbomb, int _speed, enum Team::Type);
@@ -50,7 +51,11 @@ public:
     void setLife(int);
     Qneed* image;
     int use_soju;
+  bool getMujuk();
+  void setMujuk(bool);
 public slots:
+  virtual void bombrecover2();
+    virtual void resetMujuk();
     virtual bool bombObject();
     virtual void bombrecover();
     void animateImage(int);
