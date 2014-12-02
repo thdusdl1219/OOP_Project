@@ -16,6 +16,10 @@ InGameScene::InGameScene(QObject *parent) :
 	player2 = ChoiceScene :: get_ChoiceScene()->player2;
 	keyUp = keyDown = keyLeft = keyRight = false;
     keyT = keyF = keyG = keyH = false;
+<<<<<<< HEAD
+=======
+    //keyW = keyA = keyS = keyD = false;
+>>>>>>> 필요없는거 이미지 지움
     bomb1 = bomb2 = false;
 	setupIngame();
     scene = this;
