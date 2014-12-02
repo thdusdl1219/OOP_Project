@@ -15,11 +15,7 @@ InGameScene::InGameScene(QObject *parent) :
 	player1 = ChoiceScene :: get_ChoiceScene()->player1;
 	player2 = ChoiceScene :: get_ChoiceScene()->player2;
 	keyUp = keyDown = keyLeft = keyRight = false;
-<<<<<<< HEAD
     keyT = keyF = keyG = keyH = false;
-=======
-    keyW = keyA = keyS = keyD = false;
->>>>>>> 노의미
     bomb1 = bomb2 = false;
 	setupIngame();
     scene = this;

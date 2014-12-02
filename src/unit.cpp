@@ -239,7 +239,7 @@ bool Block::isBreakable(){
 bool Block::bombObject(){
   if(isBreakable())
   {
-  srand((cell_x + cell_y)*time(0));
+  srand((cell_x + cell_y)+time(0));
   if(Null == false)
   {
       Null = true;
