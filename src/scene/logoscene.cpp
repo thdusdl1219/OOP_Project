@@ -48,9 +48,6 @@ void LogoScene::setupLogo()
 
     connect(animation, SIGNAL(finished()), this, SLOT(goinit()));
     animation->start();
-
-
-
 }
 
 

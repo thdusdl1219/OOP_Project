@@ -20,11 +20,11 @@ class Character : public Unit
 {
     Q_OBJECT
 private:
-	enum CharacterType::Type character_type;
-	enum Team::Type team;
+    enum CharacterType::Type character_type;
+    enum Team::Type team;
     enum Direction::Type character_dir;
-	int numbomb;
-	int powbomb;
+    int numbomb;
+    int powbomb;
     int speed;
     int position;
     int life;
@@ -32,29 +32,29 @@ private:
     bool mujuk;
     void setCharPos(int);
 public:
-	Character(Qneed* parent, enum CharacterType::Type, int _numbomb, int _powbomb, int _speed, enum Team::Type);
-	void setupCharacter();
+    Character(Qneed* parent, enum CharacterType::Type, int _numbomb, int _powbomb, int _speed, enum Team::Type);
+    void setupCharacter();
     void setUnitDir(enum Direction::Type);
-	void setNumBomb(int);
-	void setPowBomb(int);
-	void setSpeed(int);
-	void setPosition(int);
-	void setNeed(Map* map);
-	int getPosition();
+    void setNumBomb(int);
+    void setPowBomb(int);
+    void setSpeed(int);
+    void setPosition(int);
+    void setNeed(Map* map);
+    int getPosition();
     void consumeItem(Item*);
-	enum CharacterType::Type getType();
-	enum Team::Type getTeam() const;
-	int getNumBomb() const;
-	int getPowBomb() const;
+    enum CharacterType::Type getType();
+    enum Team::Type getTeam() const;
+    int getNumBomb() const;
+    int getPowBomb() const;
     int getSpeed() const;
     int getLife();
     void setLife(int);
     Qneed* image;
     int use_soju;
-  bool getMujuk();
-  void setMujuk(bool);
+    bool getMujuk();
+    void setMujuk(bool);
 public slots:
-  virtual void bombrecover2();
+    virtual void bombrecover2();
     virtual void resetMujuk();
     virtual bool bombObject();
     virtual void bombrecover();
