@@ -7,19 +7,23 @@
 ChoiceScene::ChoiceScene(QObject *parent) :
 	Scene(parent)
 {
-	go_button = NULL;
-	for(int i = 0; i < 4; i++)
-		{
-			player_button[i] = NULL;
-		}
-	player1_cnt = 0;
-	player2_cnt = 0;
-	player1 = NULL;
-	player2 = NULL;
-	map_cnt = 0;
-	map_kind = 0;
-	scene = this;
-	setupChoice();
+    go_button = NULL;
+    for(int i = 0; i < 6; i++)
+    {
+        player_button[i] = NULL;
+    }
+    for(int i = 0; i < 3; i++)
+    {
+        map_button[i] = NULL;
+    }
+    player1_cnt = 0;
+    player2_cnt = 0;
+    player1 = NULL;
+    player2 = NULL;
+    map_cnt = 0;
+    map_kind = 0;
+    scene = this;
+    setupChoice();
 }
 ChoiceScene::~ChoiceScene()
 {
