@@ -19,11 +19,6 @@ EndgameScene::~EndgameScene()
 void EndgameScene::setupEndgame()
 {
 	Qneed* background = new Qneed(this, get_window());
-    //background->loadImage(":images/endgame/endgame_background.png");
-    //set_background(background);
-
-   // win = new Qneed(this, get_window());
-   // win->setZValue(10);
     Character* player1 = Map::get_map()->player1;
     Character* player2 = Map::get_map()->player2;
     if(player1->getLife() == 0 && player2->getLife() == 0)
@@ -33,7 +28,6 @@ void EndgameScene::setupEndgame()
     else
         background->loadImage(":images/endgame/endgame_postech.png");
     set_background(background);
-   // win->setPos(0,0);
     OnemoreButton* one = new OnemoreButton(this,get_window());
     one->setPos(824, 553);
     CreatorButton* cre = new CreatorButton(this,get_window());
