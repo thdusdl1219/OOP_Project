@@ -92,7 +92,6 @@ bool Item::bombObject(){
 
 Soju::Soju(Qneed* need, int x, int y, int p, Character* _player): Unit(need, x, y)
 {
-//    Map::get_map()->cell[x][y]->Null = false;
     loadImage(":images/ingame/map/map_soju.png");
     time=2;
     Null = false;
@@ -102,13 +101,13 @@ Soju::Soju(Qneed* need, int x, int y, int p, Character* _player): Unit(need, x, 
     QTimer::singleShot(time*1000, this, SLOT(bombObject()));
 }
 
-int Soju::getTime(){
-    return time;
-}
+//int Soju::getTime(){
+    //return time;
+//}
 
-int Soju::getPower(){
-    return power;
-}
+//int Soju::getPower(){
+    //return power;
+//}
 
 bool Soju::bombObject(){
     bomb();

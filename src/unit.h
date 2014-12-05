@@ -53,8 +53,8 @@ class Soju: public Unit
 public:
     Soju(Qneed*, int, int , int, Character*);	// row, col, imageSrc;
 	// get private member function
-	int getTime();
-	int getPower();
+    //int getTime();
+    //int getPower();
 	void bomb();
 private:
     Character* player;
