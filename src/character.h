@@ -35,9 +35,6 @@ public:
     Character(Qneed* parent, enum CharacterType::Type, int _numbomb, int _powbomb, int _speed, enum Team::Type);
     void setupCharacter();
     void setUnitDir(enum Direction::Type);
-    void setNumBomb(int);
-    void setPowBomb(int);
-    void setSpeed(int);
     void setPosition(int);
     void setNeed(Map* map);
     int getPosition();
@@ -48,7 +45,6 @@ public:
     int getPowBomb() const;
     int getSpeed() const;
     int getLife();
-    void setLife(int);
     Qneed* image;
     int use_soju;
     bool getMujuk();

@@ -36,7 +36,6 @@ bool Unit::bombObject()
 void Unit::bombrecover()
 {
     setOpacity(0);
-   // loadImage(":images/ingame/map/map_unit.png");
 }
 
 int Unit::getPosition()
