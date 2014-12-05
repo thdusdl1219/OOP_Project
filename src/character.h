@@ -47,7 +47,6 @@ public:
     int getLife();
     Qneed* image;
     int use_soju;
-    bool getMujuk();
     void setMujuk(bool);
 public slots:
     virtual void bombrecover2();

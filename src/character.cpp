@@ -22,11 +22,6 @@ Character::Character(Qneed* parent, enum CharacterType::Type _character_type, in
     mujuk = false;
 }
 
-bool Character::getMujuk()
-{
-  return mujuk;
-}
-
 void Character::setMujuk(bool _b)
 {
   if(_b)
@@ -134,7 +129,6 @@ void Character::setCharPos(int pos)
 
 void Character::setPosition(int pos)
 {
-    //	setupCharacter();
     setCharPos(pos);
     setPos(cell_xy[getPosition()]);
 }
