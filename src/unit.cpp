@@ -84,7 +84,10 @@ bool Item::bombObject(){
         loadImage(":images/ingame/map/map_bomb.png");
         setOpacity(1);
         QTimer::singleShot(30,this, SLOT(bombrecover()));
-    return true;
+        int pos = getPosition();
+        Map::get_map()->cell[pos/37/3][(pos%37)/3] = new Unit(need, pos/37/3, (pos%37)/3);
+        delete this;
+        return true;
 }
 
 Soju::Soju(Qneed* need, int x, int y, int p, Character* _player): Unit(need, x, y)
