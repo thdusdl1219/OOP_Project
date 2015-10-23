@@ -1,4 +1,4 @@
-Projectzzang
+csed233_Project
 ============
 
-객체 프로젝트 ㄱㄱ행
+Object Oriented Programming class project
